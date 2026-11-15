@@ -330,7 +330,7 @@ example : False → True := fun hF => sorry
 
 -- *Wygląda* więc na to, że To właśnie jest Klejnot w Lotosie! ॐ मणि पद्मे हूँ!
 
---- أنا الحق
+-- أنا الحق
 
 -- Albo, jak ujął to pewien łobuz: Soll Gott gesehen werden... mein Auge und Gottes Auge ist ein
 -- Auge und ein Erkennen und ein Lieben.
