@@ -347,6 +347,21 @@ example : False → True := fun hF => sorry
 -- wydaje się dotyczyć zwrotu *strzałki czasu*. Czyli to też są, przynajmniej w tym znaczeniu, swoje
 -- lustrzane odbicia.
 
+-- Pobawmy się może przy okazji zagadką świadomości. Od dawna wielu psychologów próbuje to coś
+-- zbadać, ale nie udało się jak dotąd ustalić na ten temat nawet jednego nietrywialnego faktu.
+-- Kiedy słyszymy takie próby wyjaśnienia, jak to, że jest coś takiego jak bycie nietoperzem, to
+-- chodzi, zdaje się, o pewną *jakość* pewnego *sposobu doświadczania*, a nie o świadome
+-- doświadcz*anie* *jako takie*. Świadomość to nie punkt za naszymi oczami, w którym skupiają się
+-- promienie światła wpadające do naszej głowy, ani to nie jest żadna przestrzeń albo ekran, w
+-- której pojawiają się doświadczenia, bo przestrzenność to własność *treści* doświadczenia.
+-- Swiadomość nie jest obiektem materialnym, nie może więc być zlokalizowana w przestrzeni; to
+-- przestrzeń, a raczej jej wrażenie, i materialność albo wrażenie substancjalności są czymś *w*
+-- świadomości. Sama świadomość nie ma właściwości; świadomość tylko *jest* i *tylko* o niej możemy
+-- naprawdę wiedzieć, że jest, co czyni ją jednocześnie *pustą* i maksymalnie *obiektywną*.
+-- Właściwie nie ma nawet żadnego punktu, *z którego* dopiero coś widzimy, są tylko *widzenia* i
+-- punkty, które można odnaleźć *dzięki nim*, w dostępnych (w takim lub innym sensie) przestrzennych
+-- treściach.
+
 -- To już może I=Will See-My-Self-Out 😘
 
 ----------------------------------------------------------------------------------------------------
@@ -371,6 +386,5 @@ example : False → True := fun hF => sorry
 
 -- Na koniec wypada wspomnieć, że (może niespodziewanymi) bohaterami tego odcinka byli między
 -- innymi, poza wspomnianym już Tomkiem, w mojej ocenie wybitni Psycho-Logowie Simone Weil,
--- Al-Halladż, Mistrz Eckhart, Ten, który Obudził się na jawie, Ten, który został Namaszczony, a pod
--- sam koniec wystąpił Thomas Nagel (ale akurat tym razem nie chodziło <chyba> o żadnego
--- nietoperza).
+-- Al-Halladż, Mistrz Eckhart, Ten, który Obudził się na jawie, Ten, który został Namaszczony, i
+-- Thomas Nagel.
