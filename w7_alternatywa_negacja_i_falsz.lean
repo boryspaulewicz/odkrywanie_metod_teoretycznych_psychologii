@@ -20,7 +20,8 @@ variable (p q r : Prop)
 #check False -- False : Prop
 
 -- ... które ma tą właściwość, że *nie istnieje dowód tego zdania*. A więc to - raz na zawsze -
--- *tylko* (puste) zdanie.
+-- *tylko* (puste) zdanie, znane też, szczególnie fanom pewnego osobnika zdaje mi się szukającego
+-- swojego miejsca na ślepo tam, gdzie nic nie ma, jako fake news.
 
 -- Technicznie, ta własność polega na tym, że `False` jest typem, który z definicji, albo
 -- aksjomatycznie, nie posiada konstruktora. Termy mające typ implikacji konstruujemy za pomocą
