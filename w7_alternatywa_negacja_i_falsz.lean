@@ -343,8 +343,9 @@ example : False → True := fun hF => sorry
 -- psychicznym przeziębieniem! Jak zasugerował rzekomo jeszcze inny łobuz, istotą depresji jest
 -- życie *przeszłością*, a istotą nadmiernego lęku jest życie *przyszłością*. Zaś wspólną istotą
 -- obydwu rodzajów zaburzeń jest przede wszystkim negatywna perspektywa albo negatywne nastawienie.
--- Wspólną podstawą jest pewna forma *negacji*, a najgłębsza różnica wydaje się dotyczyć zwrotu
--- *strzałki czasu*. Czyli to też są, przynajmniej w tym znaczeniu, swoje lustrzane odbicia.
+-- Wspólną podstawą jest *negatywne złudzenie ocenne*, pewna postać fałszu, a najgłębsza różnica
+-- wydaje się dotyczyć zwrotu *strzałki czasu*. Czyli to też są, przynajmniej w tym znaczeniu, swoje
+-- lustrzane odbicia.
 
 -- To już może I=Will See-My-Self-Out 😘
 
