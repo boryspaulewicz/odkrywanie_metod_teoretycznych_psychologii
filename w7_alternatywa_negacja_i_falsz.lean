@@ -347,7 +347,7 @@ example : False → True := fun hF => sorry
 -- Dlaczego i po co? Może na przykład dlatego, że w psychologii - nie tylko w kontekście terapii -
 -- interpretacje odgrywają niezwykle doniosłą rolę? I po to, żeby zarówno same te interpretacje, jak
 -- i to, czego dotyczą, trochę lepiej w ten sposób zrozumieć? Ale uwaga: *nie każda* niespójność
--- albo paradoks prowadzi do *bezużyteczności*! (patrz hasło "logika parakonsystentna").
+-- albo paradoks prowadzi do bezużyteczności! (patrz hasło "logika parakonsystentna").
 
 -- Można powiedzieć, że czasem "naginam" tu język, ale czy faktycznie? Jeżeli jakąś perspektywę da
 -- się konsekwentnie przyjmować, to ta perspektywa po prostu jest i raczej nic się w niej nie
