@@ -20,6 +20,7 @@ def dodaje (n : Nat) :=
 -- zwraca funkcję, a więc typ funkcji `dodaje` musi mieć postać `Nat → (Nat → Nat)`.
 
 #check @dodaje
+
 -- Lean tu mówi, że `dodaje : Nat → Nat → Nat`, co znaczy to samo, co `dodaje : Nat → (Nat → Nat)`,
 -- ponieważ - jak to się mówi - w Leanie *strzałka wiąże z prawej*.
 
@@ -38,6 +39,7 @@ def dodaje (n : Nat) :=
 -- również:
 
 #check dodaje 1 2
+
 -- Ten term ma typ `Nat`, bo *jest* (wyrażeniem oznaczającym) pewną liczbą(ę) naturalną.
 
 -- W ten sposób w teorii typów *wszystkie* funkcje mogą być (i są) w istocie *jednoargumentowe*, ale
@@ -105,6 +107,7 @@ def dodaje (n : Nat) :=
 -- Zadanie 4: Korzystając z kodu poniżej jako wzorca, udowodnij twierdzenie `(p ∧ q) → q`:
 
 #check (fun (piq : p ∧ q) => piq.left)
+
 -- Ten term ma typ `p ∧ q → p`, czyli `(p ∧ q) → p`, bo koniunkcja wiąże w Leanie mocniej niż
 -- implikacja.
 

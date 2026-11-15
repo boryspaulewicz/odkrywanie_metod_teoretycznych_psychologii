@@ -6,7 +6,9 @@
 -- Gdy kursor znajduje się na linii jakiegoś kodu, a Lean został poprawnie zainstalowany i
 -- zintegrowany z edytorem Visual Studio Code, w panelu po prawej mogą się pojawiać różne
 -- komunikaty. Na przykład, gdy umieścisz kursor na linii poniżej, ...
+
 #eval 665 + 2
+
 -- ... zobaczysz po prawej liczbę `667`. Komenda `#eval` mówi Leanowi, żeby coś "poddał ewaluacji",
 -- co akurat tutaj polega na obliczeniu wyniku dodawania.
 
@@ -26,9 +28,13 @@
 -- chce, traktować jako pewnego rodzaju obiekt, tyle, że abstrakcyjny.
 
 -- Tak przy okazji, term `Nat` jest typu `Type`, bo jest takim dosyć zwyczajnym typem, ...
+
 #check Nat -- Nat : Type
+
 -- ... term `Type` to tak naprawdę term `Type 0`, który z kolei jest typu `Type 1`, ...
+
 #check Type -- Type : Type 1
+
 -- ... i tak dalej. Mamy tu więc nieskończoną hierarchię typów, ale mało co jest w tej hierarchii
 -- ciekawe i nie jest to wcale niezbędny element języka teorii typów.
 
@@ -206,6 +212,7 @@ def suma (m : Nat) (n : Nat) := m + n
 -- na temat jakiś *bliżej nieokreślonych* termów `p`, `q` i `r` typu `Prop`. `Prop` to specjalny
 -- typ, który można czytać jako "Zdanie" (`Prop` to skrót od angielskiego "Proposition"). A więc
 -- mówimy w ten sposób, że mamy ochotę coś zrobić z trzema bliżej nieokreślonymi zdaniami.
+
 variable (p q r : Prop)
 
 #check p
@@ -266,6 +273,7 @@ variable (p q r : Prop)
 -- czyli funkcji, która nie ma nazwy, czyli takiej, która nie jest "treścią" żadnej stałej.
 
 #check (fun (n : Nat) => n + 1)
+
 -- Lean nam mówi, że `(fun (n : Nat) => n + 1)` to funkcja przekształcająca `Nat`-y w `Nat`-y, to
 -- znaczy, że to jest term o typie `Nat → Nat`. Zwracam uwagę, że przed ciałem w taki sposób
 -- zapisanej funkcji piszemy `=>`, a nie `:=`, bo tu nie chodzi o *definiowanie* `fun (n : Nat)`,

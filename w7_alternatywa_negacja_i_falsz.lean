@@ -15,7 +15,9 @@ variable (p q r : Prop)
 -- FAŁSZ
 
 -- Istnieje również zdanie ...
+
 #check False -- False : Prop
+
 -- ... które ma tą właściwość, że *nie istnieje dowód tego zdania*. A więc to - raz na zawsze -
 -- *tylko* (puste) zdanie.
 
