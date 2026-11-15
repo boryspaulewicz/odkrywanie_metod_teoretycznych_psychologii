@@ -360,4 +360,4 @@ example : False → True := fun hF => sorry
 -- Na koniec wypada wspomnieć, że (może niespodziewanymi) bohaterami tego odcinka byli między
 -- innymi, poza wspomnianym już Tomkiem, w mojej ocenie wybitni Psycho-Logowie Simone Weil, Mistrz
 -- Eckhart, Ten, który Obudził się na jawie, Ten, który został Namaszczony, a pod sam koniec
--- wystąpił Thomas Nagel (akurat tym razem nie chodziło <chyba> o żadnego nietoperza).
+-- wystąpił Thomas Nagel (ale akurat tym razem nie chodziło <chyba> o żadnego nietoperza).
