@@ -1,14 +1,14 @@
 ----------------------------------------------------------------------------------------------------
--- IMPLIKACJA, CURRYING I WIĄZANIA OPERATORÓW
+-- IMPLIKACJA, KONIUNKCJA, PRAWDA, CURRYING I WIĄZANIA OPERATORÓW
 
 variable (p q r : Prop)
 
 -- W pierwszej chwili może to się wydawać dziwne, ale `p → (q → p)`. Na przykład, jeżeli (`p`) pada
--- deszcz, to jeżeli (`q`) świeci słońce, to (`p`) pada deszcz. W tym przykładzie może nam
+-- deszcz, to jeżeli (`q`) świeci Słońce, to (`p`) pada deszcz. W tym przykładzie może nam
 -- przeszkadzać jego *bezsensowność*. Nie wiem, jak Ty, ale ja mógłbym bez zastrzeżeń
 -- scharakteryzować taką wypowiedź, gdyby się pojawiła w *potocznej* rozmowie, jako dosyć
 -- bezsensowną. No ale w logice używamy odpowiedników słów takich jak "jeżeli", rozumiejąc te słowa
--- technicznie, czyli zgodnie z jednoznacznymi i sztywnymi regułami, a mowa potoczna to żywe i
+-- technicznie, czyli zgodnie z jednoznacznymi i sztywnymi regułami, a mowa potoczna to takie żywe i
 -- barwne i zawsze trochę dzikie "stworzenie".
 
 -- W Leanie, podobnie jak w życiu, funkcje mogą zwracać funkcje:
@@ -21,7 +21,7 @@ def dodaje (n : Nat) :=
 
 #check @dodaje
 
--- Lean tu mówi, że `dodaje : Nat → Nat → Nat`, co znaczy to samo, co `dodaje : Nat → (Nat → Nat)`,
+-- Lean mówi, że `dodaje : Nat → Nat → Nat`, co znaczy to samo, co `dodaje : Nat → (Nat → Nat)`,
 -- ponieważ - jak to się mówi - w Leanie *strzałka wiąże z prawej*.
 
 -- Widzisz już związek z implikacją `p → (q → p)`, o której pisałem na początku?
@@ -36,7 +36,7 @@ def dodaje (n : Nat) :=
 #check (dodaje 1) 2 -- ten term ma typ `Nat`
 
 -- A ponieważ aplikacja funkcji do argumentu wiąże z lewej, to nawiasy powyżej są zbędne, a więc
--- również:
+-- możemy napisać równoważnie:
 
 #check dodaje 1 2
 
@@ -59,7 +59,7 @@ def dodaje (n : Nat) :=
 
 #eval String.append "a" "b" -- Funkcja `String.append` zastosowana do tych argumentów zwraca "ab"
 
--- Wreszcie sprawdź typ aplikacji `sklejam` na przykład do argumentów (i zarazem termów) `"co "` i
+-- Wreszcie sprawdź typ aplikacji `sklejam`, na przykład do argumentów (i zarazem termów) `"co "` i
 -- `"nie co"`, i "oblicz" wynik tej aplikacji.
 
 -- Zadanie 2: Traktując `p` i `q` jakby były w zasadzie takimi samymi typami, jak `Nat` czy
@@ -80,7 +80,7 @@ def dodaje (n : Nat) :=
 
 -- W logice konstruktywnej `p ∧ q` jest prawdziwe wtedy i tylko wtedy, gdy ma dowód, co ma miejsce
 -- wtedy i tylko wtedy, kiedy *oba* zdania mają dowody. Wobec tego jedynym sposobem udowodnienia
--- koniunkcji jest dostarczenie takiej pary dowodów.
+-- koniunkcji jest dostarczenie takiej (uporządkowanej) *pary* dowodów.
 
 -- Tą relację *dowiedlności* możemy wyrazić w postaci *implikacji* `p → (q → (p ∧ q))`, którą możemy
 -- odczytać jako: jeżeli mam dowód zdania `p`, to jeżeli mam dowód zdania `q`, to mogę uzyskać dowód
@@ -88,8 +88,8 @@ def dodaje (n : Nat) :=
 
 -- Czy widzisz, że skoro *jedynym* sposobem udowodnienia koniunkcji jest dostarczenie pary dowodów
 -- jej członów, to ostatnia implikacja wyraża wprost coś elementarnego albo fundamentalnego na temat
--- koniunkcji? W szczególności, ta implikacja wyraża jakiś bliski związek między *koniunkcją* i
--- *curryingiem*.
+-- koniunkcji? W szczególności, ta implikacja wyraża (częściowo) bliski związek między *koniunkcją*
+-- i *curryingiem*.
 
 -- Lean ma wbudowaną funkcję `And.intro`, która pobiera dwa (jawne) argumenty będące dowodami
 -- (jakichkolwiek) dwóch zdań i zwraca dowód koniunkcji tych zdań.
@@ -129,7 +129,7 @@ def dodaje (n : Nat) :=
 
 -- Tą ostatnią regułę wnioskowania możemy również wyrazić w postaci implikacji - `((p → q) ∧ p) → q`
 -- - która może być w tym kontekście nieco dezorientująca, bo zdaje się sugerować związek między
--- *koniunkcją zdań* i *aplikacją funkcji* (do odpowiadającego typowi jej wejściu argumentu). I
+-- *koniunkcją zdań* i *aplikacją funkcji* (do odpowiadającego typowi jej wejścia argumentu). I
 -- właściwie taki związek istnieje, bo przecież każda aplikacja to *samo zestawienie*, w
 -- *odpowiedniej kolejności*, pewnej funkcji i pewnego argumentu, a to jest *dokładnie* pewnego
 -- rodzaju para uporządkowana.
@@ -149,9 +149,9 @@ def dodaje (n : Nat) :=
 #check True -- True : Prop
 
 -- `True` to znane Leanowi szczególne *zdanie atomowe*. Widzimy, że to zdanie, bo term `True` jest
--- typu `Prop`. I jest atomowe, bo nie ma żadnej struktury logicznej, nie jest przecież ani
--- koniunkcją zdań, ani implikacją, ani negacją zdania, ani alternatywą, to zdanie ma tylko *nazwę*,
--- i coś jeszcze, co już nie ma charakteru zdaniowego.
+-- typu `Prop`. I to jest zdanie atomowe, bo nie ma żadnej struktury logicznej, nie jest przecież
+-- ani koniunkcją zdań, ani implikacją, ani negacją zdania, ani alternatywą, to zdanie ma tylko
+-- *nazwę*. I ma też coś jeszcze, co nie ma charakteru zdaniowego.
 
 -- Szczególny charakter zdania `True` polega na tym, że to zdanie jest *aksjomatycznie*, czyli ma
 -- nocy *arbitralnego wyboru*, prawdziwe. A skoro prawdziwe znaczy dla nas tyle, co ma dowód, to
