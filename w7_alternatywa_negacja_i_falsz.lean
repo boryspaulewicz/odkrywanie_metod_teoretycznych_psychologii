@@ -250,6 +250,27 @@ example : False → True := fun hF => sorry
 -- struktury względem siebie dualne, czyli dokładnie (w pewnym bardzo abstrakcyjnym sensie) swoje
 -- lustrzane odbicia.
 
+-- Wyobraź sobie teraz wszystkie możliwe *formuły logiczne*, to znaczy formalne zdania, które są
+-- albo zdaniami *atomowymi*, takimi jak `False`, `True` i `p` czy `q`, albo koniunkcjami,
+-- alternatywami, implikacjami, lub negacjami zdań *niekoniecznie* atomowych. Tak rozumianych zdań
+-- jest nieskończenie wiele, bo, dajmy na to, `p ∧ p` jest takim zdaniem, a wobec tego również `(p ∧
+-- p) ∧ p` jest zdaniem, i tak dalej. Wyobraź sobie też, że od każdego zdania wychodzą strzałki -
+-- ale może inaczej rysowane, bo mają oznaczać coś innego niż implikację - do każdego takiego
+-- zdania, które z tego pierwszego w *jakikolwiek* sposób logicznie wynika. To znaczy, że każda taka
+-- strzałka reprezentuje *relację dowiedlności*, a nie żaden *konkretny* dowód. W szczególności,
+-- każda koniunkcja emituje między innymi dwie takie strzałki, do zdań będących jej członami, i
+-- każda alternatywa dostaje między innymi dwie takie strzałki, od zdań będących jej członami.
+-- Zdanie `False` emituje *dokładnie jedną* taką strzałkę do każdego zdania, w tym również do zdania
+-- `False`, i każde zdanie, w tym również `True`, emituje dokładnie jedną taką strzałkę do zdania
+-- `True`. W naszej logice jest zatem nie tylko prawdą, że Fałsz istnieje co najwyżej tylko z nazwy
+-- albo pozornie, ale w dodatku *wszystkie* drogi prowadzą ostatecznie do Prawdy. Żeby tą Prawdę
+-- "osiągnąć", nie trzeba się jednak wcale ruszać z miejsca, bo Ona zawsze po prostu jest
+-- (natychmiast dostępna), w dodatku jako coś, co jest zarazem najważniejsze i w pewnym sensie
+-- najmniej interesujące. Już nie tak ważne, ale za to najbardziej interesujące są *strzałki ze
+-- zdania `True`*, czyli *wskazane miejsca*, do których można *faktycznie skądś dojść*, bo *te*
+-- strzałki odpowiadają dokładnie wszystkim *zdaniom nietrywialnie prawdziwym*, to jest *nieatomowym
+-- twierdzeniom*.
+
 -- Funkcje matematyczne można rozumieć jako formalne odpowiedniki *oznaczania*, bo to są *arbitralne
 -- przyporządkowania* każdemu elementowi jednego zbioru, nazywanego dziedziną funkcji, dokładnie
 -- jednego elementu drugiego zbioru, nazywanego jej przeciwdziedziną. Przeciwdziedzina to z tej
@@ -257,27 +278,28 @@ example : False → True := fun hF => sorry
 -- własne. Każda funkcja może być więc rozumiana jako jednoczesne nazywanie czy wręcz wskazywanie (i
 -- może <również> stąd ta strzałka?) jakiś rzeczy w jakimś kontekście (albo w jakiejś "sytuacji").
 
--- Jeżeli tak, to czym jest, *istniejąca unikalnie*, funkcja ze zbioru pustego do zbioru
+-- Jeżeli tak, to czym jest - *istniejąca unikalnie* - funkcja ze zbioru pustego do zbioru
 -- jednoelementowego? Nazywaniem czegoś, będącego całością jakiegoś kontekstu? Ale przecież,
 -- ponieważ dziedzina tej funkcji jest zbiorem pustym, nie ma tu nawet najuboższego możliwego
 -- języka. Czy wobec tego nie można powiedzieć, że taka funkcja jest *przedjęzykowym oznaczaniem*,
--- czyli samym *zwracaniem uwagi* na to, co jest, jako na pewną Całość?
+-- czyli *zwracaniem uwagi* na to, co jest, jako na pewną całość?
 
 -- I czy zwracanie uwagi nie jest najbardziej fundamentalnym aktem *oceny*? Bo zwracać na coś
 -- u-wagę, to traktować to coś, choćby na chwilę, jako w jakiś sposób przynajmniej potencjalnie
--- ważne. W niechęci czy nienawiści jest zawsze pewnego rodzaju szacunek; nie da się, przynajmniej w
--- pewnym sensie, bardziej negatywnie ocenić czegoś, niż jako coś nieistotnego.
+-- ważne. W niechęci czy nienawiści jest zawsze pewien elementarny szacunek, bo jeśli coś budzi w
+-- nas niechęć, nienawiść, czy wstręt, to musi być tak, że to coś się dla nas *liczy*. Nie da się,
+-- przynajmniej w pewnym sensie, bardziej negatywnie ocenić czegoś, niż jako coś nieistotnego.
 
 -- Jak ujęła to pewna łobuziara: L'attention est la forme la plus rare et la plus pure de la
 -- générosité.
 
--- I czy nie jest też tak, że - ponieważ, gdy jesteśmy przytomni, działa mechanizm projekcji -
+-- I czy nie jest też tak, że - ponieważ, kiedy jesteśmy przytomni, działa mechanizm projekcji -
 -- najłatwiej jest nam odkryć stan własnego umysłu przyglądając się temu, jak nam się jawi
 -- "zewnętrzny" świat (szczególnie zaś inni ludzie)? Bo przecież introspekcja wychodzi nam raczej
 -- tak sobie. Czy świat taki, jakim nam się w danym momencie jawi - czyli świat-w-swoim-istnieniu,
 -- bo przecież przeszłego świata już nie ma, a przyszłego jeszcze nie ma - nie jest wobec tego w
--- jakiś sposób naszym najwierniejszym lustrem, pokazującym nam naszą najbardziej podstawową (i może
--- nawet przedosobową) "postać" albo ... Postawę?
+-- jakiś sposób naszym najwierniejszym lustrem, pokazującym nam naszą najbardziej subiektywną i
+-- podstawową (i może nawet przedosobową) "postać" albo ... Postawę?
 
 -- Wydaje się więc, że ustaliliśmy jak dotąd, że Fałsz to jednocześnie Zero, Pustka albo Absolutny
 -- Brak inaczej Grzech, i lustrzane odbicie Istnienia, Jedności i Prawdy.
@@ -307,5 +329,9 @@ example : False → True := fun hF => sorry
 ----------------------------------------------------------------------------------------------------
 -- BTW, Q.E.D. (FR, chyba, że znajdziesz kontrargument)
 
--- Zadanie 5: Tym razem zamiast *dowodzić*, że jakieś *zdanie* jest albo nie jest *prawdziwe*,
--- spróbuj *zademonstrować*, że któraś z przytoczonych *interpretacji* jest *niedopuszczalna*.
+-- Zadanie 5: Tym razem zamiast *udowadniać*, że jakieś *zdanie* jest albo nie jest *prawdziwe*,
+-- spróbuj *zademonstrować*, że któraś z przytoczonych *interpretacji* jest *bezużyteczna*. Dlaczego
+-- i po co? Może na przykład dlatego, że w psychologii - nie tylko w kontekście terapii -
+-- interpretacje odgrywają doniosłą rolę? I po to, żeby zarówno same te interpretacje, jak i to,
+-- czego dotyczą, trochę lepiej w ten sposób zrozumieć? Ale uwaga: nie każda niespójność czy
+-- paradoks prowadzi do bezużyteczności! (patrz hasło "logika parakonsystentna").
