@@ -363,7 +363,7 @@ example : False → True := fun hF => sorry
 -- wygina. *Zmiana* perspektywy, tak ważna między innymi w procesie terapii albo gdy próbujemy coś
 -- teoretycznie wyjaśniać, to co innego - wtedy Coś się faktycznie *rusza*, ale właściwie co? Czy
 -- może raczej Kto? Kim jest ów Ten, który istnieje jeszcze zanim przyjmie jakąś perspektywę? Czy
--- ten Ktoś to nie jest przypadkiem, wydaje się wręcz, że z jakiejś trudnej do uchwycenia definicji
+-- ten jakiś Ktoś, to nie przypadkiem, wydaje się wręcz, że z trudnej do uchwycenia definicji
 -- - we Własnej Osobie - sam Widok Znikąd?
 
 -- Na koniec wypada wspomnieć, że (może niespodziewanymi) bohaterami tego odcinka byli między
