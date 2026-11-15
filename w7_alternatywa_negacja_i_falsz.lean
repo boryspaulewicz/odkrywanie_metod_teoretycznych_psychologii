@@ -335,6 +335,15 @@ example : False → True := fun hF => sorry
 
 -- I czy to nie są wszystko w istocie sprawy Psycho-Logiczne?
 
+-- A z innej beczki, co powiesz na taką oto dualność, która według niektórych wynika w dodatku z
+-- dualizmu: Dwa zdecydowanie najczęściej występujące rodzaje zaburzeń psychicznych to zaburzenia
+-- lękowe i depresyjne. Jedno lub drugie występuje tak często, że niektórzy nazywają je nawet
+-- psychicznym przeziębieniem! Jak zasugerował rzekomo jeszcze inny łobuz, istotą depresji jest
+-- życie *przeszłością*, a istotą nadmiernego lęku jest życie *przyszłością*. Zaś wspólną istotą
+-- obydwu rodzajów zaburzeń jest przede wszystkim negatywna perspektywa albo negatywne nastawienie.
+-- Wspólną podstawą jest pewna forma *negacji*, a najgłębsza różnica wydaje się dotyczyć zwrotu
+-- *strzałki czasu*. Czyli to też są, przynajmniej w tym znaczeniu, swoje lustrzane odbicia.
+
 -- To już może I=Will See-My-Self-Out 😘
 
 ----------------------------------------------------------------------------------------------------
