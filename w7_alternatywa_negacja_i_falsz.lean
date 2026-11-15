@@ -321,7 +321,7 @@ example : False → True := fun hF => sorry
 
 -- albo sam Początek Ruchu, z Niebytu do Bytu, albo z Ciemności do Światła.
 
--- Czy wychodzi więc na to, że To właśnie jest Klejnot w Lotosie! ॐ मणि पद्मे हूँ!
+-- Wygląda więc na to, że To właśnie jest Klejnot w Lotosie! ॐ मणि पद्मे हूँ!
 
 -- Albo, jak ujął to pewien łobuz: Soll Gott gesehen werden... mein Auge und Gottes Auge ist ein
 -- Auge und ein Erkennen und ein Lieben.
