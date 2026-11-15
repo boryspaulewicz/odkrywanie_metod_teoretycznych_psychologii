@@ -334,8 +334,9 @@ example : False → True := fun hF => sorry
 -- BTW, Q.E.D. (FR, chyba, że znajdziesz kontrargument)
 
 -- Zadanie 5: Tym razem zamiast *udowadniać*, że jakieś *zdanie* jest albo nie jest *prawdziwe*,
--- spróbuj *zademonstrować*, że któraś z przytoczonych *interpretacji* jest *bezużyteczna*. Dlaczego
--- i po co? Może na przykład dlatego, że w psychologii - nie tylko w kontekście terapii -
+-- spróbuj *zademonstrować*, że któraś z przytoczonych *interpretacji* jest *bezużyteczna*.
+--
+-- Dlaczego i po co? Może na przykład dlatego, że w psychologii - nie tylko w kontekście terapii -
 -- interpretacje odgrywają doniosłą rolę? I po to, żeby zarówno same te interpretacje, jak i to,
--- czego dotyczą, trochę lepiej w ten sposób zrozumieć? Ale uwaga: nie każda niespójność czy
--- paradoks prowadzi do bezużyteczności! (patrz hasło "logika parakonsystentna").
+-- czego dotyczą, trochę lepiej w ten sposób zrozumieć? Ale uwaga: *nie każda* niespójność albo
+-- paradoks prowadzi do *bezużyteczności*! (patrz hasło "logika parakonsystentna").
