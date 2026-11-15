@@ -355,6 +355,7 @@ example : False → True := fun hF => sorry
 -- istnieje jeszcze zanim przyjmie jakąś perspektywę? Czy ten Ktoś to nie jest przypadkiem, wydaje
 -- się wręcz, że z jakiejś trudnej do uchwycenia definicji - we Własnej Osobie - sam Widok Znikąd?
 
--- Na koniec wypada wspomnieć, że (może niespodziewanymi) bohaterami tego odcinka byli między innymi
--- - poza wspomnianym już Tomkiem - (w mojej ocenie wybitni psycho-logowie) Simone Weil, Mistrz
---   Eckhart, Budda i Thomas Nagel.
+-- Na koniec wypada wspomnieć, że (może niespodziewanymi) bohaterami tego odcinka byli między
+-- innymi, poza wspomnianym już Tomkiem, w mojej ocenie wybitni Psycho-Logowie Simone Weil, Mistrz
+-- Eckhart, Ten, który Obudził się na jawie, Ten, który został Namaszczony, a pod sam koniec
+-- wystąpił Thomas Nagel (akurat tym razem nie chodziło o żadnego nietoperza).
