@@ -264,8 +264,10 @@ example : False → True := fun hF => sorry
 -- każda alternatywa dostaje między innymi dwie takie strzałki, od zdań będących jej członami.
 -- Zdanie `False` emituje *dokładnie jedną* taką strzałkę do każdego zdania, w tym również do zdania
 -- `False`, i każde zdanie, w tym również `True`, emituje dokładnie jedną taką strzałkę do zdania
--- `True`. W naszej logice jest zatem nie tylko prawdą, że Fałsz istnieje co najwyżej tylko z nazwy
--- albo pozornie, ale w dodatku *wszystkie* drogi prowadzą ostatecznie do Prawdy. Żeby tą Prawdę
+-- `True`.
+
+-- W naszej logice jest zatem nie tylko prawdą, że Fałsz istnieje co najwyżej tylko z nazwy albo
+-- pozornie, ale w dodatku *wszystkie* drogi prowadzą ostatecznie do Prawdy. Żeby tą Prawdę
 -- "osiągnąć", nie trzeba się jednak wcale ruszać z miejsca, bo Ona zawsze po prostu jest
 -- (natychmiast dostępna), w dodatku jako coś, co jest zarazem najważniejsze i w pewnym sensie
 -- najmniej interesujące. Już nie tak ważne, ale za to najbardziej interesujące są *strzałki ze
