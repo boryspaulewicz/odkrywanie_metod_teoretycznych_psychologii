@@ -350,10 +350,11 @@ example : False → True := fun hF => sorry
 
 -- Można powiedzieć, że czasem "naginam" tu język, ale czy faktycznie? Jeżeli jakąś perspektywę da
 -- się konsekwentnie przyjmować, to ta perspektywa po prostu jest i raczej nic się w niej nie
--- wygina. *Zmiana* perspektywy, tak ważna między innymi w procesie terapii, to co innego - wtedy
--- Coś się faktycznie *rusza*, ale właściwie co? Czy może raczej Kto? Kim jest ów Ten, który
--- istnieje jeszcze zanim przyjmie jakąś perspektywę? Czy ten Ktoś to nie jest przypadkiem, wydaje
--- się wręcz, że z jakiejś trudnej do uchwycenia definicji - we Własnej Osobie - sam Widok Znikąd?
+-- wygina. *Zmiana* perspektywy, tak ważna między innymi w procesie terapii albo gdy próbujemy coś
+-- teoretycznie wyjaśniać, to co innego - wtedy Coś się faktycznie *rusza*, ale właściwie co? Czy
+-- może raczej Kto? Kim jest ów Ten, który istnieje jeszcze zanim przyjmie jakąś perspektywę? Czy
+-- ten Ktoś to nie jest przypadkiem, wydaje się wręcz, że z jakiejś trudnej do uchwycenia definicji
+-- - we Własnej Osobie - sam Widok Znikąd?
 
 -- Na koniec wypada wspomnieć, że (może niespodziewanymi) bohaterami tego odcinka byli między
 -- innymi, poza wspomnianym już Tomkiem, w mojej ocenie wybitni Psycho-Logowie Simone Weil, Mistrz
