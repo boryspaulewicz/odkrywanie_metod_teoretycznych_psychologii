@@ -217,8 +217,8 @@ example : (p → q) → (¬q → ¬p) := sorry
 
 -- No dobrze, a co z implikacją? Cieszę się, że pytasz. Otóż implikacja jest w pewnym technicznym i
 -- ekstremalnie abstrakcyjnym sensie w zasadzie tym samym, co funkcja wykładnicza! I to ma ścisły
--- związek z curryingiem! A wszystko to jest, przynajmniej moim zdaniem, jednocześnie odrażająco
--- piękne i szalenie praktyczne.
+-- związek z curryingiem! A wszystko to jest, przynajmniej moim zdaniem, odrażająco piękne a także
+-- szalenie praktyczne.
 
 ----------------------------------------------------------------------------------------------------
 -- NALEŻĄ SIĘ GRATULACJE
