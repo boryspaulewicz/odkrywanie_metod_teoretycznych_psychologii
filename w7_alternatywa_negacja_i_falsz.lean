@@ -330,6 +330,8 @@ example : False → True := fun hF => sorry
 
 -- *Wygląda* więc na to, że To właśnie jest Klejnot w Lotosie! ॐ मणि पद्मे हूँ!
 
+--- أنا الحق
+
 -- Albo, jak ujął to pewien łobuz: Soll Gott gesehen werden... mein Auge und Gottes Auge ist ein
 -- Auge und ein Erkennen und ein Lieben.
 
@@ -367,6 +369,7 @@ example : False → True := fun hF => sorry
 -- - we Własnej Osobie - sam Widok Znikąd?
 
 -- Na koniec wypada wspomnieć, że (może niespodziewanymi) bohaterami tego odcinka byli między
--- innymi, poza wspomnianym już Tomkiem, w mojej ocenie wybitni Psycho-Logowie Simone Weil, Mistrz
--- Eckhart, Ten, który Obudził się na jawie, Ten, który został Namaszczony, a pod sam koniec
--- wystąpił Thomas Nagel (ale akurat tym razem nie chodziło <chyba> o żadnego nietoperza).
+-- innymi, poza wspomnianym już Tomkiem, w mojej ocenie wybitni Psycho-Logowie Simone Weil,
+-- Al-Halladż, Mistrz Eckhart, Ten, który Obudził się na jawie, Ten, który został Namaszczony, a pod
+-- sam koniec wystąpił Thomas Nagel (ale akurat tym razem nie chodziło <chyba> o żadnego
+-- nietoperza).
