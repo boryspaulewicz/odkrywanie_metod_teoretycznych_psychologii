@@ -235,4 +235,4 @@ example : False → True := fun hF => sorry
 -- Na koniec wypada wspomnieć, że (może niespodziewanymi) bohaterami tego odcinka byli między
 -- innymi, poza wspomnianym już wcześniej Tomkiem, w mojej ocenie wybitni Psycho-Logowie Simone
 -- Weil, Al-Halladż, Mistrz Eckhart, Ten, który Obudził się na jawie, Ten, który został Namaszczony,
--- i Thomas Nagel 🫥
+-- Arthur Schopenhauer i Thomas Nagel 🫥
