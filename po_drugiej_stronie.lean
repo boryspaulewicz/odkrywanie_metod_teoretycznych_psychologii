@@ -225,7 +225,9 @@ example : False → True := fun hF => sorry
 -- Dlaczego i po co? Może na przykład dlatego, że w psychologii - nie tylko w kontekście terapii -
 -- interpretacje odgrywają niezwykle doniosłą rolę? I po to, żeby zarówno same te interpretacje, jak
 -- i to, czego dotyczą, trochę lepiej w ten sposób zrozumieć? Ale uwaga: *nie każda* niespójność
--- albo paradoks prowadzi do bezużyteczności! (patrz hasło "logika parakonsystentna").
+-- albo paradoks prowadzi do bezużyteczności! (patrz hasło "logika parakonsystentna", albo
+-- przypomnij sobie, co zmarła niedawno wspaniała Marsha Linehan mówiła o roli *dialektyki* w
+-- procesie terapii).
 
 -- Można powiedzieć, że czasem "naginam" tu język, ale czy faktycznie? Jeżeli jakąś perspektywę da
 -- się konsekwentnie przyjmować, to ta perspektywa po prostu jest i raczej nic się w niej nie zgina.
@@ -235,7 +237,7 @@ example : False → True := fun hF => sorry
 -- jakąś perspektywę? Czy ten jakiś Ktoś, to nie przypadkiem, wydaje się wręcz, że z trudnej do
 -- uchwycenia definicji - we Własnej Osobie - sam Widok Znikąd?
 
--- Na koniec wypada wspomnieć, że (może niespodziewanymi) bohaterami tego odcinka byli między
--- innymi, poza wspomnianym już wcześniej Tomkiem, w mojej ocenie wybitni Psycho-Logowie Simone
--- Weil, Al-Halladż, Mistrz Eckhart, Ten, który Obudził się na jawie, Ten, który został Namaszczony,
--- Arthur Schopenhauer i Thomas Nagel 🫥
+-- Na koniec wypada wspomnieć, że (może niespodziewanymi) niejawnymi bohaterami tego odcinka byli
+-- między innymi w mojej ocenie wybitni Psycho-Logowie Simone Weil, Al-Halladż, Mistrz Eckhart,
+-- Ten, który Obudził się na jawie, Ten, który został Namaszczony, Arthur Schopenhauer i Thomas
+-- Nagel 🫥
