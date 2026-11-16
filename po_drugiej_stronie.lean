@@ -117,9 +117,9 @@ example : False → True := fun hF => sorry
 -- "osiągnąć", nie trzeba się jednak wcale ruszać z miejsca, bo Ona zawsze po prostu jest
 -- (natychmiast dostępna); w dodatku jako coś, co jest zarazem najważniejsze i w pewnym sensie
 -- najmniej interesujące. Może już nie tak ważne, ale za to niewątpliwie interesujące są *strzałki
--- ze zdania `True`*, czyli *wskazane miejsca*, do których można *faktycznie skądś dojść*, bo *te*
--- strzałki odpowiadają dokładnie wszystkim *zdaniom nietrywialnie prawdziwym*, to jest *nieatomowym
--- twierdzeniom*.
+-- ze zdania `True`*, czyli *wskazane miejsca*, do których można *faktycznie skądś dojść* (w istocie
+-- nigdzie się nie ruszając), bo *te* strzałki odpowiadają dokładnie wszystkim *zdaniom
+-- nietrywialnie prawdziwym*, to jest *nieatomowym twierdzeniom*, takim jak `p → p`.
 --
 -- Żeby zobaczyć, że takie strzałki ze zdania `True` odpowiadają dokładnie twierdzeniom logiki,
 -- wystarczy zdać sobie sprawę, że dowód zdania `True` jest jednocześnie ważny i bezużyteczny!
@@ -132,15 +132,17 @@ example : False → True := fun hF => sorry
 -- elementowi jednego zbioru, nazywanego dziedziną funkcji, dokładnie jednego elementu drugiego
 -- zbioru, nazywanego jej przeciwdziedziną. Przeciwdziedzina to z tej perspektywy kontekst, a
 -- dziedzina to taki maksymalnie ubogi język, w którym są tylko nazwy własne. Dlatego funkcje
--- nazywamy w matematyce też "mapami" albo "mapowaniami". Każda funkcja może być więc rozumiana jako
--- jednoczesne nazywanie czy wręcz wskazywanie (i może <również> stąd ta strzałka?) jakiś rzeczy
--- (albo miejsc) w jakimś kontekście (albo w jakiejś "sytuacji").
+-- nazywamy w matematyce też "mapami" albo "mapowaniami" czy wreszcie "odwzorowaniami". Każda
+-- funkcja może być więc rozumiana jako jednoczesne nazywanie czy wręcz wskazywanie (i może
+-- <również> stąd ta strzałka?) jakiś "rzeczy", "miejsc" albo "własności" w jakimś kontekście (albo
+-- w jakiejś "sytuacji").
 
 -- Jeżeli tak, to czym jest - istniejąca unikalnie! - funkcja ze zbioru *pustego* do zbioru
--- *jednoelementowego*? Nazywaniem czegoś, będącego *całością* jakiegoś kontekstu? Ale przecież,
--- ponieważ dziedzina tej funkcji jest zbiorem pustym, nie ma tu nawet najuboższego możliwego
--- języka. Czy wobec tego nie można powiedzieć, że taka funkcja jest *przedjęzykowym oznaczaniem*,
--- czyli *zwracaniem uwagi* na to, co jest, jako na pewną całość?
+-- *jednoelementowego*? Nazywaniem czegoś, będącego *całością* jakiegoś kontekstu, skoro jej
+-- przeciwdziedzina to tylko jedno jakieś coś? Ale przecież, ponieważ dziedzina tej funkcji jest
+-- zbiorem pustym, nie ma tu nawet najuboższego możliwego "języka". Czy wobec tego nie można
+-- powiedzieć, że taka funkcja jest *przedjęzykowym oznaczaniem*, czyli *zwracaniem uwagi* na to, co
+-- jest, jako na pewną całość?
 
 -- I czy zwracanie uwagi nie jest najbardziej fundamentalnym aktem *oceny*? Bo zwracać na coś
 -- u-wagę, to traktować to coś, choćby na chwilę, jako w jakiś sposób przynajmniej potencjalnie
