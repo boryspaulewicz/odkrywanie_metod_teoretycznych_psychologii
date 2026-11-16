@@ -190,10 +190,10 @@ example : False → True := fun hF => sorry
 -- psychicznym przeziębieniem! Jak zasugerował rzekomo jeszcze inny łobuz, istotą depresji jest
 -- życie *przeszłością*, a istotą nadmiernego lęku jest życie *przyszłością*. A więc w obydwu
 -- przypadkach chodzi o *życie czymś, czego nie ma*. Wspólną istotą obydwu rodzajów zaburzeń jest
--- jest jednocześnie negatywna perspektywa albo negatywne nastawienie, a mówiąc dokładniej
--- *negatywne złudzenie ocenne*, czyli pewna postać fałszu. A najgłębsza *różnica* między tymi
--- zaburzeniami wydaje się dotyczyć zwrotu *strzałki czasu*. Czyli to też są, przynajmniej w tym
--- znaczeniu, swoje lustrzane odbicia.
+-- jednocześnie negatywna perspektywa albo negatywne nastawienie, a mówiąc dokładniej *negatywne
+-- złudzenie ocenne*, czyli pewna postać fałszu. A najgłębsza *różnica* między tymi zaburzeniami
+-- wydaje się dotyczyć zwrotu *strzałki czasu*. Czyli to też są, przynajmniej w tym znaczeniu, swoje
+-- lustrzane odbicia.
 
 -- Pobawmy się też może przy okazji zagadką świadomości. Od dawna wielu psychologów próbuje to coś
 -- zbadać, ale nie udało się jak dotąd ustalić na ten temat nawet jednego nietrywialnego faktu.
@@ -235,4 +235,4 @@ example : False → True := fun hF => sorry
 -- Na koniec wypada wspomnieć, że (może niespodziewanymi) bohaterami tego odcinka byli między
 -- innymi, poza wspomnianym już wcześniej Tomkiem, w mojej ocenie wybitni Psycho-Logowie Simone
 -- Weil, Al-Halladż, Mistrz Eckhart, Ten, który Obudził się na jawie, Ten, który został Namaszczony,
--- i Thomas Nagel.
+-- i Thomas Nagel 🫥
