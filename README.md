@@ -14,3 +14,4 @@ Na razie jest tu tylko kilka skryptów napisanych w języku [Lean](https://lean-
 
 [Alternatywa, negacja i fałsz](./w7_alternatywa_negacja_i_falsz.lean)
 
+[Po Drugiej Stronie](./po_drugiej_stronie.lean)
