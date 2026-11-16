@@ -148,18 +148,19 @@ example : False → True := fun hF => sorry
 -- u-wagę, to traktować to coś, choćby na chwilę, jako w jakiś sposób przynajmniej potencjalnie
 -- ważne. W niechęci czy nienawiści jest zawsze pewien elementarny szacunek, bo jeśli coś budzi w
 -- nas niechęć, nienawiść, czy wstręt, to musi być tak, że to coś się dla nas *liczy*. Nie da się,
--- przynajmniej w pewnym sensie, bardziej negatywnie ocenić czegoś, niż jako coś nieistotnego.
+-- przynajmniej w pewnym sensie, bardziej negatywnie ocenić czegoś, a zwłaszcza kogoś, niż jako coś
+-- nieistotnego.
 --
 -- Jak ujęła to pewna łobuziara: L'attention est la forme la plus rare et la plus pure de la
 -- générosité.
 
 -- I czy nie jest też tak, że - ponieważ, kiedy jesteśmy przytomni, działa mechanizm projekcji -
--- najłatwiej jest nam odkryć stan własnego umysłu przyglądając się temu, jak nam się jawi
--- "zewnętrzny" świat (szczególnie zaś "inni" ludzie)? Bo introspekcja wychodzi nam raczej
--- tak sobie. Czy świat taki, jakim nam się w danym momencie jawi - czyli świat-w-swoim-istnieniu,
--- bo przecież przeszłego świata już nie ma, a przyszłego jeszcze nie ma - nie jest wobec tego w
--- jakiś sposób naszym najwierniejszym lustrem, pokazującym nam naszą najbardziej subiektywną i
--- podstawową (i może nawet przedosobową) "postać" albo ... Postawę?
+-- najłatwiej jest nam odkrywać aktualny stan własnego umysłu przyglądając się temu, jak nam się
+-- jawi "zewnętrzny" świat (szczególnie zaś "inni" ludzie)? Bo introspekcja wychodzi nam raczej tak
+-- sobie. Czy świat taki, jakim nam się w danym momencie jawi - czyli świat-w-swoim-istnieniu, bo
+-- przecież przeszłego świata już nie ma, a przyszłego jeszcze nie ma - nie jest wobec tego w jakiś
+-- sposób naszym najwierniejszym lustrem, pokazującym nam naszą najbardziej subiektywną i podstawową
+-- (i może nawet przedosobową) "postać" albo ... Postawę?
 
 -- Wydaje się więc, że ustaliliśmy jak dotąd, że Fałsz to jednocześnie Zero, Pustka albo Absolutny
 -- Brak inaczej Grzech, i lustrzane odbicie Istnienia, Jedności i Prawdy.
@@ -171,9 +172,9 @@ example : False → True := fun hF => sorry
 
 -- Logiczna relacja między Fałszem i Prawdą to Ocena albo Owoc z Drzewa Poznania (Dobrego i Złego),
 
--- to Sama Uwaga,
+-- Sama Uwaga,
 
--- to Coś, czego istotą jest Aktywne->Niebycie->Wobec->Istnienia,
+-- Coś, czego istotą jest Aktywne->Niebycie->Wobec->Istnienia,
 
 -- albo sam Początek Ruchu, z Niebytu do Bytu, albo z Ciemności do Światła.
 
@@ -184,33 +185,33 @@ example : False → True := fun hF => sorry
 -- Albo, jak ujął to pewien łobuz: Soll Gott gesehen werden... mein Auge und Gottes Auge ist ein
 -- Auge und ein Erkennen und ein Lieben.
 
--- I czy to nie są wszystko w istocie sprawy Psycho-Logiczne?
+-- I czy to wszystko nie są w istocie sprawy Psycho-Logiczne?
 
 -- A z innej beczki, co powiesz na taką oto dualność, która według niektórych wynika w dodatku z
 -- dualizmu: Dwa zdecydowanie najczęściej występujące rodzaje zaburzeń psychicznych to zaburzenia
 -- lękowe i depresyjne. Jedno lub drugie występuje tak często, że niektórzy nazywają je nawet
--- psychicznym przeziębieniem! Jak zasugerował rzekomo jeszcze inny łobuz, istotą depresji jest
+-- psychicznym przeziębieniem. Jak zasugerował rzekomo jeszcze inny łobuz, istotą depresji jest
 -- życie *przeszłością*, a istotą nadmiernego lęku jest życie *przyszłością*. A więc w obydwu
--- przypadkach chodzi o *życie czymś, czego nie ma*. Wspólną istotą obydwu rodzajów zaburzeń jest
--- jednocześnie negatywna perspektywa albo negatywne nastawienie, a mówiąc dokładniej *negatywne
--- złudzenie ocenne*, czyli pewna postać fałszu. A najgłębsza *różnica* między tymi zaburzeniami
--- wydaje się dotyczyć zwrotu *strzałki czasu*. Czyli to też są, przynajmniej w tym znaczeniu, swoje
--- lustrzane odbicia.
+-- rodzajach zaburzeń chodzi o *życie czymś, czego nie ma*. Wspólną istotą obydwu rodzajów zaburzeń
+-- jest jednocześnie negatywna perspektywa albo negatywne nastawienie, a mówiąc dokładniej
+-- *negatywne złudzenie ocenne*, czyli pewna postać fałszu. A najgłębsza *różnica* między tymi
+-- zaburzeniami wydaje się dotyczyć zwrotu *strzałki czasu*. Czyli to też są, przynajmniej w tym
+-- znaczeniu, swoje lustrzane odbicia.
 
--- Pobawmy się też może przy okazji zagadką świadomości. Od dawna wielu psychologów próbuje to coś
--- zbadać, ale nie udało się jak dotąd ustalić na ten temat nawet jednego nietrywialnego faktu.
--- Kiedy słyszymy takie próby wyjaśnienia, jak to, że "jest coś takiego jak bycie nietoperzem", to
+-- Pobawmy się też może przy okazji zagadką świadomości. Psychologowie od dawna próbują to coś
+-- zbadać, ale jak dotąd nie udało się ustalić na ten temat nawet jednego nietrywialnego faktu.
+-- Kiedy słyszymy takie próby wyjaśnienia, jak to, że "jest coś takiego *jak* bycie nietoperzem", to
 -- chodzi, zdaje się, o pewną *jakość* pewnego *sposobu doświadczania*, a nie o świadome
 -- doświadcz*anie* *jako takie*. Świadomość to zdecydowanie nie punkt za naszymi oczami, w którym
 -- skupiają się promienie światła wpadające do naszej głowy. Ani to nie jest żadna przestrzeń albo
--- ekran, w której pojawiają się doświadczenia, bo przestrzenność to własność *treści*
--- doświadczenia. Swiadomość nie jest obiektem materialnym, nie może więc być zlokalizowana w
--- przestrzeni; to przestrzeń, a raczej jej wrażenie, i materialność albo wrażenie substancjalności
--- są czymś "*w*" świadomości. Sama świadomość nie ma właściwości; świadomość tylko *jest* i *tylko*
--- o niej możemy naprawdę wiedzieć, że jest, co czyni ją jednocześnie *pustą* i maksymalnie
--- *obiektywną*. Właściwie nie ma nawet żadnego punktu, *z którego* dopiero coś widzimy, są tylko
--- *widzenia* i punkty, które można odnaleźć *dzięki tym widzeniom*, w dostępnych (w takim lub innym
--- sensie) przestrzennych treściach.
+-- ekran, w której pojawiają się doświadczenia, bo *przestrzenność* to własność albo część *treści*
+-- świadomego doświadczenia. Swiadomość nie jest obiektem materialnym, nie może więc być
+-- zlokalizowana w przestrzeni; to przestrzeń, a raczej jej wrażenie, i materialność albo wrażenie
+-- substancjalności (związane oczywiście z dotykiem) są czymś "*w*" świadomości. Sama świadomość nie
+-- ma właściwości; świadomość tylko *jest* i *tylko* o niej możemy naprawdę wiedzieć, że jest, co
+-- czyni ją jednocześnie *pustą* i maksymalnie *obiektywną*. Właściwie nie ma nawet żadnego punktu,
+-- *z którego* dopiero coś widzimy, są tylko *widzenia* i punkty, które można odnaleźć *dzięki tym
+-- widzeniom*, w dostępnych (w takim lub innym sensie) przestrzennych treściach.
 
 -- To już może I=Will See-My-Self-Out 😘
 
@@ -227,12 +228,12 @@ example : False → True := fun hF => sorry
 -- albo paradoks prowadzi do bezużyteczności! (patrz hasło "logika parakonsystentna").
 
 -- Można powiedzieć, że czasem "naginam" tu język, ale czy faktycznie? Jeżeli jakąś perspektywę da
--- się konsekwentnie przyjmować, to ta perspektywa po prostu jest i raczej nic się w niej nie
--- wygina. *Zmiana* perspektywy, tak ważna między innymi w procesie terapii, albo gdy próbujemy coś
--- teoretycznie wyjaśniać, to co innego - wtedy Coś się faktycznie *rusza*, ale właściwie co? Czy
--- może raczej Kto? Kim jest ów Ten, który istnieje jeszcze zanim przyjmie jakąś perspektywę? Czy
--- ten jakiś Ktoś, to nie przypadkiem, wydaje się wręcz, że z trudnej do uchwycenia definicji
--- - we Własnej Osobie - sam Widok Znikąd?
+-- się konsekwentnie przyjmować, to ta perspektywa po prostu jest i raczej nic się w niej nie zgina.
+-- *Zmiana* perspektywy, tak ważna między innymi w procesie terapii, albo gdy próbujemy coś
+-- teoretycznie wyjaśniać czy głębiej zrozumieć, to co innego - wtedy Coś się faktycznie *rusza*,
+-- ale właściwie co? Czy może raczej Kto? Kim jest ten Ów, który istnieje jeszcze zanim przyjmie
+-- jakąś perspektywę? Czy ten jakiś Ktoś, to nie przypadkiem, wydaje się wręcz, że z trudnej do
+-- uchwycenia definicji - we Własnej Osobie - sam Widok Znikąd?
 
 -- Na koniec wypada wspomnieć, że (może niespodziewanymi) bohaterami tego odcinka byli między
 -- innymi, poza wspomnianym już wcześniej Tomkiem, w mojej ocenie wybitni Psycho-Logowie Simone
