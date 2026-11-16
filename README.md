@@ -7,6 +7,8 @@ Można się zorientować, czy któryś z materiałów uległ ostatnio zmianie, a
 dokładnie to były zmiany, korzystając z funkcjonalności GitHuba.
 
 Na razie jest tu tylko kilka skryptów napisanych w języku [Lean](https://lean-lang.org/).
+Instrukcje, jak zainstalować edytor Visual Studio Code ze wsparciem dla Leana znajdziesz
+[tutaj](https://lean-lang.org/install/).
 
 [Implikacja jako typ funkcji](./w5_implikacja_jako_typ_funkcji.lean)
 
