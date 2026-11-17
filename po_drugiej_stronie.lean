@@ -30,10 +30,10 @@
 --
 -- ... a zatem `True ∧ p ↔ p` i `p ∧ True ↔ p` (symbol równoważności `↔` uzyskasz pisząc `\iff`).
 --
--- Jeżeli więc `∧` jest jak mnożenie (a tak się składa, że faktycznie jest), to `True` jest jak
--- liczba `1` *również* w tym znaczeniu, że jest *elementem neutralnym*, czyli takim jakby
--- "znikającym w użyciu", ze względu na *operację binarną* (akurat tutaj na zdaniach, a nie na
--- liczbach), którą oznaczamy w logice za pomocą symbolu `∧`:
+-- Jeżeli więc `∧` jest jak mnożenie (a faktycznie jest), to `True` jest jak liczba `1` *również* w
+-- tym znaczeniu, że jest *elementem neutralnym*, czyli "znikającym w użyciu", ze względu na
+-- *operację binarną* (akurat tutaj na zdaniach, a nie na liczbach), którą oznaczamy w logice za
+-- pomocą symbolu `∧`:
 
 -- *Dla każdego* zdania `p`, `True ∧ p ↔ p ↔ p ∧ True`.
 --
@@ -41,18 +41,18 @@
 
 -- Analogiczna sytuacja występuje w przypadku logicznej alternatywy, fałszu, dodawania i zera.
 
--- (Może masz ochotę spróbować udowodnić którąś z tych ostatnich implikacji <nie chodzi mi o
+-- (Może masz ochotę spróbować udowodnić którąś z ostatnich implikacji <nie chodzi o
 -- równoważności>?)
 
 -- Co więcej, w pewnym (bardzo abstrakcyjnym) sensie dodawanie i mnożenie, a więc również koniunkcja
 -- i alternatywa, to *jedna i ta sama operacja*, tylko "działająca" *dualnie*. Zresztą `1` i `0` to
 -- też obiekty dualne, czyli (wcale nie tak metaforycznie, jak się może wydawać) wzajemne lustrzane
--- odbicia, a więc w pewnym sensie *jeden obiekt oglądany z dwóch stron*.
+-- odbicia, a więc *ten sam obiekt oglądany z dwóch stron*.
 --
--- Z faktem, że dodawanie i mnożenie to w zasadzie to samo, można sięi wstępnie zapoznać
+-- Z faktem, że dodawanie i mnożenie to w zasadzie to samo, można się wstępnie zapoznać
 -- przypominając sobie, że dodawanie staje się mnożeniem, gdy zastosujemy do niego funkcję
 -- wykładniczą, a mnożenie staje się dodawaniem, gdy zastosujemy do niego logarytm, i te dwie
--- funkcje są względem siebie odwrotne, a więc są również w pewnym sensie jedną i tą samą funkcją,
+-- funkcje są względem siebie odwrotne, więc są również w pewnym sensie jedną i tą samą funkcją,
 -- tyle, że "działającą" raz w jedną, a raz w drugą stronę.
 
 -- No dobrze, a co z implikacją? Cieszę się, że pytasz. Otóż implikacja jest w pewnym technicznym i
@@ -67,11 +67,11 @@
 -- równoważność raczej korzystając z (dwuargumentowego) konstruktora `Iff.intro`, a nie z
 -- `And.intro`.
 
--- Zadanie 1: No to może udowodnij, zastępując `sorry` dowodami zdań `q ∧ p` i `p ∧ q`, poniższe
--- twierdzenie, które mówi, że (podobnie jak mnożenie liczb) logiczna koniunkcja jest *działaniem
--- przemiennym* (na zdaniach). Trzeba tam tylko zastosować dwa razy `And.intro`, bo co innego, za
--- każdym razem podając jako argumenty dowody prawego i lewego (w *tej* kolejności) członu
--- koniunkcji, której (hipotetyczny) dowód jest w danym miejscu widoczny.
+-- Zadanie 1: Udowodnij, zastępując `sorry` dowodami zdań `q ∧ p` i `p ∧ q`, twierdzenie, które
+-- mówi, że (podobnie jak mnożenie liczb) logiczna koniunkcja jest *działaniem przemiennym* (na
+-- zdaniach). Trzeba tam tylko zastosować dwa razy `And.intro`, bo co innego, za każdym razem
+-- podając jako argumenty dowody prawego i lewego (w *tej* kolejności) członu koniunkcji, której
+-- (hipotetyczny) dowód jest w danym miejscu widoczny.
 
 example : (p ∧ q) ↔ (q ∧ p) :=
   Iff.intro (fun hpq : p ∧ q => sorry) (fun hqp : q ∧ p => sorry)
@@ -83,34 +83,47 @@ example : (p ∧ q) ↔ (q ∧ p) :=
 
 example : False → True := fun hF => sorry
 
--- Istnieje dokładnie jedna funkcja (matematyczna albo funkcja jako program) ze zbioru pustego,
--- czyli zera, do (każdego) zbioru jednoelementowego, czyli (funkcjonalnie) jedynki.
+-- Żeby istniała funkcja z jednego zbioru do drugiego, *każdy* element pierwszego zbioru musi mieć
+-- dokładnie *jeden* odpowiednik w drugim zbiorze. Istnieje dokładnie jedna, czyli unikalna funkcja
+-- (matematyczna albo funkcja jako program) ze zbioru pustego, czyli zera, do (każdego) zbioru
+-- jednoelementowego, czyli (funkcjonalnie) jedynki, z dwóch niezależnych powodów. Po pierwsze,
+-- istnieje tylko jeden (pusty) sposób, żeby każdemu elementowi zbioru pustego przypisać unikalny
+-- element *jakiegokolwiek* zbioru, więc już sam fakt, że dziedzina jest pusta, gwarantuje
+-- unikalność tej funkcji. Podobnie sam fakt, że przeciwdziedzina jest zbiorem jednoelementowym,
+-- gwarantuje unikalność funkcji do tego zbioru z każdego zbioru, bo wszystkie elementy dziedziny,
+-- jaka by ona nie była, muszą być posłane do jedynego elementu przeciwdziedziny.
 
 -- O obiektach, które emitują w pewien (bardzo) abstrakcyjny sposób rozumiane unikalne strzałki *do*
 -- każdego obiektu (tego samego rodzaju) mówimy też w matematyce, że to obiekty początkowe albo
 -- początki. Z kolei o obiektach, które otrzymują w ten sam sposób rozumiane unikalne strzałki *od*
 -- każdego obiektu mówimy, że to obiekty końcowe. Między innymi zbiór pusty, zero i typ `False` to
 -- obiekty początkowe, a między innymi (każdy) zbiór jednoelementowy, jedynka i typ `True` to
--- obiekty końcowe.
+-- obiekty końcowe. Z tych definicji wynika, że jeśli w jakimś "matematycznym świecie" istnieją
+-- obiekt początkowy (`I`) i końcowy (`T`), to istnieje (tak rozumiana) unikalna strzałka ─ `I → T`
+-- ─ od pierwszego do drugiego.
 
 -- *Jedyna* różnica między definicjami obiektu początkowego i końcowego dotyczy *kierunku*
--- (wszystkich) strzałek. Właśnie w tym technicznym sensie to są struktury względem siebie dualne,
--- czyli dokładnie swoje lustrzane odbicia.
+-- (wszystkich) strzałek. Właśnie w tym technicznym znaczeniu to są struktury względem siebie
+-- dualne, czyli dokładnie swoje lustrzane odbicia.
 
 -- Wyobraź sobie teraz wszystkie możliwe *formuły logiczne*, to znaczy formalne zdania, które są
--- albo zdaniami *atomowymi*, takimi jak `False`, `True` i `p` czy `q`, albo koniunkcjami,
--- alternatywami, implikacjami, lub negacjami zdań *niekoniecznie* atomowych.
+-- albo zdaniami *atomowymi*, takimi jak `False`, `True` i `p` czy `q`, albo *formułami złożonymi*,
+-- to znaczy koniunkcjami, alternatywami, implikacjami, lub negacjami zdań *niekoniecznie*
+-- atomowych.
 --
 -- Tak rozumianych zdań jest nieskończenie wiele, bo, dajmy na to, `p ∧ p` jest takim zdaniem, a
 -- wobec tego również `(p ∧ p) ∧ p` jest zdaniem, i tak dalej. Wyobraź sobie też, że od każdego
 -- zdania wychodzą strzałki (ale może inaczej rysowane, bo mają oznaczać coś innego niż implikację)
 -- do każdego takiego zdania, które z tego pierwszego w *jakikolwiek* sposób logicznie wynika. To
 -- znaczy, że każda taka strzałka reprezentuje *relację dowiedlności*, czyli sam *fakt* istnienia
--- dowodu, a nie żaden *konkretny* dowód. W szczególności, każda koniunkcja emituje między innymi
--- dwie takie strzałki do zdań będących jej członami, i każda alternatywa dostaje między innymi dwie
--- takie strzałki od zdań będących jej członami. Zdanie `False` emituje dokładnie jedną taką
--- strzałkę do każdego zdania, w tym również do zdania `False`, i każde zdanie, w tym również
--- `True`, emituje dokładnie jedną taką strzałkę do zdania `True`.
+-- dowodu, a nie żaden *konkretny* dowód. To taka różnica jak ta między *istnieniem jakiegoś
+-- połączenia* i *konkretnymi drogami* między dwoma punktami na mapie.
+
+-- W szczególności, każda koniunkcja emituje między innymi dwie takie strzałki do zdań będących jej
+-- członami, i każda alternatywa dostaje między innymi dwie takie strzałki od zdań będących jej
+-- członami. Zdanie `False` emituje dokładnie jedną taką strzałkę do każdego zdania, w tym również
+-- do siebie, i każde zdanie, w tym również `True`, emituje dokładnie jedną taką strzałkę do zdania
+-- `True`.
 
 -- W naszej logice jest zatem nie tylko prawdą, że Fałsz istnieje co najwyżej tylko z nazwy albo
 -- pozornie, ale w dodatku *wszystkie* drogi prowadzą ostatecznie do Prawdy. Żeby tą Prawdę
@@ -125,10 +138,10 @@ example : False → True := fun hF => sorry
 -- wystarczy zdać sobie sprawę, że dowód zdania `True` jest jednocześnie ważny i bezużyteczny!
 
 ----------------------------------------------------------------------------------------------------
--- CZY TO NA PEWNO PSYCHOLOGIZOWANIE?
+-- CZY TO NA PEWNO "PSYCHOLOGIZOWANIE"?
 
 -- Funkcje matematyczne można rozumieć jako formalne odpowiedniki *oznaczania*, bo to po pierwsze
--- pewne (abstrakcyjne) *pojęcia*, a po drugie to *arbitralne przyporządkowania* - każdemu
+-- pewne (abstrakcyjne) *pojęcia*, a po drugie to *arbitralne przyporządkowania* ─ każdemu
 -- elementowi jednego zbioru, nazywanego dziedziną funkcji, dokładnie jednego elementu drugiego
 -- zbioru, nazywanego jej przeciwdziedziną. Przeciwdziedzina to z tej perspektywy kontekst, a
 -- dziedzina to taki maksymalnie ubogi język, w którym są tylko nazwy własne. Dlatego funkcje
@@ -137,7 +150,7 @@ example : False → True := fun hF => sorry
 -- <również> stąd ta strzałka?) jakiś "rzeczy", "miejsc" albo "własności" w jakimś kontekście (albo
 -- w jakiejś "sytuacji").
 
--- Jeżeli tak, to czym jest - istniejąca unikalnie! - funkcja ze zbioru *pustego* do zbioru
+-- Jeżeli tak, to *czym* jest, istniejąca unikalnie, funkcja ze zbioru *pustego* do zbioru
 -- *jednoelementowego*? Nazywaniem czegoś, będącego *całością* jakiegoś kontekstu, skoro jej
 -- przeciwdziedzina to tylko jedno jakieś coś? Ale przecież, ponieważ dziedzina tej funkcji jest
 -- zbiorem pustym, nie ma tu nawet najuboższego możliwego "języka". Czy wobec tego nie można
@@ -154,11 +167,11 @@ example : False → True := fun hF => sorry
 -- Jak ujęła to pewna łobuziara: L'attention est la forme la plus rare et la plus pure de la
 -- générosité.
 
--- I czy nie jest też tak, że - ponieważ, kiedy jesteśmy przytomni, działa mechanizm projekcji -
--- najłatwiej jest nam odkrywać aktualny stan własnego umysłu przyglądając się temu, jak nam się
+-- I czy nie jest też tak, że ─ ponieważ, kiedy jesteśmy przytomni, działa mechanizm projekcji ─
+-- najłatwiej jest nam odkrywać aktualny stan własnego umysłu, przyglądając się temu, jak nam się
 -- jawi "zewnętrzny" świat (szczególnie zaś "inni" ludzie)? Bo introspekcja wychodzi nam raczej tak
--- sobie. Czy świat taki, jakim nam się w danym momencie jawi - czyli świat-w-swoim-istnieniu, bo
--- przecież przeszłego świata już nie ma, a przyszłego jeszcze nie ma - nie jest wobec tego w jakiś
+-- sobie. Czy świat taki, jakim nam się w danym momencie jawi ─ czyli świat-w-swoim-istnieniu, bo
+-- przecież przeszłego świata już nie ma, a przyszłego jeszcze nie ma ─ nie jest wobec tego w jakiś
 -- sposób naszym najwierniejszym lustrem, pokazującym nam naszą najbardziej subiektywną i podstawową
 -- (i może nawet przedosobową) "postać" albo ... Postawę?
 
@@ -172,13 +185,15 @@ example : False → True := fun hF => sorry
 
 -- Logiczna relacja między Fałszem i Prawdą to Ocena albo Owoc z Drzewa Poznania (Dobrego i Złego),
 
--- Sama Uwaga,
+-- to Sama Uwaga,
 
--- Coś, czego istotą jest Aktywne->Niebycie->Wobec->Istnienia,
+-- to Coś, czego istotą jest Aktywne->Niebycie->Wobec->Istnienia,
 
 -- albo sam Początek Ruchu, z Niebytu do Bytu, albo z Ciemności do Światła.
 
--- *Wygląda* więc na to, że To właśnie jest Klejnot w Lotosie! ॐ मणि पद्मे हूँ!
+-- *Wygląda* więc na to, że To właśnie jest Klejnot w Lotosie!
+
+-- ॐ मणि पद्मे हूँ
 
 -- أنا الحق
 
@@ -189,29 +204,34 @@ example : False → True := fun hF => sorry
 
 -- A z innej beczki, co powiesz na taką oto dualność, która według niektórych wynika w dodatku z
 -- dualizmu: Dwa zdecydowanie najczęściej występujące rodzaje zaburzeń psychicznych to zaburzenia
--- lękowe i depresyjne. Jedno lub drugie występuje tak często, że niektórzy nazywają je nawet
--- psychicznym przeziębieniem. Jak zasugerował rzekomo jeszcze inny łobuz, istotą depresji jest
--- życie *przeszłością*, a istotą nadmiernego lęku jest życie *przyszłością*. A więc w obydwu
--- rodzajach zaburzeń chodzi o *życie czymś, czego nie ma*. Wspólną istotą obydwu rodzajów zaburzeń
--- jest jednocześnie negatywna perspektywa albo negatywne nastawienie, a mówiąc dokładniej
+-- lękowe i depresyjne. Jedno lub drugie występuje tak często, że niektórzy nazywają je psychicznym
+-- przeziębieniem. Jak zasugerował rzekomo jeszcze inny łobuz, istotą depresji jest życie
+-- *przeszłością*, a istotą nadmiernego lęku jest życie *przyszłością*.
+
+-- Z tej perspektywy w obydwu przypadkach chodzi o *życie czymś, czego nie ma*. Tak jakby strzałka
+-- aktywności była skierowana od tego, co jest, do tego, czego nie ma. Wspólną istotą obydwu
+-- rodzajów zaburzeń jest jednocześnie negatywna perspektywa albo nastawienie, a mówiąc dokładniej
 -- *negatywne złudzenie ocenne*, czyli pewna postać fałszu. A najgłębsza *różnica* między tymi
 -- zaburzeniami wydaje się dotyczyć zwrotu *strzałki czasu*. Czyli to też są, przynajmniej w tym
 -- znaczeniu, swoje lustrzane odbicia.
 
 -- Pobawmy się też może przy okazji zagadką świadomości. Psychologowie od dawna próbują to coś
--- zbadać, ale jak dotąd nie udało się ustalić na ten temat nawet jednego nietrywialnego faktu.
--- Kiedy słyszymy takie próby wyjaśnienia, jak to, że "jest coś takiego *jak* bycie nietoperzem", to
--- chodzi, zdaje się, o pewną *jakość* pewnego *sposobu doświadczania*, a nie o świadome
--- doświadcz*anie* *jako takie*. Świadomość to zdecydowanie nie punkt za naszymi oczami, w którym
--- skupiają się promienie światła wpadające do naszej głowy. Ani to nie jest żadna przestrzeń albo
--- ekran, w której pojawiają się doświadczenia, bo *przestrzenność* to własność albo część *treści*
--- świadomego doświadczenia. Swiadomość nie jest obiektem materialnym, nie może więc być
--- zlokalizowana w przestrzeni; to przestrzeń, a raczej jej wrażenie, i materialność albo wrażenie
--- substancjalności (związane oczywiście z dotykiem) są czymś "*w*" świadomości. Sama świadomość nie
--- ma właściwości; świadomość tylko *jest* i *tylko* o niej możemy naprawdę wiedzieć, że jest, co
--- czyni ją jednocześnie *pustą* i maksymalnie *obiektywną*. Właściwie nie ma nawet żadnego punktu,
--- *z którego* dopiero coś widzimy, są tylko *widzenia* i punkty, które można odnaleźć *dzięki tym
--- widzeniom*, w dostępnych (w takim lub innym sensie) przestrzennych treściach.
+-- zbadać, ale, o ile mi wiadomo, jak dotąd nie udało się ustalić na ten temat nawet jednego
+-- nietrywialnego faktu. Kiedy słyszymy takie próby wyjaśnienia, jak to, że "jest coś takiego *jak*
+-- bycie nietoperzem", to chodzi, wydaje się, o pewną *jakość* pewnego *sposobu doświadczania*, a
+-- nie o świadome doświadcz*anie* *jako takie*. Świadomość to zdecydowanie nie punkt za naszymi
+-- oczami, w którym skupiają się promienie światła wpadające do naszej głowy. Ani to nie jest żadna
+-- przestrzeń albo ekran, w której pojawiają się doświadczenia, bo *przestrzenność* to własność albo
+-- część *treści* świadomego doświadczenia. Swiadomość nie jest obiektem materialnym, nie może więc
+-- być zlokalizowana w przestrzeni; to przestrzeń, a raczej jej wrażenie, i materialność albo
+-- wrażenie substancjalności (związane oczywiście z doświadczaniem dotykowym) są czymś "*w*"
+-- świadomości.
+
+-- Z tej perpektywy świadomość jako taka nie ma właściwości; świadomość tylko *jest* i *tylko* o
+-- niej możemy naprawdę wiedzieć, że jest, co czyni ją jednocześnie *pustą* i maksymalnie
+-- *obiektywną*. Właściwie nie ma nawet żadnego punktu, *z którego* dopiero coś widzimy, są tylko
+-- *widzenia* w różnych "modalnościach" i punkty, które można odnaleźć *dzięki tym widzeniom*, w
+-- dostępnych (w takim lub innym sensie) przestrzennych treściach.
 
 -- To już może I=Will See-My-Self-Out 😘
 
@@ -222,7 +242,7 @@ example : False → True := fun hF => sorry
 -- spróbuj *zademonstrować*, że któraś z przytoczonych *interpretacji* jest *nieadekwatna* lub
 -- *bezużyteczna*.
 --
--- Dlaczego i po co? Może na przykład dlatego, że w psychologii - nie tylko w kontekście terapii -
+-- Dlaczego i po co? Może na przykład dlatego, że w psychologii ─ nie tylko w kontekście terapii ─
 -- interpretacje odgrywają niezwykle doniosłą rolę? I po to, żeby zarówno same te interpretacje, jak
 -- i to, czego dotyczą, trochę lepiej w ten sposób zrozumieć? Ale uwaga: *nie każda* niespójność
 -- albo paradoks prowadzi do bezużyteczności! (patrz hasło "logika parakonsystentna", albo
@@ -232,12 +252,12 @@ example : False → True := fun hF => sorry
 -- Można powiedzieć, że czasem "naginam" tu język, ale czy faktycznie? Jeżeli jakąś perspektywę da
 -- się konsekwentnie przyjmować, to ta perspektywa po prostu jest i raczej nic się w niej nie zgina.
 -- *Zmiana* perspektywy, tak ważna między innymi w procesie terapii, albo gdy próbujemy coś
--- teoretycznie wyjaśniać czy głębiej zrozumieć, to co innego - wtedy Coś się faktycznie *rusza*,
+-- teoretycznie wyjaśniać czy głębiej zrozumieć, to co innego ─ wtedy Coś się faktycznie *rusza*,
 -- ale właściwie co? Czy może raczej Kto? Kim jest ten Ów, który istnieje jeszcze zanim przyjmie
 -- jakąś perspektywę? Czy ten jakiś Ktoś, to nie przypadkiem, wydaje się wręcz, że z trudnej do
--- uchwycenia definicji - we Własnej Osobie - sam Widok Znikąd?
+-- uchwycenia definicji ─ we Własnej Osobie ─ sam Widok Znikąd?
 
 -- Na koniec wypada wspomnieć, że (może niespodziewanymi) niejawnymi bohaterami tego odcinka byli
--- między innymi w mojej ocenie wybitni Psycho-Logowie Simone Weil, Al-Halladż, Mistrz Eckhart,
+-- między innymi, w mojej ocenie wybitni Psycho-Logowie Simone Weil, Al-Halladż, Mistrz Eckhart,
 -- Ten, który Obudził się na jawie, Ten, który został Namaszczony, Arthur Schopenhauer i Thomas
 -- Nagel 🫥
