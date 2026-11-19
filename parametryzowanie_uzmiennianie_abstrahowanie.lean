@@ -94,8 +94,7 @@ example (p q : Prop) : (p ∧ ¬p) → q := fun h => False.elim (h.right h.left)
 -- operacji. Lean pozwala na taką swobodę dla naszej wygody.
 
 -- To jest definicja funkcji dodającej `1`, zapisana z podanym jawnie typem rezultatu (`: Nat` zaraz
--- przed
--- `:=`):
+-- przed `:=`):
 
 def dodaje1 (n : Nat) : Nat := n + 1
 
