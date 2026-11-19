@@ -76,64 +76,76 @@ theorem idProp' : ∀ p : Prop, p → p := fun p : Prop => fun hp : p => hp
 ----------------------------------------------------------------------------------------------------
 -- AKSJOMATY TO NIE ZAŁOŻENIA TYLKO DECYZJE ALBO WYBORY JĘZYKOWE
 
--- *Aksjomaty* to *decyzje* dotyczące tego, jak będziemy *używać* pewnych *konkretnych symboli*. W
--- teorii typów to się sprowadza do *decyzji o typie*.
+-- *Aksjomaty* to *decyzje* dotyczące tego, jak będziemy *używać* pewnych *konkretnych symboli*.
+-- Aksjomaty są więc *definicjami*. W teorii typów to się sprowadza do *decyzji o typie*.
 
--- `Człowiek` będzie dla nas typem jak każdy inny, bo tak:
+-- `Człowiek` to typ jak każdy inny, bo tak:
 axiom Człowiek : Type
--- `Śmiertelny` będzie predykatem dotyczącym termów typu `Człowiek`, bo tak:
+-- `Śmiertelny` to predykat dotyczący termów typu `Człowiek`, bo tak:
 axiom Śmiertelny : Człowiek → Prop
--- A to będzie dowód śmiertelności każdego człowieka, bo tak:
+-- A to jest dowód śmiertelności każdego człowieka, bo tak:
 axiom ludzie_umierają : ∀ c : Człowiek, Śmiertelny c
 axiom Donald_Trump : Człowiek
 
 #check ludzie_umierają -- ludzie_umierają (c : Człowiek) : Śmiertelny c
-example : (c : Człowiek) → Śmiertelny c := ludzie_umierają
 #check @ludzie_umierają -- ludzie_umierają : ∀ c : Człowiek, Śmiertelny c
+example : (c : Człowiek) → Śmiertelny c := ludzie_umierają
 
 -- Czy widzisz, że te trzy sposoby zapisu znaczą to samo?
 
--- `Śmiertelny Donald_Trump` to teraz *twierdzenie* naszej teorii, które możemy udowodnić stosując
--- *aksjomat parametryczny* (czyli tak zwany "schemat aksjomatu", czyli pewną istniejącą
--- aksjomatycznie *funkcję*) `ludzie_umierają` do termu `Donald_Trump`:
+-- `Śmiertelny Donald_Trump` to teraz zarazem zdanie i *twierdzenie* naszej teorii, które możemy
+-- udowodnić stosując *aksjomat parametryczny* `ludzie_umierają` do termu `Donald_Trump`:
 
 example : Śmiertelny Donald_Trump := ludzie_umierają Donald_Trump
 
+-- Aksjomaty parametryczne nazywamy po polsku "schematami aksjomatu". "Schematami", bo to są formuły
+-- generujące tyle aksjomatów, ile możemy im dostarczyć termów (matematycy zwykle mówią "obiektów")
+-- wymaganego typu. Nasz schemat aksjomatu zwraca dowód pewnego zdania dla każdego termu typu
+-- `Człowiek`. A zatem `ludzie_umieraja` to dokładnie *funkcja zwracająca aksjomatyczne dowody*.
+
 -- Zadanie 1: Znajdź brakujący term przyglądając się temu, jak kolejne kroki konstrukcji
--- interaktywnej zmieniają stan taktyczny.
+-- interaktywnej zmieniają stan taktyczny (i w ten sposób domyślając się, jak działa taktyka `rw`).
 example : ∀ a b c : Nat, (a = b) → ((b = c) → (a = c)) := by -- te wszystkie nawiasy są zbędne
+  -- Ponieważ mamy tu do czynienia z implikacją do implikacji, to może jeszcze raz wyjaśnię:
   -- Nieważne, jak bardzo zagnieżdżona byłaby implikacja (a ogólnie *dowolny* typ strzałkowy),
   -- dowodzenie takiej zagnieżdżonej implikacji (a ogólnie konstruowanie termu dowolnie
-  -- zagnieżdżonego typu strzałkowego) polega zawsze na "założeniu" (czyli na "posiadaniu"
-  -- zmiennych-parametrów o postaci hipotetycznych dowodów, a ogólnie hipotetycznych termów typu)
-  -- *każdego poprzednika* i na konstrukcji dowodu (a ogólnie termu typu) jej ostatecznego
-  -- następnika (tutaj `a = c`).
+  -- zagnieżdżonego typu strzałkowego) polega zawsze na "założeniu" (czyli na "posiadaniu", a może
+  -- raczej "otwarciu się na"?) zmiennych-parametrów o postaci hipotetycznych dowodów, a ogólnie
+  -- hipotetycznych termów typu *każdego poprzednika*, i na konstrukcji dowodu (a ogólnie termu
+  -- typu) jej ostatecznego następnika (tutaj `a = c`).
   intro a b c hab hbc
-  rw [hab] -- nazwa taktyki `rw`, która przekształca cel, to skrót to "rewrite" (za pomocą)
+  -- Również `a`, `b` i `c` są tu (niejawnymi) "poprzednikami" typu strzałkowego (!), bo wyrażenie
+  -- `∀ a b c : Nat` to tylko alternatywny sposób zapisania `(a b c : Nat)`, a to z kolei inny
+  -- sposób zapisania `(a : Nat) (b : Nat) (c: Nat)`, a to jest tylko inny sposób zapisania
+  -- wyrażenia `(a : Nat) → (b : Nat) → (c : Nat)`.
+  rw [hab]
+  -- Nazwa taktyki `rw`, która przekształca cel, to skrót od "rewrite". Jeżeli nie powiemy jej nic
+  -- więcej, `rw [coś]`, gdzie `coś : X = Y`, zastąpi *pierwsze* wystąpienie `X` w *celu* przez `Y`.
+  -- Żeby zastąpić w celu *prawą* stronę równania przez *lewą* piszemy `rw [←coś]` (`←` uzyskasz
+  -- pisząc `\left`).
   rw [sorry]
 
--- Masz już opanowany duży kwantyfikator na poziomie logiki wyższego rzędu, ponieważ w teorii typów
--- możemy kwantyfikować po *każdym* typie, niezależnie od tego, jak bardzo byłby złożony. Na
--- przykład:
+-- Masz już opanowany duży kwantyfikator na poziomie logiki *wyższego* rzędu, ponieważ w teorii
+-- typów możemy kwantyfikować po *każdym* możliwym typie. Na przykład:
 
 -- Zadanie 2
 example : ∀ typ : Type, ∀ a b c : typ, a = b → b = c → a = c := by -- tym razem bez zbędnych nawiasów
   intro typ a b c hab hbc
   sorry
 
--- Jak zatem *udowadniamy* zdania o poI możesz to wszystko powtarzać samodzielnie
--- staci `∀ x : X, Cośtam x`? Tworząc funkcje przekształcające
--- dowolne termy `x` o typie `X` w termy typu albo dowody zdania `Cośtam x`. A jak korzystamy z
--- takich zdań w dowodach? Aplikując ich dowody czyli pewne funkcje do termów odpowiedniego typu.
--- Duży kwantyfikator to dla nas po prostu *parametryczność* jak każda inna:
+-- Jak zatem *udowadniamy* zdania o po staci `∀ x : X, Cośtam x`? Tworząc funkcje przekształcające
+-- dowolne termy `x` o typie `X` w termy typu / dowody zdania `Cośtam x`. A jak korzystamy z takich
+-- (czyli "uniwersalnie kwantyfikowanych") twierdzeń w dowodach? Aplikując ich dowody, czyli pewne
+-- funkcje, do termów odpowiedniego typu. Duży kwantyfikator to dla nas po prostu *parametryczność*
+-- jak każda inna:
 
--- Dowód zdania `∀ a b c : Nat, a = b → b = c → a = c` to funkcja przekształcająca trzy termy typu
--- `Nat` w dowód zdania zapisanego po przecinku.
+-- Dowód zdania `∀ a b c : Nat, a = b → b = c → a = c` to funkcja przekształcająca *każde* trzy
+-- termy typu `Nat` w dowód zdania zapisanego po przecinku.
 
--- Termem typu `Nat → Nat` jest każda funkcja przekształcająca termy typu `Nat` w termy typu `Nat`,
--- a więc możemy również pisać tak:
+-- Termem typu `Nat → Nat` jest każda funkcja przekształcająca *każdy* term typu `Nat` w termy typu
+-- `Nat`, a więc możemy również pisać tak:
 
-def dodaje1 : ∀ n : Nat, Nat := fun n : Nat => n + 1
+def dodaje1 : ∀ n : Nat, Nat := fun n : Nat => n + 1 -- wiem, że początkowo to wygląda dziwnie
 #check dodaje1  -- `dodaje1 (n : Nat) : Nat`
 #check @dodaje1 -- `dodaje1 : Nat → Nat`
 #eval dodaje1 2 -- `3`
@@ -141,8 +153,8 @@ def dodaje1 : ∀ n : Nat, Nat := fun n : Nat => n + 1
 -- Gratulacje: Wiesz w tym momencie wszystko, co potrzebujesz wiedzieć o dużym kwantyfikatorze w
 -- logice predykatów wyższego rzędu i *jednocześnie* znasz się już trochę na programowaniu
 -- funkcyjnym. I *jednocześnie* wiesz teraz pewne ważne rzeczy na temat podstaw całej matematyki, a
--- więc na temat wszystkiego, co jest formalizowalne. W dodatku możesz to wszystko ćwiczyć
--- *samodzielnie* korzystając z informacji zwrotnych dostarczanych przez Leana.
+-- więc na temat *wszystkiego*, co jest (w tym sensie) *formalizowalne*. W dodatku możesz to
+-- wszystko ćwiczyć *samodzielnie* korzystając z informacji zwrotnych dostarczanych przez Leana.
 
 ----------------------------------------------------------------------------------------------------
 -- KWESTIA ISTNIENIA
