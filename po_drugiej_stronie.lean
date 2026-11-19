@@ -182,6 +182,11 @@ example : False → True := fun hF => sorry
 
 ----------------------------------------------------------------------------------------------------
 -- NAJWYRAŹNIEJ DOPUSZCZALNE (?) INTERPRETACJE LOGICZNEJ RELACJI MIĘDZY FAŁSZEM I PRAWDĄ
+--
+--                                                       - Co to jest pion? - pyta Jade.
+--                                     - Przeciwieństwo poziomu, idiotko - wyjaśnia Min.
+--                                                        (George Sounders, *Morszczyn*)
+
 
 -- Logiczna relacja między Fałszem i Prawdą to Ocena albo Owoc z Drzewa Poznania (Dobrego i Złego),
 
