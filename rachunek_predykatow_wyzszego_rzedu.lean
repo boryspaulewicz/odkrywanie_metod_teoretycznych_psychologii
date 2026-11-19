@@ -53,7 +53,7 @@ variable (P : Nat → Prop) -- Niech `P` będzie jakąś funkcją z `Nat` do `Pr
 -- (nawet jeśli tylko hipotetycznego) tego zdania.
 
 ----------------------------------------------------------------------------------------------------
--- DUŻY KWANTYFIKATOR MASZ JUŻ OPANOWANY
+-- DUŻY KWANTYFIKATOR MASZ JUŻ OPAN(I)OWANY
 
 -- Przypominam naszą identycznościową tautologię:
 
