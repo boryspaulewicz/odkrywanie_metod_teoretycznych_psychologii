@@ -267,6 +267,6 @@ example : False → True := fun hF => sorry
 -- uchwycenia definicji ─ we Własnej Osobie ─ sam Widok Znikąd?
 
 -- Na koniec wypada wspomnieć, że (może niespodziewanymi) niejawnymi bohaterami tego odcinka byli
--- między innymi, w mojej ocenie wybitni Psycho-Logowie Simone Weil, Al-Halladż, Mistrz Eckhart,
+-- między innymi ─ w mojej ocenie wybitni Psycho-Logowie ─ Simone Weil, Al-Halladż, Mistrz Eckhart,
 -- Ten, który Obudził się na jawie, Ten, który został Namaszczony, Arthur Schopenhauer i Thomas
 -- Nagel 🫥
