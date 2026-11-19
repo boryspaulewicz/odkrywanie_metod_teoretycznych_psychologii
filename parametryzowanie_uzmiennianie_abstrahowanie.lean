@@ -68,7 +68,7 @@ def nast := m + 1
 -- ... wobec czego Lean musi potraktować definicję `nast` jako definicję *funkcji*. Tak też robi:
 
 #check nast  -- nast (m : Nat) : Nat
-#check @nast -- nast Nat → Nat
+#check @nast -- nast : Nat → Nat
 
 def dodaje (n : Nat) := m + n -- Domyślasz się, jak Lean potraktuje tą definicję?
 #check dodaje                 -- Co się tu pojawi?
