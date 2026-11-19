@@ -35,22 +35,22 @@
 --
 -- W *języku* rachunku predykatów *atomami* są *predykaty*, odpowiadające takim wyrażeniom języka
 -- naturalnego jak "jest śmiertelny", i *termy*, których te predykaty dotyczą, odpowiadające nazwom
--- własnym w języku naturalnym, takim jak "Stefan".
+-- własnym takim jak "Stefan".
 --
--- Zdania w języku predykatów to nic innego jak *aplikacje* funkcji zwracających *zdania*!
+-- *Zdania* w języku predykatów to nic innego jak *aplikacje* funkcji zwracających *zdania*!
 
-variable (P : Nat → Prop)
-#check P 2 -- P 2 : Prop
+variable (P : Nat → Prop) -- Niech `P` będzie jakąś funkcją z `Nat` do `Prop`, ...
+#check P 2 -- P 2 : Prop  -- ... wtedy `P 2` ma typ `Prop`, czyli jest zdaniem.
 
 -- `P` to tutaj (jakiś) predykat (można też myśleć "cecha") dotyczący liczb naturalnych, wobec czego
--- `P 2` to jednocześnie aplikacja funkcji `P` do termu `2` i *zdanie złożone* z *podmiotu* `2` i
+-- `P 2` to *jednocześnie* aplikacja funkcji `P` do termu `2` i *zdanie złożone* z *podmiotu* `2` i
 -- *orzeczenia* `P`. Czy zaczynasz już dostrzegać, że opanowanie technicznych podstaw języka teorii
--- typów pozwala szybko opanować niektóre pozornie niesprowadzalne do tego samego teorie
+-- typów pozwala zacząć szybciej rozumieć niektóre pozornie niesprowadzalne do tego samego teorie
 -- matematyczne (tutaj akurat dwa rodzaje logik)?
 
 -- Uwaga: Podobnie jak to miało miejsce w rachunku zdań, samo `P 2` to tutaj *zdanie*, a nie
--- *stwierdzenie, że zdanie `P 2` jest prawdziwe*! Takie stwierdzenie musi mieć postać *dowodu*
--- (nawet jesli tylko hipotetycznego) tego zdania.
+-- *stwierdzenie, że zdanie `P 2` jest prawdziwe*. Takie (s)twierdzenie musi mieć postać *dowodu*
+-- (nawet jeśli tylko hipotetycznego) tego zdania.
 
 ----------------------------------------------------------------------------------------------------
 -- DUŻY KWANTYFIKATOR MASZ JUŻ OPANOWANY
