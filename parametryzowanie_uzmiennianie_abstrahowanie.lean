@@ -2,7 +2,7 @@
 -- PARAMETRYZOWANIE = UZMIENNIANIE = ABSTRAHOWANIE
 
 -- Poniżej widzimy kilka przykładów *tego samego* sprawdzania "zgadzania się" typu i termu, ale
--- *zapisane* na 6 (powierzchownie różnych) sposobów:
+-- *zapisane* na 7 (powierzchownie różnych) sposobów:
 
 example (m : Nat) (n : Nat) : Nat := m + n
 example (m n : Nat) : Nat := m + n -- tak też można, bo oba parametry mają ten sam typ
