@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------
--- Po Drugiej Stronie
+-- PO dRUGIEJ sTRONIE
 
 -- Istnieje pewna głęboka analogia, a właściwie coś *analogicznego do analogii*, między prawdą i
 -- koniunkcją z jednej strony, a fałszem i alternatywą z drugiej:
