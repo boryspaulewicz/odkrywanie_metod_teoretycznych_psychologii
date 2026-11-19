@@ -53,7 +53,8 @@ example (m n : Nat) : Nat := m + n
 -- wszystko (jest) jedno co(ś).
 
 -- Deklaracja `variable` mówi tak naprawdę: Hej, Lean, użyj tego jako parametru (czyli zmiennej)
--- *tam*, gdzie `m` pojawi się *"znienacka"* .
+-- *tam*, gdzie `m` pojawi się *"znienacka"* . Czyli `variable (m : Nat)` można odczytać jako "jakby
+-- co, to `m` ma być zmienną typu `Nat`".
 
 variable (m : Nat)
 
