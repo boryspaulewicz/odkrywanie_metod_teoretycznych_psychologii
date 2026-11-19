@@ -17,3 +17,5 @@ Instrukcje, jak zainstalować edytor Visual Studio Code ze wsparciem dla Leana z
 [Alternatywa, negacja i fałsz](./w7_alternatywa_negacja_i_falsz.lean)
 
 [Po Drugiej Stronie](./po_drugiej_stronie.lean)
+
+[Parametryzowanie = uzmiennianie = abstrahowanie](./parametryzowanie_uzmiennianie_abstrahowanie.lean)
