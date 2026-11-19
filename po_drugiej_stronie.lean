@@ -186,7 +186,7 @@ example : False → True := fun hF => sorry
 --                                                       - Co to jest pion? - pyta Jade.
 --                                     - Przeciwieństwo poziomu, idiotko - wyjaśnia Min.
 --                                                        (George Sounders, *Morszczyn*)
-
+--
 
 -- Logiczna relacja między Fałszem i Prawdą to Ocena albo Owoc z Drzewa Poznania (Dobrego i Złego),
 
