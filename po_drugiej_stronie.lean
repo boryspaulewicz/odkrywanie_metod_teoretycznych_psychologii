@@ -155,7 +155,7 @@ example : False → True := fun hF => sorry
 -- przeciwdziedzina to tylko jedno jakieś coś? Ale przecież, ponieważ dziedzina tej funkcji jest
 -- zbiorem pustym, nie ma tu nawet najuboższego możliwego "języka". Czy wobec tego nie można
 -- powiedzieć, że taka funkcja jest *przedjęzykowym oznaczaniem*, czyli *zwracaniem uwagi* na to, co
--- jest, jako na pewną całość?
+-- *jest*, jako na pewną *całość*?
 
 -- I czy zwracanie uwagi nie jest najbardziej fundamentalnym aktem *oceny*? Bo zwracać na coś
 -- u-wagę, to traktować to coś, choćby na chwilę, jako w jakiś sposób przynajmniej potencjalnie
@@ -171,9 +171,9 @@ example : False → True := fun hF => sorry
 -- najłatwiej jest nam odkrywać aktualny stan własnego umysłu, przyglądając się temu, jak nam się
 -- jawi "zewnętrzny" świat (szczególnie zaś "inni" ludzie)? Bo introspekcja wychodzi nam raczej tak
 -- sobie. Czy świat taki, jakim nam się w danym momencie jawi ─ czyli świat-w-swoim-istnieniu, bo
--- przecież przeszłego świata już nie ma, a przyszłego jeszcze nie ma ─ nie jest wobec tego w jakiś
--- sposób naszym najwierniejszym lustrem, pokazującym nam naszą najbardziej subiektywną i podstawową
--- (i może nawet przedosobową) "postać" albo ... Postawę?
+-- przecież (za każdym razem) przeszłego świata już nie ma, a przyszłego jeszcze nie ma ─ nie jest
+-- wobec tego w jakiś sposób naszym najwierniejszym lustrem, pokazującym nam naszą najbardziej
+-- subiektywną i podstawową (i może nawet przedosobową) "postać" albo ... Postawę?
 
 -- Wydaje się więc, że ustaliliśmy jak dotąd, że Fałsz to jednocześnie Zero, Pustka albo Absolutny
 -- Brak inaczej Grzech, i lustrzane odbicie Istnienia, Jedności i Prawdy.
