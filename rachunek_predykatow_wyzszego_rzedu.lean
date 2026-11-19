@@ -59,38 +59,45 @@ variable (P : Nat → Prop) -- Niech `P` będzie jakąś funkcją z `Nat` do `Pr
 
 theorem idProp (p : Prop) : p → p := fun (hp : p) => hp
 
--- `p` jest tutaj *zmienną*, inaczej *parametrem*, czyli tu chodzi o *jakieś*, bliżej nieokreślone
--- zdanie `p`. Czasem wyrażaliśmy ten fakt za pomocą deklaracji `variable`, czasem traktując `p` jak
--- lokalny parametr, a czasem używając parametryzacji implicitnej, ale za każdym razem to było
--- *jakieś* zdanie.
+-- `p` jest tutaj *zmienną*, inaczej *parametrem*, bo tu chodzi o *jakieś*, bliżej nieokreślone
+-- zdanie `p`. Czasem wyrażaliśmy tą "zmiennościowość" za pomocą deklaracji `variable`, czasem
+-- traktując `p` jako lokalny parametr (na przykład, gdy `(p : Prop)` pojawiało się zaraz po
+-- `example`), a czasem używając parametryzacji implicitnej (gdy były nawiasy klamrowe), ale za
+-- każdym razem to było *jakieś* zdanie, czyli to był parametr, czyli to była zmienna.
 
 -- To znaczy, że wszystkie nasze twierdzenia zostały odowodnione *dla dowolnego* zdania `p`, inaczej
--- mówiąc *dla każdego* `p`. Symol `∀` (który uzyskasz pisząc `∀`) to tylko *alternatywna notacja*
--- dla czegoś, czego używaliśmy przez cały czas. W szczególności, to ...
+-- mówiąc *dla każdego* `p`. Symol `∀` (który uzyskasz pisząc `\forall`) to tylko *alternatywna
+-- notacja* dla czegoś, czego używaliśmy przez cały czas. W szczególności, to ...
 
 theorem idProp' : ∀ p : Prop, p → p := fun p : Prop => fun hp : p => hp
 
--- jest to samo twierdzenie, tylko inaczej zapisane.
+-- ... jest *to samo* twierdzenie, tylko *inaczej zapisane*; różnica jest całkiem powierzchowna.
+
+----------------------------------------------------------------------------------------------------
+-- AKSJOMATY TO NIE ZAŁOŻENIA TYLKO DECYZJE ALBO WYBORY JĘZYKOWE
 
 -- *Aksjomaty* to *decyzje* dotyczące tego, jak będziemy *używać* pewnych *konkretnych symboli*. W
--- teorii typów to się zawsze sprowadza do *decyzji o typie*.
+-- teorii typów to się sprowadza do *decyzji o typie*.
 
-axiom Człowiek : Type -- `Człowiek` będzie dla nas typem, jak każdy inny
-axiom Śmiertelny : Człowiek → Prop -- `Śmiertelny` będzie predykatem dotyczącym termów typu `Człowiek`
-axiom wszystko_mija : ∀ c : Człowiek, Śmiertelny c -- a to będzie dowód śmiertelności każdego człowieka
+-- `Człowiek` będzie dla nas typem jak każdy inny, bo tak:
+axiom Człowiek : Type
+-- `Śmiertelny` będzie predykatem dotyczącym termów typu `Człowiek`, bo tak:
+axiom Śmiertelny : Człowiek → Prop
+-- A to będzie dowód śmiertelności każdego człowieka, bo tak:
+axiom ludzie_umierają : ∀ c : Człowiek, Śmiertelny c
 axiom Donald_Trump : Człowiek
 
-#check wszystko_mija -- wszystko_mija (c : Człowiek) : Śmiertelny c
-example : (c : Człowiek) → Śmiertelny c := wszystko_mija
-#check @wszystko_mija -- wszystko_mija : ∀ c : Człowiek, Śmiertelny c
+#check ludzie_umierają -- ludzie_umierają (c : Człowiek) : Śmiertelny c
+example : (c : Człowiek) → Śmiertelny c := ludzie_umierają
+#check @ludzie_umierają -- ludzie_umierają : ∀ c : Człowiek, Śmiertelny c
 
 -- Czy widzisz, że te trzy sposoby zapisu znaczą to samo?
 
 -- `Śmiertelny Donald_Trump` to teraz *twierdzenie* naszej teorii, które możemy udowodnić stosując
 -- *aksjomat parametryczny* (czyli tak zwany "schemat aksjomatu", czyli pewną istniejącą
--- aksjomatycznie *funkcję*) `wszystko_mija` do termu `Donald_Trump`:
+-- aksjomatycznie *funkcję*) `ludzie_umierają` do termu `Donald_Trump`:
 
-example : Śmiertelny Donald_Trump := wszystko_mija Donald_Trump
+example : Śmiertelny Donald_Trump := ludzie_umierają Donald_Trump
 
 -- Zadanie 1: Znajdź brakujący term przyglądając się temu, jak kolejne kroki konstrukcji
 -- interaktywnej zmieniają stan taktyczny.
