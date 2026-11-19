@@ -212,17 +212,19 @@ example : False → True := fun hF => sorry
 -- dualizmu: Dwa zdecydowanie najczęściej występujące rodzaje zaburzeń psychicznych to zaburzenia
 -- lękowe i depresyjne. Jedno lub drugie występuje tak często, że niektórzy nazywają je psychicznym
 -- przeziębieniem. Jak zasugerował rzekomo jeszcze inny łobuz, istotą depresji jest życie
--- *przeszłością*, a istotą nadmiernego lęku jest życie *przyszłością*.
+-- *przeszłością*, a istotą nadmiernego lęku jest życie *przyszłością*. Trudno powiedzieć, czy zaraz
+-- "istotą", ale może na chwilę "wychodźmy z tego założenia".
 
 -- Z tej perspektywy w obydwu przypadkach chodzi o *życie czymś, czego nie ma*. Tak jakby strzałka
 -- aktywności była skierowana od tego, co jest, do tego, czego nie ma. Wspólną istotą obydwu
 -- rodzajów zaburzeń jest jednocześnie negatywna perspektywa albo nastawienie, a mówiąc dokładniej
--- *negatywne złudzenie ocenne*, czyli pewna postać fałszu. A najgłębsza *różnica* między tymi
--- zaburzeniami wydaje się dotyczyć zwrotu *strzałki czasu*. Czyli to też są, przynajmniej w tym
--- znaczeniu, swoje lustrzane odbicia.
+-- *negatywne złudzenie ocenne*, bo gdyby w tym ocenianiu nie było daleko idącej przesady, nie
+-- mielibyśmy do czynienia z zaburzeniami. Czyli w obydwu przypadkach mamy pewną postać fałszu. A
+-- najgłębsza *różnica* między tymi zaburzeniami wydaje się (z tej perspektywy) dotyczyć zwrotu
+-- *strzałki czasu*. Czyli to też są, przynajmniej w tym znaczeniu, swoje lustrzane odbicia.
 
 -- Pobawmy się też może przy okazji zagadką świadomości. Psychologowie od dawna próbują to coś
--- zbadać, ale, o ile mi wiadomo, jak dotąd nie udało się ustalić na ten temat nawet jednego
+-- badać, ale, o ile mi wiadomo, jak dotąd nie udało się ustalić na ten temat nawet *jednego*
 -- nietrywialnego faktu. Kiedy słyszymy takie próby wyjaśnienia, jak to, że "jest coś takiego *jak*
 -- bycie nietoperzem", to chodzi, wydaje się, o pewną *jakość* pewnego *sposobu doświadczania*, a
 -- nie o świadome doświadcz*anie* *jako takie*. Świadomość to zdecydowanie nie punkt za naszymi
@@ -231,13 +233,14 @@ example : False → True := fun hF => sorry
 -- część *treści* świadomego doświadczenia. Swiadomość nie jest obiektem materialnym, nie może więc
 -- być zlokalizowana w przestrzeni; to przestrzeń, a raczej jej wrażenie, i materialność albo
 -- wrażenie substancjalności (związane oczywiście z doświadczaniem dotykowym) są czymś "*w*"
+-- świadomości. W ogóle wszystko, co dla nas istnieje, istnieje *z pewnością* *tylko* *w* naszej
 -- świadomości.
 
--- Z tej perpektywy świadomość jako taka nie ma właściwości; świadomość tylko *jest* i *tylko* o
+-- Z tej perpektywy świadomość *jako taka* nie ma właściwości; świadomość tylko *jest* i *tylko* o
 -- niej możemy naprawdę wiedzieć, że jest, co czyni ją jednocześnie *pustą* i maksymalnie
 -- *obiektywną*. Właściwie nie ma nawet żadnego punktu, *z którego* dopiero coś widzimy, są tylko
 -- *widzenia* w różnych "modalnościach" i punkty, które można odnaleźć *dzięki tym widzeniom*, w
--- dostępnych (w takim lub innym sensie) przestrzennych treściach.
+-- dostępnych *w ramach* tych widzeń (w takim lub innym sensie) przestrzennych treściach.
 
 -- To już może I=Will See-My-Self-Out 😘
 
