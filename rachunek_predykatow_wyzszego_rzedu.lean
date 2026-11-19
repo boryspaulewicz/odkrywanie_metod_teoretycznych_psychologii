@@ -55,9 +55,9 @@ variable (P : Nat → Prop) -- Niech `P` będzie jakąś funkcją z `Nat` do `Pr
 ----------------------------------------------------------------------------------------------------
 -- DUŻY KWANTYFIKATOR MASZ JUŻ OPAN(I)OWANY
 
--- Przypominam naszą identycznościową tautologię:
+-- Przypominam naszą identycznościową tautologię (tym razem w wersji maksymalnie wykrochmalonej):
 
-theorem idProp (p : Prop) : p → p := fun hp => hp
+theorem idProp (p : Prop) : p → p := fun (hp : p) => hp
 
 -- `p` jest tutaj *zmienną*, inaczej *parametrem*, czyli tu chodzi o *jakieś*, bliżej nieokreślone
 -- zdanie `p`. Czasem wyrażaliśmy ten fakt za pomocą deklaracji `variable`, czasem traktując `p` jak
