@@ -102,6 +102,8 @@ example : Śmiertelny Donald_Trump := ludzie_umierają Donald_Trump
 -- generujące tyle aksjomatów, ile możemy im dostarczyć termów (matematycy zwykle mówią "obiektów")
 -- wymaganego typu. Nasz schemat aksjomatu zwraca dowód pewnego zdania dla każdego termu typu
 -- `Człowiek`. A zatem `ludzie_umieraja` to dokładnie *funkcja zwracająca aksjomatyczne dowody*.
+-- Jeszcze raz: to nie jest żadne *założenie*; za pomocą tej aksjomatycznej funkcji wyrażamy
+-- *definicyjną* relację między pojęciami człowieczeństwa i śmiertelności.
 
 -- Zadanie 1: Znajdź brakujący term przyglądając się temu, jak kolejne kroki konstrukcji
 -- interaktywnej zmieniają stan taktyczny (i w ten sposób domyślając się, jak działa taktyka `rw`).
