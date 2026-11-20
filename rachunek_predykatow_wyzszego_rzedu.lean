@@ -132,7 +132,7 @@ example : ∀ a b c : Nat, (a = b) → ((b = c) → (a = c)) := by -- te wszystk
 
 -- Zadanie 2
 example : ∀ typ : Type, ∀ a b c : typ, a = b → b = c → a = c := by -- tym razem bez zbędnych nawiasów
-  intro typ a b c hab hbc
+  intro typ x y z hxy hyz -- nazwy parametrów nie są widoczne z zewnątrz funkcji → nie mają znaczenia
   sorry
 
 -- Jak zatem *udowadniamy* zdania o po staci `∀ x : X, Cośtam x`? Tworząc funkcje przekształcające
@@ -156,9 +156,95 @@ def dodaje1 : ∀ n : Nat, Nat := fun n : Nat => n + 1 -- wiem, że początkowo 
 -- logice predykatów wyższego rzędu i *jednocześnie* znasz się już trochę na programowaniu
 -- funkcyjnym. I *jednocześnie* wiesz teraz pewne ważne rzeczy na temat podstaw całej matematyki, a
 -- więc na temat *wszystkiego*, co jest (w tym sensie) *formalizowalne*. W dodatku możesz to
--- wszystko ćwiczyć *samodzielnie* korzystając z informacji zwrotnych dostarczanych przez Leana.
+-- wszystko ćwiczyć *samodzielnie*, korzystając z informacji zwrotnych dostarczanych przez Leana.
 
 ----------------------------------------------------------------------------------------------------
 -- KWESTIA ISTNIENIA
 
--- TODO
+-- Symbol `∃` uzyskasz pisząc `\exists`. Duży kwantyfikator (nazywany też uniwersalnym) jest jak
+-- *koniunkcja*: dla każdego `x`, ..., a więc dla tego `x` *i* dla tamtego `x` *i* dla tamtego, i
+-- tak dalej. Kwantyfikator egzystencjalny, nazywany też małym albo szczegółowym, jest jak
+-- *alternatywa*: istnieje takie `x`, że ..., a więc dla tego `x` albo dla tego `x` albo dla tego, i
+-- tak dalej.
+
+-- Duży kwantyfikator jest jak *koniunkcja indeksowana termami*. Na przykład, ...
+--
+-- `∀ n : Nat, P n`, gdzie `P : Nat → Prop`,
+--
+-- ... znaczy w zasadzie to samo, co ...
+--
+-- `(P 1) ∧ (P 2) ∧ ...`,
+--
+-- ... chociaż nie da się korzystać z `∀ n : Nat, P n` jakby to była *formalna* koniunkcja.
+--
+-- Analogicznie, mały kwantyfikator jest jak *alternatywa indeksowana termami*:
+--
+-- `∃ n, P n` ~ `(P 1) ∨ (P 2) ∨ ...`
+--
+-- A więc to "tylko" uogólnienia koniunkcji i alternatywy.
+
+-- Już wiesz, że udowadniamy zdania kwantyfikowane uniwersalnie tworząc odpowiednie funkcje, a
+-- używamy (dowodów) takich zdań w dowodach po prostu aplikując te funkcje.
+--
+-- Zdania kwantyfikowane egzystencjalnie udowadniamy *dostarczając parę* złożoną z termu
+-- odpowiedniego typu i dowodu, że ten term spełnia kwantyfikowane zdanie:
+
+example : ∃ n : Nat, n = 0 := ⟨0, Eq.refl 0⟩
+
+-- Symbol `⟨` uzyskasz pisząc `\<` (analogicznie uzyskasz `⟩`). A zatem `⟨x, y⟩` to para
+-- uporządkowana złożona z termów `x` i `y`. `Eq.refl` to nazwa dowodu zwrotności relacji równości,
+-- czyli dowodu zdania, że dla każdego `x`, `x = x`, niezależnie od tego, jakiego typu jest `x` (ta
+-- funkcja używa więc parametrów implicitnych).
+
+-- Typ par uporządkowanych zapisujemy w ten sposób (`×` uzyskasz pisząc `\times`):
+
+#check Nat × String -- Nat × String : Type
+example : Nat × String := ⟨1, "dwa"⟩
+
+-- Żeby wykorzystać zdanie egzystencjalne (pozwolisz, że czasami będę tak pisał?) `∃ x : X, P x` do
+-- udowodnienia np. `∀ y : Y, R y`, musimy skorzystać z dowodu `∀ x : X, P x → (∀ y : Y, R y)`. A to
+-- dlatego, że zdanie egzystencjalne *nie* mówi nam *jaki* term spełnia dane zdanie, mówi tylko, że
+-- `jakiś` i dowód takiego zdania, z perspektywy kodu, który tego dowodu używa, jest termem
+-- *prostym*. Analogiczna sytuacja występuje w przypadku alternatywy: żeby wykorzystać dowód
+-- alternatywy w dowodzie, musimy użyć dowodów wynikania czegoś z *każdego* członu alternatywy.
+
+-- Pokażę Ci teraz przy okazji wygodny sposób używania dowodów zdań egzystencjalnych.
+
+-- Tak się nazywa twierdzenie, że `0` jest najmniejszą liczbą naturalną (`≤` uzyskasz pisząc
+-- `\leq`):
+
+example (P : Nat → Prop) : (∃ n : Nat, P n) → ¬(∀ m : Nat, ¬(P m)) :=
+  fun ⟨n, hpn⟩ => by -- możemy wejść w tryb interaktywny w dowolnym momencie definiowania termu
+  intro h
+  unfold Not at h -- żeby było lepiej widać, o co chodzi
+  apply h n -- `apply` przyjmuje również złożone termy o typie strzałkowym
+  exact sorry
+
+-- Ponieważ dowód zdania egzystencjalnego można skonstruować tylko w *jeden* sposób, to Lean może
+-- się sam domyślić, że każdy term o typie zdania egzystencjalnego to para uporządkowana złożona z
+-- termu i dowodu pewnego zdania (zwykle dotyczącego tego termu). Dlatego możemy w taki wygodny
+-- sposób jak wyżej *przechwycić* składowe tej pary *w parametrze*, pisząc na przykład, jak wyżej,
+-- `fun ⟨n, hpn⟩ => ...`.
+
+-- Ten sam sposób działa dla koniunkcji, dokładnie dlatego, że jest tylko *jeden* sposób
+-- konstruowania dowodu koniunkcji:
+
+example (p q : Prop) : p ∧ q → q ∧ p := fun ⟨hp, hq⟩ => ⟨hq, hp⟩
+
+-- Poza tym, jak widzisz, zamiast korzystać z `And.intro`, dowody koniunkcji możemy również
+-- zapisywać wprost jako pary (dowodów jej członów) i to działa tak samo dla *równoważności*, która
+-- jest z definicji koniunkcją dwóch implikacji:
+
+example (p : Prop) : p ↔ p := ⟨id, sorry⟩
+
+-- Szybko poszło, prawda? A to dlatego, dowód `p → p` to pewna identyczność (na zdaniach), a `id` to
+-- taka identyczność uniwersalna, z typem przetwarzanego termu jako niejawnym parametrem.
+
+-- Ten trik *nie* działa w przypadku alternatyw i zdań uniwersalnych, ponieważ, w ogólnym przypadku,
+-- tego rodzaju zdania można udowodnić na *więcej niż jeden* sposób, wobec czego Lean nie może
+-- zakładać "formulaicznej" struktury tych dowodów.
+
+-- GRATULACJE: Wiesz już wszystko, co potrzebujesz wiedzieć na temat rachunku predykatów wyższego
+-- rzędu (w wersji konstruktywnej). Co prawda nie "masz" go jeszcze "w palcach", ale od tego są
+-- *ćwiczenia* i ich *powtarzanie*, najlepiej na *różne* sposoby ─ na przykład, raz interaktywnie, a
+-- raz pisząc kod wprost ─ o czym w następnym odcinku.
