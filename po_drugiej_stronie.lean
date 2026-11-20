@@ -225,6 +225,8 @@ example (p : Prop) : True → (p → p) := fun _ => id
 
 -- ॐ मणि पद्मे हूँ
 
+-- 陰陽
+
 -- أنا الحق
 
 -- Albo, jak ujął to pewien łobuz: Soll Gott gesehen werden... mein Auge und Gottes Auge ist ein
