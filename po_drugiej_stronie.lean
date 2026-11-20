@@ -122,20 +122,34 @@ example : False → True := fun hF => sorry
 -- W szczególności, każda koniunkcja emituje między innymi dwie takie strzałki do zdań będących jej
 -- członami, i każda alternatywa dostaje między innymi dwie takie strzałki od zdań będących jej
 -- członami. Zdanie `False` emituje dokładnie jedną taką strzałkę do każdego zdania, w tym również
--- do siebie, i każde zdanie, w tym również `True`, emituje dokładnie jedną taką strzałkę do zdania
--- `True`.
+-- do siebie, ...
 
--- W naszej logice jest zatem nie tylko prawdą, że Fałsz istnieje co najwyżej tylko z nazwy albo
--- pozornie, ale w dodatku *wszystkie* drogi prowadzą ostatecznie do Prawdy. Żeby tą Prawdę
--- "osiągnąć", nie trzeba się jednak wcale ruszać z miejsca, bo Ona zawsze po prostu jest
--- (natychmiast dostępna); w dodatku jako coś, co jest zarazem najważniejsze i w pewnym sensie
--- najmniej interesujące. Może już nie tak ważne, ale za to niewątpliwie interesujące są *strzałki
--- ze zdania `True`*, czyli *wskazane miejsca*, do których można *faktycznie skądś dojść* (w istocie
--- nigdzie się nie ruszając), bo *te* strzałki odpowiadają dokładnie wszystkim *zdaniom
--- nietrywialnie prawdziwym*, to jest *nieatomowym twierdzeniom*, takim jak `p → p`.
---
--- Żeby zobaczyć, że takie strzałki ze zdania `True` odpowiadają dokładnie twierdzeniom logiki,
--- wystarczy zdać sobie sprawę, że dowód zdania `True` jest jednocześnie ważny i bezużyteczny!
+example (jakiekolwiek_zdanie : Prop) : False → jakiekolwiek_zdanie :=
+  fun hF => hF.elim
+
+-- ... i każde zdanie, w tym również `True`, emituje dokładnie jedną taką strzałkę do zdania `True`:
+
+example (jakiekolwiek_zdanie : Prop) : jakiekolwiek_zdanie → True :=
+  fun _ => True.intro
+
+-- W naszej logice jest zatem nie tylko prawdą, że (to, co oznacza zdanie) Fałsz istnieje co
+-- najwyżej tylko z nazwy albo pozornie, ale w dodatku *wszystkie* drogi prowadzą ostatecznie do
+-- Prawdy. Żeby tą Prawdę "osiągnąć", nie trzeba się jednak wcale ruszać z miejsca, bo Ona zawsze po
+-- prostu jest (natychmiast dostępna); w dodatku jako coś, co jest zarazem najważniejsze i w pewnym
+-- sensie najmniej interesujące.
+
+-- Może już nie tak ważne, ale za to niewątpliwie interesujące są *strzałki ze zdania `True`*, czyli
+-- *wskazane miejsca*, do których można *faktycznie skądś dojść* (w istocie nigdzie się nie
+-- ruszając), bo *te* strzałki odpowiadają dokładnie wszystkim *zdaniom nietrywialnie prawdziwym*,
+-- to jest *nieatomowym twierdzeniom*, takim jak `p → p`. Żeby zobaczyć, że takie strzałki ze zdania
+-- `True` odpowiadają dokładnie twierdzeniom logiki, wystarczy zdać sobie sprawę, że dowód zdania
+-- `True` jest jednocześnie ważny i bezużyteczny:
+
+example (p : Prop) : True → (p → p) := fun _ => id
+
+-- Jeżeli jakieś zdanie inne niż `True` wynika ze zdania `True`, to dowód tego zdania można uzyskać
+-- nie korzystając z dowodu `True`. A wobec tego strzałki (faktu spełniania w jakikolwiek sposób
+-- relacji) dowiedlności wychodzące ze zdania `True` odpowiadają dokładnie twierdzeniom logiki.
 
 ----------------------------------------------------------------------------------------------------
 -- CZY TO NA PEWNO "PSYCHOLOGIZOWANIE"?
