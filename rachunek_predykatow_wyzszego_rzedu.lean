@@ -191,22 +191,21 @@ def dodaje1 : ∀ n : Nat, Nat := fun n : Nat => n + 1 -- wiem, że początkowo 
 
 example : ∃ n : Nat, n = 0 := ⟨0, Eq.refl 0⟩
 
--- Symbol `⟨` uzyskasz pisząc `\<` (analogicznie uzyskasz `⟩`). A zatem `⟨x, y⟩` to para
+-- Symbol `⟨` uzyskasz pisząc `\<` (analogicznie uzyskasz `⟩`). Term o postaci `⟨x, y⟩` to para
 -- uporządkowana złożona z termów `x` i `y`. `Eq.refl` to nazwa dowodu zwrotności relacji równości,
 -- czyli dowodu zdania, że dla każdego `x`, `x = x`, niezależnie od tego, jakiego typu jest `x` (ta
 -- funkcja używa więc parametrów implicitnych).
 
--- Typ par uporządkowanych zapisujemy w ten sposób (`×` uzyskasz pisząc `\times`):
+-- *Typ* par uporządkowanych zapisujemy w ten sposób (`×` uzyskasz pisząc `\times`):
 
 #check Nat × String -- Nat × String : Type
 example : Nat × String := ⟨1, "dwa"⟩
 
--- Żeby wykorzystać zdanie egzystencjalne (pozwolisz, że czasami będę tak pisał?) `∃ x : X, P x` do
--- udowodnienia np. `∀ y : Y, R y`, musimy skorzystać z dowodu `∀ x : X, P x → (∀ y : Y, R y)`. A to
--- dlatego, że zdanie egzystencjalne *nie* mówi nam *jaki* term spełnia dane zdanie, mówi tylko, że
--- `jakiś` i dowód takiego zdania, z perspektywy kodu, który tego dowodu używa, jest termem
--- *prostym*. Analogiczna sytuacja występuje w przypadku alternatywy: żeby wykorzystać dowód
--- alternatywy w dowodzie, musimy użyć dowodów wynikania czegoś z *każdego* członu alternatywy.
+-- Żeby wykorzystać zdanie egzystencjalne `∃ x : X, P x` do udowodnienia np. `∀ y : Y, R y`,
+-- korzystamy z dowodu zdania *uniwersalnego* `∀ x : X, P x → (∀ y : Y, R y)`. A to dlatego, że
+-- zdanie egzystencjalne *nie* mówi nam *jaki* term spełnia dane zdanie, mówi nam tylko, że `jakiś`.
+-- Analogiczna sytuacja występuje w przypadku alternatywy: żeby wykorzystać dowód alternatywy w
+-- dowodzie, musimy użyć dowodów wynikania czegoś z *każdego* członu alternatywy.
 
 -- Pokażę Ci teraz przy okazji wygodny sposób używania dowodów zdań egzystencjalnych.
 
