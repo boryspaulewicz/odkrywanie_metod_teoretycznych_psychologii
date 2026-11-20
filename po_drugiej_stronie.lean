@@ -132,7 +132,7 @@ example (jakiekolwiek_zdanie : Prop) : False → jakiekolwiek_zdanie :=
 example (jakiekolwiek_zdanie : Prop) : jakiekolwiek_zdanie → True :=
   fun _ => True.intro
 
--- W naszej logice jest zatem nie tylko prawdą, że (to, co oznacza zdanie) Fałsz istnieje co
+-- W naszej logice jest zatem nie tylko prawdą, że (to, co oznacza zdanie) `False` istnieje co
 -- najwyżej tylko z nazwy albo pozornie, ale w dodatku *wszystkie* drogi prowadzą ostatecznie do
 -- Prawdy. Żeby tą Prawdę "osiągnąć", nie trzeba się jednak wcale ruszać z miejsca, bo Ona zawsze po
 -- prostu jest (natychmiast dostępna); w dodatku jako coś, co jest zarazem najważniejsze i w pewnym
@@ -147,9 +147,10 @@ example (jakiekolwiek_zdanie : Prop) : jakiekolwiek_zdanie → True :=
 
 example (p : Prop) : True → (p → p) := fun _ => id
 
--- Jeżeli jakieś zdanie inne niż `True` wynika ze zdania `True`, to dowód tego zdania można uzyskać
--- nie korzystając z dowodu `True`. A wobec tego strzałki (faktu spełniania w jakikolwiek sposób
--- relacji) dowiedlności wychodzące ze zdania `True` odpowiadają dokładnie twierdzeniom logiki.
+-- Jeżeli jakieś zdanie inne niż `True` (tutaj akurat nasze `p → p`) wynika ze zdania `True`, to
+-- dowód tego zdania można uzyskać nie korzystając z dowodu zdania `True`. A wobec tego strzałki
+-- (faktu spełniania w jakikolwiek sposób relacji) dowiedlności wychodzące ze zdania `True`
+-- odpowiadają dokładnie twierdzeniom logiki.
 
 ----------------------------------------------------------------------------------------------------
 -- CZY TO NA PEWNO "PSYCHOLOGIZOWANIE"?
