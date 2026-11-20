@@ -166,6 +166,15 @@ example : False → True := fun hF => sorry
 --
 -- Jak ujęła to pewna łobuziara: L'attention est la forme la plus rare et la plus pure de la
 -- générosité.
+--
+-- No dobrze (?), ale przecież uwaga to inaczej *selekcja*, a tutaj chodzi o *całość*. W zasadzie
+-- tak, ale redukowanie pojęcia uwagi do pojęcia selekcji można uznać za nietrafne, bo w samej
+-- selektywności jakiegokolwiek reagowania nie ma *oceny*, a przecież uwaga, tak jak ją rozumiemy w
+-- psychologii, wydaje się zawsze polegać na jakiejś ocenie. Jeżeli rozumiemy uwagę jako
+-- (abstrakcyjnie pojęte) *przykładanie do czegoś wagi*, to może jednak się da, choćby tylko
+-- teoretycznie, zwracać uwagę na *wszystko jako na pewną niepodzielną całość*, tak jakby ─ swoją
+-- Postawą ─ niewerbalnie wypowiadając wobec całego świata i aktualnego swojego w nim miejsca
+-- uniwersalne i niewyrażalne wprost w żadnym zwyczajnym języku "Tak".
 
 -- I czy nie jest też tak, że ─ ponieważ, kiedy jesteśmy przytomni, działa mechanizm projekcji ─
 -- najłatwiej jest nam odkrywać aktualny stan własnego umysłu, przyglądając się temu, jak nam się
