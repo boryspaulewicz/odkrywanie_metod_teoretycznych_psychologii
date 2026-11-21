@@ -7,7 +7,8 @@
 -- Prawda wynika ze wszystkiego. Z fałszu wynika wszystko.
 
 -- Istnieje dokładnie jeden sposób udowodnienia prawdy i nie istnieje żaden sposób udowodnienia
--- fałszu. W tym sensie prawda jest jak liczba `1`, a fałsz jest jak liczba `0`.
+-- fałszu. W tym, ale nie tylko w tym sensie prawda jest jak liczba `1`, a fałsz jest jak liczba
+-- `0`.
 
 -- Istnieje dokładnie jeden sposób udowodnienia koniunkcji i istnieją dokładnie dwa sposoby użycia
 -- koniunkcji w dowodzie. Istnieją dokładnie dwa sposoby udowodnienia alternatywy i dokładnie jeden
@@ -23,7 +24,7 @@
 
 -- `∧` to symbol taki sam jak `∨`, tyle, że odwrócony do góry nogami.
 
--- Jak łatwo wykazać (jeżeli nie będziesz panikować, to na pewno poradzisz sobie z tym niebawem bez
+-- Jak łatwo wykazać (jeżeli nie będziesz panikować, na pewno poradzisz sobie z tym niebawem bez
 -- trudu, o ile już nie wiesz, jak te zdania można udowodnić), dla każdego zdania `p`, ...
 --
 --  `True ∧ p → p` i `p ∧ True → p` i `p → True ∧ p` i `p → p ∧ True`,
@@ -35,17 +36,21 @@
 -- *operację binarną* (akurat tutaj na zdaniach, a nie na liczbach), którą oznaczamy w logice za
 -- pomocą symbolu `∧`:
 
+-- (Może masz ochotę spróbować udowodnić którąś z ostatnich implikacji <nie chodzi o
+-- równoważności>?)
+
 -- *Dla każdego* zdania `p`, `True ∧ p ↔ p ↔ p ∧ True`.
 --
 -- Dla każdej liczby `x`,       `1 × x = x = x × 1`.
 
--- Analogiczna sytuacja występuje w przypadku logicznej alternatywy, fałszu, dodawania i zera.
+-- Analogiczna sytuacja występuje w przypadku logicznej alternatywy, fałszu, dodawania i zera:
 
--- (Może masz ochotę spróbować udowodnić którąś z ostatnich implikacji <nie chodzi o
--- równoważności>?)
+example (p : Prop) : False ∨ p → p :=
+  fun h => Or.elim h (fun hF => hF.elim) (fun hp => hp)
+-- i tak dalej.
 
--- Co więcej, w pewnym (bardzo abstrakcyjnym) sensie dodawanie i mnożenie, a więc również koniunkcja
--- i alternatywa, to *jedna i ta sama operacja*, tylko "działająca" *dualnie*. Zresztą `1` i `0` to
+-- Co więcej, w pewnym (bardzo abstrakcyjnym) sensie dodawanie i mnożenie, więc również koniunkcja i
+-- alternatywa, to *jedna i ta sama operacja*, tylko "działająca" *dualnie*. Zresztą `1` i `0` to
 -- też obiekty dualne, czyli (wcale nie tak metaforycznie, jak się może wydawać) wzajemne lustrzane
 -- odbicia, a więc *ten sam obiekt oglądany z dwóch stron*.
 --
@@ -73,7 +78,7 @@
 -- podając jako argumenty dowody prawego i lewego (w *tej* kolejności) członu koniunkcji, której
 -- (hipotetyczny) dowód jest w danym miejscu widoczny.
 
-example : (p ∧ q) ↔ (q ∧ p) :=
+example (p q : Prop) : (p ∧ q) ↔ (q ∧ p) :=
   Iff.intro (fun hpq : p ∧ q => sorry) (fun hqp : q ∧ p => sorry)
 
 ----------------------------------------------------------------------------------------------------
@@ -83,24 +88,29 @@ example : (p ∧ q) ↔ (q ∧ p) :=
 
 example : False → True := fun hF => sorry
 
--- Żeby istniała funkcja z jednego zbioru do drugiego, *każdy* element pierwszego zbioru musi mieć
--- dokładnie *jeden* odpowiednik w drugim zbiorze. Istnieje dokładnie jedna, czyli unikalna funkcja
--- (matematyczna albo funkcja jako program) ze zbioru pustego, czyli zera, do (każdego) zbioru
--- jednoelementowego, czyli (funkcjonalnie) jedynki, z dwóch niezależnych powodów. Po pierwsze,
--- istnieje tylko jeden (pusty) sposób, żeby każdemu elementowi zbioru pustego przypisać unikalny
--- element *jakiegokolwiek* zbioru, więc już sam fakt, że dziedzina jest pusta, gwarantuje
--- unikalność tej funkcji. Podobnie sam fakt, że przeciwdziedzina jest zbiorem jednoelementowym,
--- gwarantuje unikalność funkcji do tego zbioru z każdego zbioru, bo wszystkie elementy dziedziny,
--- jaka by ona nie była, muszą być posłane do jedynego elementu przeciwdziedziny.
+-- Żeby istniała funkcja z jednego *zbioru* (tym razem nie typu) do drugiego, *każdy* element
+-- pierwszego zbioru musi mieć dokładnie *jeden* odpowiednik w drugim zbiorze. Istnieje dokładnie
+-- jedna, czyli unikalna funkcja (matematyczna albo funkcja jako program) ze zbioru pustego, czyli
+-- zera, do (każdego) zbioru jednoelementowego, czyli (funkcjonalnie) jedynki, z dwóch niezależnych
+-- powodów. Po pierwsze, istnieje tylko jeden (pusty) sposób, żeby każdemu elementowi zbioru pustego
+-- przypisać unikalny element *jakiegokolwiek* zbioru, więc już sam fakt, że dziedzina jest pusta,
+-- gwarantuje unikalność tej funkcji. Po drugie, sam fakt, że przeciwdziedzina jest zbiorem
+-- jednoelementowym, gwarantuje unikalność funkcji do tego zbioru z każdego zbioru, bo wszystkie
+-- elementy dziedziny, jaka by ona nie była, muszą być posłane do jedynego elementu
+-- przeciwdziedziny. Ponieważ zbiory o skończonej liczbie elementów możemy definiować wypisując wszystkie elementy
+-- między nawiasami klamrowymi, tą funkcję można zapisać tak:
 
--- O obiektach, które emitują w pewien (bardzo) abstrakcyjny sposób rozumiane unikalne strzałki *do*
--- każdego obiektu (tego samego rodzaju) mówimy też w matematyce, że to obiekty początkowe albo
--- początki. Z kolei o obiektach, które otrzymują w ten sam sposób rozumiane unikalne strzałki *od*
--- każdego obiektu mówimy, że to obiekty końcowe. Między innymi zbiór pusty, zero i typ `False` to
--- obiekty początkowe, a między innymi (każdy) zbiór jednoelementowy, jedynka i typ `True` to
+--                                          `{} → {♥}`
+
+-- O obiektach, które emitują w pewien (bardzo) abstrakcyjny sposób rozumiane *unikalne* strzałki
+-- *do* każdego obiektu (tego samego rodzaju) mówimy w matematyce, że to obiekty początkowe albo
+-- początki. Z kolei o obiektach, które otrzymują w ten sam sposób rozumiane *unikalne* strzałki
+-- *od* każdego obiektu mówimy, że to obiekty końcowe. Między innymi zbiór pusty, zero i typ `False`
+-- to obiekty początkowe, a między innymi (każdy) zbiór jednoelementowy, jedynka i typ `True` to
 -- obiekty końcowe. Z tych definicji wynika, że jeśli w jakimś "matematycznym świecie" istnieją
--- obiekt początkowy (`I`) i końcowy (`T`), to istnieje (tak rozumiana) unikalna strzałka ─ `I → T`
--- ─ od pierwszego do drugiego.
+-- obiekt początkowy (`I`) i końcowy (`T`), to (z obydwu powodów) istnieje (tak rozumiana) unikalna
+-- strzałka ─ `I → T` ─ od pierwszego do drugiego. Strzałki z typu `False` do typu `True` i ze
+-- zbioru pustego do dowolnego singletona to tylko szczególne przypadki.
 
 -- *Jedyna* różnica między definicjami obiektu początkowego i końcowego dotyczy *kierunku*
 -- (wszystkich) strzałek. Właśnie w tym technicznym znaczeniu to są struktury względem siebie
@@ -109,20 +119,25 @@ example : False → True := fun hF => sorry
 -- Wyobraź sobie teraz wszystkie możliwe *formuły logiczne*, to znaczy formalne zdania, które są
 -- albo zdaniami *atomowymi*, takimi jak `False`, `True` i `p` czy `q`, albo *formułami złożonymi*,
 -- to znaczy koniunkcjami, alternatywami, implikacjami, lub negacjami zdań *niekoniecznie*
--- atomowych.
+-- atomowych. Wszystkie takie zdania są poprawne *syntaktycznie*, ale nie wszystkie są oczywiście
+-- prawdziwe.
 --
 -- Tak rozumianych zdań jest nieskończenie wiele, bo, dajmy na to, `p ∧ p` jest takim zdaniem, a
--- wobec tego również `(p ∧ p) ∧ p` jest zdaniem, i tak dalej. Wyobraź sobie też, że od każdego
--- zdania wychodzą strzałki (ale może inaczej rysowane, bo mają oznaczać coś innego niż implikację)
--- do każdego takiego zdania, które z tego pierwszego w *jakikolwiek* sposób logicznie wynika. To
--- znaczy, że każda taka strzałka reprezentuje *relację dowiedlności*, czyli sam *fakt* istnienia
--- dowodu, a nie żaden *konkretny* dowód. To taka różnica jak ta między *istnieniem jakiegoś
--- połączenia* i *konkretnymi drogami* między dwoma punktami na mapie.
+-- wobec tego również `(p ∧ p) ∧ p` jest zdaniem, i tak dalej. Może najlepiej wyobraź sobie `False`
+-- na górze, `True` na samym dole, a między nimi wszystkie inne zdania jako kropki. Wyobraź sobie
+-- też, *że* (czyli nie wyobrażaj sobie tych strzałek, bo na to jest ich za dużo, tylko wyobraź
+-- sobie pewien *fakt*) od każdego zdania wychodzą strzałki (ale może inaczej rysowane, bo mają
+-- oznaczać coś innego niż implikację) do każdego takiego zdania, które z tego pierwszego w
+-- *jakikolwiek* sposób logicznie wynika. To znaczy, że każda taka strzałka reprezentuje *relację
+-- dowiedlności*, czyli sam *fakt* istnienia dowodu, a nie żaden *konkretny* dowód. To taka różnica
+-- jak między *istnieniem jakiegoś połączenia* i *konkretnymi drogami* między dwoma punktami na
+-- mapie; to pierwsze jest pewnym faktem, to drugie jest elementem mapy.
 
--- W szczególności, każda koniunkcja emituje między innymi dwie takie strzałki do zdań będących jej
--- członami, i każda alternatywa dostaje między innymi dwie takie strzałki od zdań będących jej
+-- W szczególności, każda koniunkcja *emituje* (między innymi) dwie *takie* strzałki do zdań
+-- będących jej członami, i każda alternatywa *dostaje* dwie takie strzałki od zdań będących jej
 -- członami. Zdanie `False` emituje dokładnie jedną taką strzałkę do każdego zdania, w tym również
--- do siebie, ...
+-- do siebie,
+-- ...
 
 example (jakiekolwiek_zdanie : Prop) : False → jakiekolwiek_zdanie :=
   fun hF => hF.elim
@@ -130,7 +145,7 @@ example (jakiekolwiek_zdanie : Prop) : False → jakiekolwiek_zdanie :=
 -- ... i każde zdanie, w tym również `True`, emituje dokładnie jedną taką strzałkę do zdania `True`:
 
 example (jakiekolwiek_zdanie : Prop) : jakiekolwiek_zdanie → True :=
-  fun _ => True.intro
+  fun _ => True.intro -- `_`, ponieważ w tym dowodzie nie korzystamy z parametru
 
 -- W naszej logice jest zatem nie tylko prawdą, że (to, co oznacza zdanie) `False` istnieje co
 -- najwyżej tylko z nazwy albo pozornie, ale w dodatku *wszystkie* drogi prowadzą ostatecznie do
@@ -145,12 +160,13 @@ example (jakiekolwiek_zdanie : Prop) : jakiekolwiek_zdanie → True :=
 -- `True` odpowiadają dokładnie twierdzeniom logiki, wystarczy zdać sobie sprawę, że dowód zdania
 -- `True` jest jednocześnie ważny i bezużyteczny:
 
-example (p : Prop) : True → (p → p) := fun _ => id
+example (p : Prop) : True → (p → p) := fun _ => (fun hp => hp)
 
 -- Jeżeli jakieś zdanie inne niż `True` (tutaj akurat nasze `p → p`) wynika ze zdania `True`, to
 -- dowód tego zdania można uzyskać nie korzystając z dowodu zdania `True`. A wobec tego strzałki
 -- (faktu spełniania w jakikolwiek sposób relacji) dowiedlności wychodzące ze zdania `True`
--- odpowiadają dokładnie twierdzeniom logiki.
+-- odpowiadają dokładnie twierdzeniom logiki. Podobnie (a dokładniej dualnie) interesujące są takie
+-- strzałki *do* typu `False`, ponieważ odpowiadają dokładnie zdaniom dowiedlnie fałszywym.
 
 ----------------------------------------------------------------------------------------------------
 -- CZY TO NA PEWNO "PSYCHOLOGIZOWANIE"?
@@ -161,18 +177,21 @@ example (p : Prop) : True → (p → p) := fun _ => id
 -- zbioru, nazywanego jej przeciwdziedziną. Przeciwdziedzina to z tej perspektywy kontekst, a
 -- dziedzina to taki maksymalnie ubogi język, w którym są tylko nazwy własne. Dlatego funkcje
 -- nazywamy w matematyce też "mapami" albo "mapowaniami" czy wreszcie "odwzorowaniami". Każda
--- funkcja może być więc rozumiana jako jednoczesne nazywanie czy wręcz wskazywanie (i może
--- <również> stąd ta strzałka?) jakiś "rzeczy", "miejsc" albo "własności" w jakimś kontekście (albo
--- w jakiejś "sytuacji").
+-- funkcja może być więc rozumiana jako jednoczesne nazywanie lub wskazywanie (i może <również> stąd
+-- ta strzałka?) jakiś "rzeczy", "miejsc" albo "własności" w jakimś kontekście (albo w jakiejś
+-- "sytuacji").
 
--- Jeżeli tak, to *czym* jest, istniejąca unikalnie, funkcja ze zbioru *pustego* do zbioru
--- *jednoelementowego*? Nazywaniem czegoś, będącego *całością* jakiegoś kontekstu, skoro jej
--- przeciwdziedzina to tylko jedno jakieś coś? Ale przecież, ponieważ dziedzina tej funkcji jest
--- zbiorem pustym, nie ma tu nawet najuboższego możliwego "języka". Czy wobec tego nie można
--- powiedzieć, że taka funkcja jest *przedjęzykowym oznaczaniem*, czyli *zwracaniem uwagi* na to, co
--- *jest*, jako na pewną *całość*?
+-- Jeżeli tak, to *czym* jest, istniejąca unikalnie, funkcja ze zbioru *pustego* do (dowolnego)
+-- zbioru *jednoelementowego*?
 
--- I czy zwracanie uwagi nie jest najbardziej fundamentalnym aktem *oceny*? Bo zwracać na coś
+--                                          `{} → {⊙}`
+
+-- Nazywaniem czegoś, będącego *całością* jakiegoś kontekstu, skoro jej przeciwdziedzina to tylko
+-- jedno jakieś coś? Ale przecież, ponieważ dziedzina tej funkcji jest zbiorem pustym, nie ma tu
+-- nawet najuboższego możliwego "języka". Czy wobec tego nie można powiedzieć, że taka funkcja jest
+-- *przedjęzykowym oznaczaniem*, czyli *zwracaniem uwagi* na to, co *jest*, jako na pewną *całość*?
+
+-- I czy zwracanie uwagi nie jest najbardziej fundamentalnym *aktem oceny*? Bo zwracać na coś
 -- u-wagę, to traktować to coś, choćby na chwilę, jako w jakiś sposób przynajmniej potencjalnie
 -- ważne. W niechęci czy nienawiści jest zawsze pewien elementarny szacunek, bo jeśli coś budzi w
 -- nas niechęć, nienawiść, czy wstręt, to musi być tak, że to coś się dla nas *liczy*. Nie da się,
@@ -185,11 +204,12 @@ example (p : Prop) : True → (p → p) := fun _ => id
 -- No dobrze (?), ale przecież uwaga to inaczej *selekcja*, a tutaj chodzi o *całość*. W zasadzie
 -- tak, ale redukowanie pojęcia uwagi do pojęcia selekcji można uznać za nietrafne, bo w samej
 -- selektywności jakiegokolwiek reagowania nie ma *oceny*, a przecież uwaga, tak jak ją rozumiemy w
--- psychologii, wydaje się zawsze polegać na jakiejś ocenie. Jeżeli rozumiemy uwagę jako
+-- psychologii, wydaje się zawsze polegać na jakiejś ocenie, bo to jest pojęcie funkcjonalne (w
+-- znaczeniu zdefiniowane w kategoriach wykonywania jakiegoś zadania). Jeżeli rozumiemy uwagę jako
 -- (abstrakcyjnie pojęte) *przykładanie do czegoś wagi*, to może jednak się da, choćby tylko
--- teoretycznie, zwracać uwagę na *wszystko jako na pewną niepodzielną całość*, tak jakby ─ swoją
--- Postawą ─ niewerbalnie wypowiadając wobec całego świata i aktualnego swojego w nim miejsca,
--- niewyrażalne wprost w żadnym zwyczajnym języku Wielkie "Tak".
+-- teoretycznie, zwracać uwagę na *wszystko jako na pewną niepodzielną całość*. Tak jakby ─ swoją
+-- Postawą ─ niewerbalnie wypowiadając wobec całego świata i aktualnego swojego w nim miejsca
+-- niewyrażalne wprost w zwyczajnym języku Wielkie "Tak".
 
 -- I czy nie jest też tak, że ─ ponieważ, kiedy jesteśmy przytomni, działa mechanizm projekcji ─
 -- najłatwiej jest nam odkrywać aktualny stan własnego umysłu, przyglądając się temu, jak nam się
@@ -197,10 +217,10 @@ example (p : Prop) : True → (p → p) := fun _ => id
 -- sobie. Czy świat taki, jakim nam się w danym momencie jawi ─ czyli świat-w-swoim-istnieniu, bo
 -- przecież (za każdym razem) przeszłego świata już nie ma, a przyszłego jeszcze nie ma ─ nie jest
 -- wobec tego w jakiś sposób naszym najwierniejszym lustrem, pokazującym nam naszą najbardziej
--- subiektywną i podstawową (i może nawet przedosobową) "postać" albo ... Postawę?
+-- subiektywną i podstawową (i może nawet przedosobową) "postać" albo Postawę?
 
--- Wydaje się więc, że ustaliliśmy jak dotąd, że Fałsz to jednocześnie Zero, Pustka albo Absolutny
--- Brak inaczej Grzech, i lustrzane odbicie Istnienia, Jedności i Prawdy.
+-- Ustaliliśmy jak dotąd, że Fałsz to jednocześnie Zero, Pustka albo Absolutny Brak inaczej Grzech,
+-- i lustrzane odbicie Istnienia, Jedności i Prawdy.
 
 -- Chyba już pora na coś bardziej odklejonego, czyli przyziemnego.
 
@@ -211,7 +231,7 @@ example (p : Prop) : True → (p → p) := fun _ => id
 --              - Przeciwieństwo poziomu, idiotko - wyjaśnia Min.
 --
 --                                                        (George Sounders, *Morszczyn*)
-
+--
 
 -- Logiczna relacja między Fałszem i Prawdą to Ocena albo Owoc z Drzewa Poznania (Dobrego i Złego),
 
@@ -242,12 +262,13 @@ example (p : Prop) : True → (p → p) := fun _ => id
 -- "istotą", ale może na chwilę "wychodźmy z tego założenia".
 
 -- Z tej perspektywy w obydwu przypadkach chodzi o *życie czymś, czego nie ma*. Tak jakby strzałka
--- aktywności była skierowana od tego, co jest, do tego, czego nie ma. Wspólną istotą obydwu
--- rodzajów zaburzeń jest jednocześnie negatywna perspektywa albo nastawienie, a mówiąc dokładniej
--- *negatywne złudzenie ocenne*, bo gdyby w tym ocenianiu nie było daleko idącej przesady, nie
--- mielibyśmy do czynienia z zaburzeniami. Czyli w obydwu przypadkach mamy pewną postać fałszu. A
--- najgłębsza *różnica* między tymi zaburzeniami wydaje się (z tej perspektywy) dotyczyć zwrotu
--- *strzałki czasu*. Czyli to też są, przynajmniej w tym znaczeniu, swoje lustrzane odbicia.
+-- aktywności była skierowana od tego, co jest, do tego, czego nie ma (a w teorii mnogości i logice
+-- zdań takich strzałek nie ma). Wspólną istotą obydwu rodzajów zaburzeń jest jednocześnie negatywna
+-- perspektywa albo nastawienie, a mówiąc dokładniej *negatywne złudzenie ocenne*, bo gdyby w tym
+-- ocenianiu nie było daleko idącej przesady, nie mielibyśmy do czynienia z zaburzeniami. Czyli w
+-- obydwu przypadkach mamy pewną postać fałszu. A najgłębsza *różnica* między tymi zaburzeniami
+-- wydaje się (z tej perspektywy) dotyczyć zwrotu *strzałki czasu*. Czyli to też są, przynajmniej w
+-- tym znaczeniu, swoje lustrzane odbicia.
 
 -- Pobawmy się też może przy okazji zagadką świadomości. Psychologowie od dawna próbują to coś
 -- badać, ale, o ile mi wiadomo, jak dotąd nie udało się ustalić na ten temat nawet *jednego*
@@ -258,9 +279,9 @@ example (p : Prop) : True → (p → p) := fun _ => id
 -- przestrzeń albo ekran, w której pojawiają się doświadczenia, bo *przestrzenność* to własność albo
 -- część *treści* świadomego doświadczenia. Swiadomość nie jest obiektem materialnym, nie może więc
 -- być zlokalizowana w przestrzeni; to przestrzeń, a raczej jej wrażenie, i materialność albo
--- wrażenie substancjalności (związane oczywiście z doświadczaniem dotykowym) są czymś "*w*"
--- świadomości. W ogóle wszystko, co dla nas istnieje, istnieje *z pewnością* *tylko* *w* naszej
--- świadomości.
+-- wrażenie "substancjalności" (związane oczywiście z *doświadczaniem* dotykowym) są czymś "*w*"
+-- świadomości. W ogóle wszystko, co dla nas istnieje, istnieje *z pewnością* *tylko* *aktualnie* i
+-- *w* naszej świadomości.
 
 -- Z tej perpektywy świadomość *jako taka* nie ma właściwości; świadomość tylko *jest* i *tylko* o
 -- niej możemy naprawdę wiedzieć, że jest, co czyni ją jednocześnie *pustą* i maksymalnie
@@ -273,7 +294,7 @@ example (p : Prop) : True → (p → p) := fun _ => id
 ----------------------------------------------------------------------------------------------------
 -- BTW, Q.E.D. (FR, chyba, że znajdziesz kontrargument)
 
--- Zadanie 5: Tym razem zamiast *udowadniać*, że jakieś *zdanie* jest albo nie jest *prawdziwe*,
+-- Zadanie 5: Tym razem zamiast *udowadniać*, że jakieś *zdanie* jest *prawdziwe* lub *fałszywe*,
 -- spróbuj *zademonstrować*, że któraś z przytoczonych *interpretacji* jest *nieadekwatna* lub
 -- *bezużyteczna*.
 --
@@ -287,12 +308,12 @@ example (p : Prop) : True → (p → p) := fun _ => id
 -- Można powiedzieć, że czasem "naginam" tu język, ale czy faktycznie? Jeżeli jakąś perspektywę da
 -- się konsekwentnie przyjmować, to ta perspektywa po prostu jest i raczej nic się w niej nie zgina.
 -- *Zmiana* perspektywy, tak ważna między innymi w procesie terapii, albo gdy próbujemy coś
--- teoretycznie wyjaśniać czy głębiej zrozumieć, to co innego ─ wtedy Coś się faktycznie *rusza*,
--- ale właściwie co? Czy może raczej Kto? Kim jest ten Ów, który istnieje jeszcze zanim przyjmie
--- jakąś perspektywę? Czy ten jakiś Ktoś, to nie przypadkiem, wydaje się wręcz, że z trudnej do
--- uchwycenia definicji ─ we Własnej Osobie ─ sam Widok Znikąd?
+-- teoretycznie wyjaśniać czy głębiej zrozumieć, to co innego, wtedy Coś się faktycznie w jakimś
+-- sensie *rusza*, ale właściwie co? Czy może raczej Kto? Kim jest ten Ów, który istnieje jeszcze
+-- zanim przyjmie jakąś perspektywę? Czy ten jakiś Ktoś, to nie przypadkiem, wydaje się wręcz, że z
+-- trudnej do uchwycenia definicji ─ we Własnej Osobie ─ sam Widok Znikąd?
 
 -- Na koniec wypada wspomnieć, że (może niespodziewanymi) niejawnymi bohaterami tego odcinka byli
 -- między innymi ─ w mojej ocenie wybitni Psycho-Logowie ─ Simone Weil, Al-Halladż, Mistrz Eckhart,
--- Ten, który Obudził się na jawie, Ten, który został Namaszczony, Arthur Schopenhauer i Thomas
--- Nagel 🫥
+-- św. Augustyn, Ten, który Obudził się na jawie, Ten, który został Namaszczony, Arthur
+-- Schopenhauer i Thomas Nagel 🫥
