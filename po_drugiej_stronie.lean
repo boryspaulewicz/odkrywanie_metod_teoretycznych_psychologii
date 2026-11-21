@@ -182,9 +182,9 @@ example (p : Prop) : True → (p → p) := fun _ => (fun hp => hp)
 -- "sytuacji").
 
 -- Jeżeli tak, to *czym* jest, istniejąca unikalnie, funkcja ze zbioru *pustego* do (dowolnego)
--- zbioru *jednoelementowego*?
+-- zbioru *jednoelementowego* (`∅` to standardowe oznaczenie zbioru pustego)?
 
---                                          `{} → {⊙}`
+--                                          `∅ → {⊙}`
 
 -- Nazywaniem czegoś, będącego *całością* jakiegoś kontekstu, skoro jej przeciwdziedzina to tylko
 -- jedno jakieś coś? Ale przecież, ponieważ dziedzina tej funkcji jest zbiorem pustym, nie ma tu
