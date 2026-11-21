@@ -254,7 +254,7 @@ example (p : Prop) : True → (p → p) := fun _ => (fun hp => hp)
 -- أنا الحق
 
 -- Albo, jak ujął to pewien łobuz: Soll Gott gesehen werden... mein Auge und Gottes Auge ist ein
--- Auge und ein Erkennen und ein Lieben.
+-- Auge und ein Erkennen und ein Lieben. Inaczej mówiąc, `∅ → {∅}`.
 
 -- I czy to wszystko nie są w istocie sprawy Psycho-Logiczne?
 
