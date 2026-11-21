@@ -57,7 +57,7 @@ example (p : Prop) : False ∨ p → p :=
 -- Z faktem, że dodawanie i mnożenie to w zasadzie to samo, można się wstępnie zapoznać
 -- przypominając sobie, że dodawanie staje się mnożeniem, gdy zastosujemy do niego funkcję
 -- wykładniczą, a mnożenie staje się dodawaniem, gdy zastosujemy do niego logarytm, i te dwie
--- funkcje są względem siebie odwrotne, więc są również w pewnym sensie jedną i tą samą funkcją,
+-- funkcje są względem siebie odwrotne, a więc są również w pewnym sensie jedną i tą samą funkcją,
 -- tyle, że "działającą" raz w jedną, a raz w drugą stronę.
 
 -- No dobrze, a co z implikacją? Cieszę się, że pytasz. Otóż implikacja jest w pewnym technicznym i
