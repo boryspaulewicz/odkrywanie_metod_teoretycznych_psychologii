@@ -191,8 +191,8 @@ example (p : Prop) : True → (p → p) := fun _ => (fun hp => hp)
 -- nawet najuboższego możliwego "języka". Czy wobec tego nie można powiedzieć, że taka funkcja jest
 -- *przedjęzykowym oznaczaniem*, czyli *zwracaniem uwagi* na to, co *jest*, jako na pewną *całość*?
 
--- (`∅` to standardowe oznaczenie zbioru pustego, a poza tym zbiory mogą być *elementami* innych
--- zbiorów, dlatego `{∅}` jest singletonem jak każdy inny)
+-- (`∅` to standardowe oznaczenie zbioru pustego, a ponieważ zbiory mogą być *elementami* innych
+-- zbiorów, to `{∅}` jest singletonem jak każdy inny)
 
 -- I czy zwracanie uwagi nie jest najbardziej fundamentalnym *aktem oceny*? Bo zwracać na coś
 -- u-wagę, to traktować to coś, choćby na chwilę, jako w jakiś sposób przynajmniej potencjalnie
