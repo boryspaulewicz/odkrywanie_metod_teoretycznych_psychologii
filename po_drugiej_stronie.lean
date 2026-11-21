@@ -192,7 +192,9 @@ example (p : Prop) : True → (p → p) := fun _ => (fun hp => hp)
 -- *przedjęzykowym oznaczaniem*, czyli *zwracaniem uwagi* na to, co *jest*, jako na pewną *całość*?
 
 -- (`∅` to standardowe oznaczenie zbioru pustego, a ponieważ zbiory mogą być *elementami* innych
--- zbiorów, to `{∅}` jest singletonem jak każdy inny)
+-- zbiorów, to `{∅}` jest singletonem jak każdy inny. Zresztą w tak zwanej "czystej" teorii mnogości
+-- <ZFC>, zbiory są *jedynymi* elementami, bo *wszystkie* zbiory są tam ostatecznie "zrobione" ze
+-- zbioru pustego.)
 
 -- I czy zwracanie uwagi nie jest najbardziej fundamentalnym *aktem oceny*? Bo zwracać na coś
 -- u-wagę, to traktować to coś, choćby na chwilę, jako w jakiś sposób przynajmniej potencjalnie
@@ -321,8 +323,6 @@ example (p : Prop) : True → (p → p) := fun _ => (fun hp => hp)
 -- między innymi ─ w mojej ocenie wybitni Psycho-Logowie ─ Simone Weil, Al-Halladż, Mistrz Eckhart,
 -- św. Augustyn, Ten, który Obudził się na jawie, Ten, który został Namaszczony, Arthur
 -- Schopenhauer i Thomas Nagel 🫥
-
-
 
 
 
