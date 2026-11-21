@@ -225,7 +225,8 @@ example (p : Prop) : True → (p → p) := fun _ => (fun hp => hp)
 -- Chyba już pora na coś bardziej odklejonego, czyli przyziemnego.
 
 ----------------------------------------------------------------------------------------------------
--- NAJWYRAŹNIEJ DOPUSZCZALNE (?) INTERPRETACJE LOGICZNEJ RELACJI MIĘDZY FAŁSZEM I PRAWDĄ
+-- NAJWYRAŹNIEJ DOPUSZCZALNE (?) INTERPRETACJE MIĘDZY INNYMI LOGICZNEJ RELACJI MIĘDZY FAŁSZEM I
+-- PRAWDĄ I TEORIOMNOGOŚCIOWEJ RELACJI MIĘDZY ZBIOREM PUSTYM I KAŻDYM SINGLETONEM
 --
 --              - Co to jest pion? - pyta Jade.
 --              - Przeciwieństwo poziomu, idiotko - wyjaśnia Min.
@@ -317,7 +318,6 @@ example (p : Prop) : True → (p → p) := fun _ => (fun hp => hp)
 -- między innymi ─ w mojej ocenie wybitni Psycho-Logowie ─ Simone Weil, Al-Halladż, Mistrz Eckhart,
 -- św. Augustyn, Ten, który Obudził się na jawie, Ten, który został Namaszczony, Arthur
 -- Schopenhauer i Thomas Nagel 🫥
-
 
 
 
