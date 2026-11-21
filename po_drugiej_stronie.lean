@@ -97,8 +97,8 @@ example : False → True := fun hF => sorry
 -- gwarantuje unikalność tej funkcji. Po drugie, sam fakt, że przeciwdziedzina jest zbiorem
 -- jednoelementowym, gwarantuje unikalność funkcji do tego zbioru z każdego zbioru, bo wszystkie
 -- elementy dziedziny, jaka by ona nie była, muszą być posłane do jedynego elementu
--- przeciwdziedziny. Ponieważ zbiory o skończonej liczbie elementów możemy definiować wypisując wszystkie elementy
--- między nawiasami klamrowymi, tą funkcję można zapisać tak:
+-- przeciwdziedziny. Ponieważ zbiory o skończonej liczbie elementów możemy definiować wypisując
+-- wszystkie elementy między nawiasami klamrowymi, tą funkcję można zapisać tak:
 
 --                                          `{} → {♥}`
 
