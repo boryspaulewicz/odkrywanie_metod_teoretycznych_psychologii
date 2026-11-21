@@ -182,7 +182,7 @@ example (p : Prop) : True → (p → p) := fun _ => (fun hp => hp)
 -- "sytuacji").
 
 -- Jeżeli tak, to *czym* jest, istniejąca unikalnie, funkcja ze zbioru *pustego* do (dowolnego)
--- zbioru *jednoelementowego* (`∅` to standardowe oznaczenie zbioru pustego)?
+-- zbioru *jednoelementowego*?
 
 --                                          `∅ → {∅}`
 
@@ -190,6 +190,9 @@ example (p : Prop) : True → (p → p) := fun _ => (fun hp => hp)
 -- jedno jakieś coś? Ale przecież, ponieważ dziedzina tej funkcji jest zbiorem pustym, nie ma tu
 -- nawet najuboższego możliwego "języka". Czy wobec tego nie można powiedzieć, że taka funkcja jest
 -- *przedjęzykowym oznaczaniem*, czyli *zwracaniem uwagi* na to, co *jest*, jako na pewną *całość*?
+
+-- (`∅` to standardowe oznaczenie zbioru pustego, a poza tym zbiory mogą być *elementami* innych
+-- zbiorów, dlatego `{∅}` jest singletonem jak każdy inny)
 
 -- I czy zwracanie uwagi nie jest najbardziej fundamentalnym *aktem oceny*? Bo zwracać na coś
 -- u-wagę, to traktować to coś, choćby na chwilę, jako w jakiś sposób przynajmniej potencjalnie
@@ -318,9 +321,6 @@ example (p : Prop) : True → (p → p) := fun _ => (fun hp => hp)
 -- między innymi ─ w mojej ocenie wybitni Psycho-Logowie ─ Simone Weil, Al-Halladż, Mistrz Eckhart,
 -- św. Augustyn, Ten, który Obudził się na jawie, Ten, który został Namaszczony, Arthur
 -- Schopenhauer i Thomas Nagel 🫥
-
-
-
 
 
 
