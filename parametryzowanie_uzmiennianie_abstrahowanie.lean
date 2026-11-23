@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------
--- PARAMETRYZOWANIE = UZMIENNIANIE = ABSTRAHOWANIE
+-- PARAMETRYZOWANIE = UZMIENNIANIE = ABSTRAHOWANIE = "FUNKCJONOWANIE"
 
 -- Poniżej widzimy kilka przykładów *tego samego* sprawdzania "zgadzania się" typu i termu,
 -- *zapisane* na 7 (powierzchownie) różnych sposobów. Zwróć uwagę, że położenie głównego dwukropka,
