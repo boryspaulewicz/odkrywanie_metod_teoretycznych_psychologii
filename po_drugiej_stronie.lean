@@ -251,7 +251,7 @@ jedną liczbę (będącą jej kwadratem), i właśnie dlatego nazywamy ten "obie
 
 Jeżeli potraktujemy funkcję jako sposób oznaczania, przeciwdziedzina będzie kontekstem, a dziedzina
 będzie maksymalnie ubogim językiem, w którym są tylko nazwy własne. Dlatego funkcje nazywamy w
-matematyce też "mapami" albo "mapowaniami" czy wreszcie "odwzorowaniami". Każda funkcja może być
+matematyce też "mapami" albo "mapowaniami", czy wreszcie "odwzorowaniami". Każda funkcja może być
 więc rozumiana jako jednoczesne nazywanie lub wskazywanie (i może <również> stąd ta strzałka?) jakiś
 "rzeczy", "miejsc" albo "własności" w jakimś kontekście (albo w jakiejś "sytuacji").
 
@@ -269,7 +269,7 @@ najuboższego możliwego języka. Czy wobec tego nie można powiedzieć, że tak
 (Nawiasem mówiąc, `∅` to standardowe oznaczenie zbioru pustego, a skoro w tak zwanej "czystej"
 teorii mnogości <ZFC> zbiory mogą być *elementami* innych zbiorów, to `{∅}` jest singletonem jak
 każdy inny. Zresztą zbiory są w tej teorii *jedynymi* elementami, bo *wszystko* jest tam "zrobione"
-ostatecznie ze zbioru pustego.)
+ostatecznie ze zbioru pustego!)
 
 I czy zwracanie uwagi nie jest najbardziej fundamentalnym *aktem oceny*? Bo zwracać na coś u*wagę*,
 to traktować to coś, choćby na chwilę, jako w jakiś sposób przynajmniej potencjalnie ważne. W
@@ -277,7 +277,7 @@ niechęci czy nienawiści jest zawsze pewien elementarny szacunek, bo jeśli co�
 nienawiść, czy wstręt, to musi być tak, że to coś się dla nas *liczy*. Nie da się, przynajmniej w
 pewnym sensie, bardziej negatywnie ocenić czegoś, a zwłaszcza kogoś, niż jako coś nieistotnego.
 
-Jak ujęła to pewna łobuziara: L'attention est la forme la plus rare et la plus pure de la
+Albo jak ujęła to pewna łobuziara: L'attention est la forme la plus rare et la plus pure de la
 générosité.
 
 (- Do czego to wszystko zmierza?
@@ -289,8 +289,8 @@ selektywności *jakiegokolwiek* reagowania, na przykład w selektywności rezona
 gitary na drgania powietrza, nie ma *oceny*. A przecież uwaga, tak jak ją rozumiemy w psychologii,
 wydaje się zawsze polegać na jakiejś ocenie, bo to jest pojęcie funkcjonalne (w znaczeniu
 zdefiniowane w kategoriach wykonywania jakiegoś zadania). Jeżeli rozumiemy uwagę jako (abstrakcyjnie
-pojęte) *przykładanie do czegoś wagi*, to może jednak da się, choćby tylko teoretycznie albo "w
-granicy", zwracać uwagę na *wszystko* (w danym kontekście) *jako na pewną niepodzielną całość*. Tak
+pojęte) *przykładanie do czegoś wagi*, to może jednak da się, choćby tylko teoretycznie (albo "w
+granicy"), zwracać uwagę na *wszystko* (w danym kontekście) *jako na pewną niepodzielną całość*. Tak
 jakby ─ swoją Postawą ─ niewerbalnie wypowiadając wobec świata i aktualnego swojego w nim miejsca
 niewyrażalne wprost w zwyczajnym języku Wielkie "Tak".
 
@@ -314,7 +314,7 @@ naszego doświadczenia to dokładnie wszystko to, co wydaje nam się nie całkie
 niektórych (również filozofów), z jednym wyjątkiem: uniwersalnej postawy ocennej, która akceptuje
 samą siebie, bo kiedy (jeśli) pojawia się taka postawa, pojawia się jednocześnie ─ pusta, bo
 polegająca na nieróżnicującej akceptacji albo *uniwersalnym przyzwoleniu* ─ pełna kontrola, czyli
-całkowita wolność.
+nieograniczona wolność.
 
 (- A to też będzie na teście końcowym?
  - Co?)
@@ -324,10 +324,11 @@ nam się być działaniem "naszej woli", sprawia, że różne zjawiska postrzega
 "autonomicznie" i odrębnie, a my, doświadczając ich ─ być może zniekształcająco ─ w zasadzie tylko
 je "odzwierciedlamy"? Gdy połączymy to wrażenie i myślowy nawyk z wrażeniem odległości w przestrzeni
 między naszym ciałem i innymi ciałami, pojawia się, jak uporczywe pojęciowe swędzenie, kantowska
-zagadka dostępu do "rzeczy samych w sobie". Jako takich rzeczy, które są *poza nami*, ale *jeszcze
-bardziej* niż te, które znamy, bo jako takie istnieją po drugiej stronie (lustra percepcji). Tak
-jakby "rzeczowość", tak samo jak "oporność" czy "autonomiczność", niezależnie od tego, jakby nie
-była rozumiana, nie była również, jak każda inna, własnością *relacyjną*.
+zagadka dostępu do "rzeczy samych w sobie". Jako takich rzeczy, które są *poza nami*, ale "jeszcze
+bardziej poza" niż te, które znamy, bo jako takie, rzeczy same w sobie istnieją, wydaje się, *na
+zewnątrz*, albo wręcz *niezależnie od* lustra percepcji. Tak jakby "rzeczowość", tak samo jak
+"oporność" czy "autonomiczność" ─ jakby nie była rozumiana ─ nie była również, jak każda inna,
+własnością *relacyjną*.
 
 यः प्रतीत्यसमुत्पादः शून्यतां तां प्रचक्ष्महे ।
 सा प्रज्ञप्तिरुपादाय प्रतिपत् सैव मध्यमा ॥
