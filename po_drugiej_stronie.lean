@@ -381,12 +381,12 @@ und ein Erkennen und ein Lieben. Inaczej mówiąc, `∅ → {∅}` ~ `{} → {�
 
 I czy to wszystko nie są w istocie sprawy Psycho-Logiczne?
 
-A z innej beczki, co powiesz na taką dualność, która według niektórych wynika z dualizmu: Dwa --
-najczęściej występujące rodzaje zaburzeń psychicznych to zaburzenia lękowe i -- depresyjne. Jedno
-lub drugie występuje tak często, że niektórzy nazywają je psychicznym -- przeziębieniem. Jak
-zasugerował rzekomo jeszcze inny łobuz, istotą depresji jest życie -- *przeszłością*, a istotą
-nadmiernego lęku jest życie *przyszłością*. Nie wiem, czy zaraz -- "istotą", ale może przez chwilę
-"wychodźmy z tego założenia".
+A z innej beczki, co powiesz na taką dualność, która według niektórych wynika z dualizmu: Dwa
+najczęściej występujące rodzaje zaburzeń psychicznych to zaburzenia lękowe i  depresyjne. Jedno lub
+drugie występuje tak często, że niektórzy nazywają je psychicznym  przeziębieniem. Jak zasugerował
+rzekomo jeszcze inny łobuz, istotą depresji jest życie  *przeszłością*, a istotą nadmiernego lęku
+jest życie *przyszłością*. Nie wiem, czy zaraz  "istotą", ale może przez chwilę "wychodźmy z tego
+założenia".
 
 Z tej perspektywy w obydwu przypadkach chodzi o *życie czymś, czego nie ma*. Tak jakby *strzałka
 aktywności* była skierowana *od tego, co jest, do tego, czego nie ma*. (Nawiasem mówiąc, w teorii
@@ -448,9 +448,6 @@ między innymi ─ w mojej ocenie wybitni Psycho-Logowie ─ Sutton i Barto, Spi
 Weil, Al-Halladż, Mistrz Eckhart, św. Augustyn, Ten, który Obudził się na jawie, Ten, który został
 Namaszczony, Arthur Schopenhauer i Thomas Nagel 🫥
 -/
-
-
-
 
 
 
