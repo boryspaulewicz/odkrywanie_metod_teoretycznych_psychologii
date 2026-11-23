@@ -16,7 +16,7 @@ fałszu. W tym, ale nie tylko w tym sensie prawda jest jak liczba `1`, a fałsz 
 koniunkcji w dowodzie. Istnieją dokładnie dwa sposoby udowodnienia alternatywy i dokładnie jeden
 sposób użycia alternatywy w dowodzie.
 
-- Używając w dowodzie *koniunkcji* , korzystamy z jej lewego członu, *albo* prawego, *albo* z
+- Używając w dowodzie *koniunkcji* , korzystamy *albo* z jej lewego członu, *albo* prawego, *albo* z
 odywdu. W ten sposób *pojęcie* logicznej altarnatywy pojawia się w *sposobie korzystania*
 z koniunkcji.
 
@@ -74,8 +74,9 @@ szalenie praktyczne.
 -- "lustrzane odbijanie")
 
 /-
-Zdanie o postaci `p ↔ q` to z definicji to samo, co `(p → q) ∧ (q → p)`, ale udowadniamy
-równoważność korzystając z (dwuargumentowego) konstruktora `Iff.intro`, a nie z `And.intro`.
+Zdanie o postaci `p ↔ q` (nawet litery są tutaj swoimi odbiciami!) to z definicji to samo, co zdanie
+`(p → q) ∧ (q → p)`, ale udowadniamy równoważność korzystając z (dwuargumentowego) konstruktora
+`Iff.intro`, a nie z `And.intro`.
 -/
 
 example (p : Prop) : p ↔ p := Iff.intro id id
@@ -104,7 +105,7 @@ theorem certum_est_quia_impossibile : False → True := fun hF => sorry
 Inną nazwą tego twierdzenia mogłoby być credo ut intelligam, albo credo quia absurdum. Warto jednak
 pamiętać, że łacińskie "credo" czy nasze "wiara" to niezbyt dokładne tłumaczenie występującego w
 Nowym Testamencie starogreckiego słowa "πίστις". To słowo oznaczało nie tylko wiarę, ale również
-pewność, dowód, albo ... *zaufanie*.
+pewność, dowód, albo *zaufanie*.
 
 Przy okazji dodam, że nazwą *sposobu działania* typu `False` w Leanie jest *absurd*:
 -/
@@ -130,14 +131,15 @@ elementy (otaczamy je wtedy nawiasami klamrowymi), tą funkcję można zapisać 
 
 --                                          `{} → {♥}`
 
-O obiektach, które emitują w pewien (bardzo) abstrakcyjny sposób rozumiane *unikalne* strzałki *do*
-każdego obiektu (tego samego rodzaju), mówimy w matematyce, że to obiekty początkowe albo początki.
-Z kolei o obiektach, które otrzymują w ten sam sposób rozumiane *unikalne* strzałki *od* każdego
-obiektu mówimy, że to obiekty końcowe. Między innymi zbiór pusty, zero i typ `False` to obiekty
+O obiektach, które emitują w pewien (bardzo) abstrakcyjny sposób rozumiane *unikalne* strzałki *do
+każdego obiektu* (tego samego rodzaju), mówimy w matematyce, że to obiekty początkowe albo początki.
+Z kolei o obiektach, które otrzymują w ten sam sposób rozumiane *unikalne* strzałki *od każdego
+obiektu* mówimy, że to obiekty końcowe. Między innymi zbiór pusty, zero i typ `False` to obiekty
 początkowe, a między innymi (każdy) zbiór jednoelementowy, jedynka i typ `True` to obiekty końcowe.
-Z tych definicji wynika, że jeśli w jakimś "matematycznym świecie" istnieją obiekt początkowy (`I`)
-i końcowy (`T`), to (z obydwu powodów) istnieje (tak rozumiana) unikalna strzałka od (każdego
-takiego) początku do (każdego takiego) końca:
+
+Z ich definicji wynika, że jeśli w jakimś "matematycznym świecie" istnieją obiekt początkowy (`I`
+jak "initial") i końcowy (`T` jak "terminal"), to (z obydwu powodów) istnieje (tak rozumiana)
+unikalna strzałka od (każdego takiego) początku do (każdego takiego) końca:
 
 --                                           `I → T`
 
@@ -194,11 +196,11 @@ najmniej interesujące.
 
 Może już nie tak ważne, ale za to niewątpliwie interesujące są *strzałki ze zdania `True`*, czyli
 *wskazane miejsca*, do których można *faktycznie skądś dojść* (w istocie nigdzie się nie ruszając
-<skądś, bo w przeciwieństwie do `False`, zdanie `True` jest o czymś w tym znaczeniu, że ma dowód>).
-*Te* strzałki odpowiadają dokładnie wszystkim *zdaniom nietrywialnie prawdziwym*, to jest
-*nieatomowym twierdzeniom*, takim jak `p → p`. Żeby zobaczyć, że takie strzałki ze zdania `True`
-odpowiadają dokładnie twierdzeniom logiki, wystarczy zdać sobie sprawę, że dowód zdania `True` jest
-jednocześnie ważny i bezużyteczny:
+<skądś, bo w przeciwieństwie do `False`, zdanie `True` jest *o czymś* w tym znaczeniu, że *ma*
+dowód>). *Te* strzałki, czyli "prawdziwe wskazania", odpowiadają dokładnie wszystkim *zdaniom
+nietrywialnie prawdziwym*, to jest *nieatomowym twierdzeniom*, takim jak `p → p`. Żeby zobaczyć, że
+takie strzałki ze zdania `True` odpowiadają dokładnie twierdzeniom logiki, wystarczy zdać sobie
+sprawę, że dowód zdania `True` jest jednocześnie ważny i bezużyteczny:
 -/
 
 example (p : Prop) : True → (p → p) := fun _ => (fun hp => hp)
@@ -207,12 +209,12 @@ example (p : Prop) : True → (p → p) := fun _ => (fun hp => hp)
 Jeżeli jakieś zdanie inne niż `True` (tutaj akurat nasze `p → p`) wynika ze zdania `True`, to dowód
 tego zdania można uzyskać nie korzystając z dowodu zdania `True`. A wobec tego strzałki (faktu
 spełniania w jakikolwiek sposób relacji) dowiedlności wychodzące ze zdania `True` odpowiadają
-dokładnie twierdzeniom logiki. Inaczej mówiąc, formalnie jest tak, że "prawda dowodzi wszystkiego"
+dokładnie twierdzeniom logiki. Inaczej mówiąc, formalnie jest tak, że "prawda dowodzi wszystkiego",
 co prawdziwe (patrz ostatni przykład), ale "materialnie" nie dowodzi niczego poza sobą (patrz
 ostatni przykład).
 
-Podobnie (a dokładniej dualnie) interesujące są takie strzałki *do* typu `False`, ponieważ
-odpowiadają dokładnie zdaniom dowiedlnie fałszywym.
+Podobnie (a dokładniej dualnie) interesujące są (takie) strzałki *do* typu `False`, ponieważ
+odpowiadają dokładnie zdaniom *dowiedlnie fałszywym*.
 
 Zinterpretujmy teraz strzałki dowiedlności jako reprezentację relacji *widoczności* albo
 *dostrzegalności* czegoś skądś. Bo czemu nie, skoro wnioski dedukcyjne są z jednej strony *zawarte*
@@ -229,12 +231,12 @@ wnioski eksplicitne. Okazuje się więc, że w tej logice prawdą są dokładnie
 
 -- `False → p`
 
-Bo subiektywność jest "meta" w tym znaczeniu, że nie znajduje "się" *w* spostrzeganej przestrzeni
-jako część jej zawartości, tylko jest samym spostrzeganiem albo sposobem spostrzegania. W końcu
-strzałkami z `False` są dokładnie *jakiekolwiek zdania*, a subiektywność *jako taką* można rozumieć
-jako ogół *arbitralnych* zdań.
+Możemy chyba nazwać tą drugą stronę subiektywną, bo subiektywność jest "meta" w tym znaczeniu, że
+nie znajduje "się" *w* spostrzeganej przestrzeni jako część jej zawartości, tylko jest samym
+spostrzeganiem albo sposobem spostrzegania. W końcu strzałkami z `False` są dokładnie *jakiekolwiek
+zdania*, a subiektywność *jako taką* można rozumieć jako ogół *arbitralnych* zdań.
 
-Można więc również powiedzieć, że prawda (w tej logice) to jakby dokładnie *ugruntowane bzdury*.
+Można więc również powiedzieć, że prawda (w tej logice) to jakby dokładnie *ugruntowane złudzenia*.
 -/
 
 ----------------------------------------------------------------------------------------------------
