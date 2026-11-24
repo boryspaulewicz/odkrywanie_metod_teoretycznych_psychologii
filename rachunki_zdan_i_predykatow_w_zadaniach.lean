@@ -11,7 +11,7 @@ example : p → p := by sorry
 
 example : p ↔ p := by sorry
 
-example : p ↔ p := ⟨sorry, sorry⟩
+example : p ↔ p := ⟨by sorry, sorry⟩
 
 example : p → q → p ∧ q := sorry
 
