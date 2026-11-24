@@ -34,6 +34,6 @@ TODO
 
 [Na czym *dokładnie* polega wnioskowanie przyczynowe]
 
-[Psychologia?]
+[A psychologia?]
 
 [Ποίησις]
