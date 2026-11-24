@@ -38,6 +38,21 @@ example : (p → r) → (q → r) → (p ∨ q → r) := sorry
 -- klasycznej).
 example : p ∨ q → ¬p → q := sorry
 
+-- Jeśli masz ochotę spróbować, to będziesz potrzebować czegoś takiego (`em` to skrót od "excluded
+-- middle"):
+axiom em (p : Prop) : p ∨ ¬p
+
+-- Można to zrobić na wiele innych sposobów, w tym również (znacznie) krócej:
+example : (¬p → q) → p ∨ q := fun h => by
+  apply (em p).elim -- = `(p → r) → (¬p → r) → p ∨ ¬p → r`, gdzie `r` to `p ∨ q`
+  apply Or.inl
+  intro np
+  apply Or.inr
+  sorry
+
+-- (Nawiasem mówiąc, do tego sprowadza się uogólnienie używanej przez nas do tej pory logiki
+-- konstruktywnej do logiki klasycznej)
+
 -- Dowód implikacji w drugą stronę wymaga zastosowania aksjomatu wyłączonego środka (czyli logiki
 -- klasycznej).
 example : p → ¬(¬p) := sorry
