@@ -244,6 +244,10 @@ typu i dowodu, że ten term spełnia kwantyfikowane zdanie, na przykład:
 
 example : ∃ n : Nat, n = 0 := ⟨0, Eq.refl 0⟩
 
+-- Możemy wejść w tryb interaktywny na *dowolnym* etapie, czy może raczej w dowolnym "miejscu"
+-- konstruowania *dowolnego* termu!
+example : ∃ n : Nat, n = 0 := ⟨0, by rfl⟩
+
 /-
 Symbol `⟨` uzyskasz pisząc `\<` (analogicznie uzyskasz `⟩`). Term o postaci `⟨x, y⟩` to para
 uporządkowana złożona z termów `x` i `y`. `Eq.refl` to nazwa dowodu zwrotności relacji równości,
