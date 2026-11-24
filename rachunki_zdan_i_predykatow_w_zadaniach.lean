@@ -18,7 +18,11 @@ example : p → q → p ∧ q := sorry
 example : p ∧ q → p := sorry
 
 -- Częściowy dowód przemienności koniunkcji
-example : p ∧ q → q ∧ p := sorry -- raz w trybie interaktywnym, a raz pisząc kod wprost
+theorem some_theo : p ∧ q → q ∧ p := sorry
+   -- raz w trybie interaktywnym, a raz pisząc kod wprost
+
+-- Jak udowodnisz `some_theo`, ten przykład zacznie (sam) naprawdę działać:
+example : (p ∧ q) ↔ (q ∧ p) := ⟨some_theo p q, some_theo q p⟩
 
 -- Ex contradictione quodlibet
 example : p ∧ ¬p → q := sorry
