@@ -24,11 +24,11 @@ dokładnie to były zmiany, korzystając z funkcjonalności GitHuba.
 
 [Rachunek predykatów wyższego rzędu](./rachunek_predykatow_wyzszego_rzedu.lean)
 
+[Logika zdań i logika predykatów w zadaniach](./rachunki_zdan_i_predykatow_w_zadaniach.lean)
+
 <hr>
 
 TODO
-
-[Logika zdań i logika predykatów w zadaniach]
 
 [Na czym *dokładnie* polega wnioskowanie statystyczne]
 
