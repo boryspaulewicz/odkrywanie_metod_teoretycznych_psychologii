@@ -40,11 +40,13 @@ def compress (t1 t2 t3 : Type) (f : t1 → t2 → t3) : t1 × t2 → t3 := by
   exact a2
 
 -- Symbol `∘`, który uzyskasz pisząc `\comp`, to operacja składania funkcji.
-example (t1 t2 t3 : Type) : (flatten t1 t2 t3) ∘ (compress t1 t2 t3) =
-  -- Taktyka `rfl` pozwala szybko udowadniać równości wynikające z definicji
-  fun (f : t1 → t2 → t3) => f := by rfl
-example (t1 t2 t3 : Type) : (compress t1 t2 t3) ∘ (flatten t1 t2 t3) =
-  fun (f : t1 × t2 → t3) => f := by rfl
+example (t1 t2 t3 : Type) : -- zdanie poniżej mówi o *równości* dwóch funkcji
+  (flatten t1 t2 t3) ∘ (compress t1 t2 t3) = fun (f : t1 → t2 → t3) => f :=
+    by rfl -- taktyka `rfl` pozwala automatycznie udowadniać równości wynikające z definicji
+
+example (t1 t2 t3 : Type) :
+  (compress t1 t2 t3) ∘ (flatten t1 t2 t3) = fun (f : t1 × t2 → t3) => f :=
+    by rfl
 
 /-
 Żadne z tych dwóch wymienionych wcześniej formalnych zdań nie jest twierdzeniem logiki zdań, to
