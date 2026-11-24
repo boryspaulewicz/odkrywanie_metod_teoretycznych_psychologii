@@ -372,6 +372,8 @@ Logiczna relacja między Fałszem i Prawdą to:
 
 - ॐ मणि पद्मे हूँ
 
+- Ἐγώ εἰμί τὸ Ἄλφα καὶ τὸ Ὦ
+
 - 陰陽
 
 - أنا الحق
@@ -448,8 +450,6 @@ między innymi ─ w mojej ocenie wybitni Psycho-Logowie ─ Sutton i Barto, Spi
 Weil, Al-Halladż, Mistrz Eckhart, św. Augustyn, Ten, który Obudził się na jawie, Ten, który został
 Namaszczony, Arthur Schopenhauer i Thomas Nagel 🫥
 -/
-
-
 
 
 
