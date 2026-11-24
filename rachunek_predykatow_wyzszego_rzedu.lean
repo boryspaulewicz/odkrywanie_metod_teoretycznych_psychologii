@@ -27,7 +27,6 @@ ogólnie* (czyli taki jakby "formulaiczny") sposób funkcją jednoargumentową, 
 jednoargumentową, i odwrotnie, *nie zmieniając "funkcjonalności" tych funkcji*:
 -/
 
-
 -- Ten dowód *odwracalności curryingu* ma być dla Ciebie na tym etapie tylko częściowo zrozumiały
 def flatten (t1 t2 t3 : Type) (f : t1 × t2 → t3) : t1 → t2 → t3 := by
   intro a1 a2
