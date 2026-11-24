@@ -41,8 +41,8 @@ example : p → ¬(¬p) := sorry
 -- Rozdzielność dodawania względem mnożenia!
 example : p ∧ (q ∨ r) → (p ∧ q) ∨ (p ∧ r) := sorry
 
--- A to jest odpowiednik rozdzielności mnożenia względem dodawania (?). W dodatku obie te
--- rozdzielności można wyrazić jako równoważności (`↔`).
+-- A to jest odpowiednik rozdzielności mnożenia względem dodawania (?). Obie te rozdzielności można
+-- wyrazić jako równoważności (`↔`).
 example : p ∨ (q ∧ r) → (p ∨ q) ∧ (p ∨ r) := sorry
 
 -- Nasz zdaniowy final boss to prawa De Morgana (w których używamy wszystkich spójników):
