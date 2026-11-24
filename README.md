@@ -21,3 +21,15 @@ Instrukcje, jak zainstalować edytor Visual Studio Code ze wsparciem dla Leana z
 [Parametryzowanie = uzmiennianie = abstrahowanie](./parametryzowanie_uzmiennianie_abstrahowanie.lean)
 
 [Rachunek predykatów wyższego rzędu](./rachunek_predykatow_wyzszego_rzedu.lean)
+
+TODO
+
+[Logika zdań i logika predykatów w zadaniach]
+
+[Na czym *dokładnie* polega wnioskowanie statystyczne]
+
+[Na czym *dokładnie* polega wnioskowanie przyczynowe]
+
+[Psychologia?]
+
+[Ποίησις]
