@@ -28,25 +28,25 @@ jednoargumentową, i odwrotnie, *nie zmieniając "funkcjonalności" tych funkcji
 -/
 
 -- Ten dowód *odwracalności curryingu* ma być dla Ciebie na tym etapie tylko częściowo zrozumiały
-def flatten (t1 t2 t3 : Type) (f : t1 × t2 → t3) : t1 → t2 → t3 := by
+variable (t1 t2 t3 : Type)
+
+def flatten (f : t1 × t2 → t3) : t1 → t2 → t3 := by
   intro a1 a2
   apply f
   exact ⟨a1, a2⟩
 
-def compress (t1 t2 t3 : Type) (f : t1 → t2 → t3) : t1 × t2 → t3 := by
+def compress (f : t1 → t2 → t3) : t1 × t2 → t3 := by
   intro ⟨a1, a2⟩
   apply f
   exact a1
   exact a2
 
 -- Symbol `∘`, który uzyskasz pisząc `\comp`, to operacja składania funkcji.
-example (t1 t2 t3 : Type) : -- zdanie poniżej mówi o *równości* dwóch funkcji
-  (flatten t1 t2 t3) ∘ (compress t1 t2 t3) = fun (f : t1 → t2 → t3) => f :=
-    by rfl -- taktyka `rfl` pozwala automatycznie udowadniać równości wynikające z definicji
+example : -- zdanie poniżej mówi o *równości* dwóch funkcji
+  (flatten t1 t2 t3) ∘ (compress t1 t2 t3) = id := by rfl
+  -- taktyka `rfl` pozwala automatycznie udowadniać równości wynikające z definicji
 
-example (t1 t2 t3 : Type) :
-  (compress t1 t2 t3) ∘ (flatten t1 t2 t3) = fun (f : t1 × t2 → t3) => f :=
-    by rfl
+example : (compress t1 t2 t3) ∘ (flatten t1 t2 t3) = id := by rfl
 
 /-
 Żadne z tych dwóch wymienionych wcześniej formalnych zdań nie jest twierdzeniem logiki zdań, to
