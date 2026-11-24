@@ -44,17 +44,26 @@ axiom em (p : Prop) : p ∨ ¬p
 
 -- Można to zrobić na wiele innych sposobów, w tym również (znacznie) krócej:
 example : (¬p → q) → p ∨ q := fun h => by
-  apply (em p).elim -- = `(p → r) → (¬p → r) → p ∨ ¬p → r`, gdzie `r` to `p ∨ q`
-  apply Or.inl
+  -- Aplikacja aksjomatu parametrycznego `em` do zdania `p` jest dowodem `p ∨ ¬p`. Żeby skorzystać z
+  -- dowodu alternatywy do udowodnienia jakiegoś zdania `r` (tutaj akurat chodzi o `p ∨ q`), trzeba
+  -- wykazać, że `r` wynika zarówno z *samego* lewego *jak i* z *samego* prawego członu:
+  apply (em p).elim
+  -- Jeżeli chcemy zastosować (`apply`) do zrealizowania celu regułę eliminacji alternatywy dla
+  -- *tej* alternatywy, czyli jeżeli chcemy w tym momencie zastosować w jakiś sposób dowód
+  -- implikacji `(p ∨ ¬p) → (p → r) → (¬p → r) → r`, to ─ czego Lean się domyśla ─ `r`-em musi być
+  -- `p ∨ q`, a my musimy dostarczyć dowody implikacji `p → p ∨ q` (to będzie łatwe) i `¬p → p ∨ q`.
+  apply Or.inl -- `Or.inl` (po odgadnięciu implicitnych parametrów) to w tym momencie dosłownie cały
+  -- aktualny cel, a więc zostaje nam tylko do zrobienia dowód `¬p → p ∨ q`:
   intro np
+  -- Ponieważ mamy `h : ¬p → q` i `np : ¬p`, to teraz wystarczy ...
   apply Or.inr
   sorry
 
--- (Nawiasem mówiąc, do tego sprowadza się uogólnienie używanej przez nas do tej pory logiki
--- konstruktywnej do logiki klasycznej)
+-- (Nawiasem mówiąc, uogólnienie używanej przez nas do tej pory logiki konstruktywnej do logiki
+-- *klasycznej* sprowadza się do dopuszczenia możliwości korzystania z aksjomatu `em`)
 
--- Dowód implikacji w drugą stronę wymaga zastosowania aksjomatu wyłączonego środka (czyli logiki
--- klasycznej).
+-- Również w tym przypadku dowód implikacji w drugą stronę wymaga zastosowania aksjomatu wyłączonego
+-- środka (czyli logiki klasycznej).
 example : p → ¬(¬p) := sorry
 
 -- Rozdzielność dodawania względem mnożenia!
