@@ -3,12 +3,14 @@
 To repozytorium zawiera niektóre materiały, których używam na tym
 [kursie](https://www.usosweb.uj.edu.pl/kontroler.php?_action=katalog2/przedmioty/pokazPrzedmiot&kod=WFz.IPs-N-MB37).
 
-Można się zorientować, czy któryś z materiałów uległ ostatnio zmianie, a jeśli tak, to jakie
-dokładnie to były zmiany, korzystając z funkcjonalności GitHuba.
-
 Na razie jest tu tylko kilka skryptów napisanych w języku [Lean](https://lean-lang.org/).
 Instrukcje, jak zainstalować edytor Visual Studio Code ze wsparciem dla Leana znajdziesz
 [tutaj](https://lean-lang.org/install/).
+
+Można się zorientować, czy któryś ze skryptów uległ ostatnio zmianie, a jeśli tak, to jakie
+dokładnie to były zmiany, korzystając z funkcjonalności GitHuba.
+
+<hr>
 
 [Implikacja jako typ funkcji](./w5_implikacja_jako_typ_funkcji.lean)
 
@@ -21,6 +23,8 @@ Instrukcje, jak zainstalować edytor Visual Studio Code ze wsparciem dla Leana z
 [Parametryzowanie = uzmiennianie = abstrahowanie](./parametryzowanie_uzmiennianie_abstrahowanie.lean)
 
 [Rachunek predykatów wyższego rzędu](./rachunek_predykatow_wyzszego_rzedu.lean)
+
+<hr>
 
 TODO
 
