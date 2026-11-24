@@ -1,7 +1,7 @@
--- To wyłącza ostrzeżenia o niewykorzystanych parametrach
+-- To wyłącza ostrzeżenia o niewykorzystanych parametrach:
 set_option linter.unusedVariables false
 
--- Niech to będą jakieś zdania i jakieś predykaty dotyczące (bo czemu nie) liczb naturalnych
+-- Niech to będą jakieś zdania i jakieś predykaty dotyczące liczb naturalnych (bo czemu nie):
 variable (p q r : Prop) (P Q R : Nat → Prop)
 
 ----------------------------------------------------------------------------------------------------
@@ -17,17 +17,17 @@ example : p → q → p ∧ q := sorry
 
 example : p ∧ q → p := sorry
 
--- Częściowy dowód przemienności koniunkcji
+-- Częściowy dowód przemienności koniunkcji:
 theorem some_theo : p ∧ q → q ∧ p := sorry
-   -- raz w trybie interaktywnym, a raz pisząc kod wprost
+   -- może raz w trybie interaktywnym, a raz pisząc kod wprost?
 
 -- Jak udowodnisz `some_theo`, ten przykład zacznie (sam) naprawdę działać:
 example : (p ∧ q) ↔ (q ∧ p) := ⟨some_theo p q, some_theo q p⟩
 
--- Ex contradictione quodlibet
+-- Ex contradictione quodlibet:
 example : p ∧ ¬p → q := sorry
 
--- Kontrapozycja
+-- Kontrapozycja:
 example : p → q → (¬q → ¬p) := sorry
 
 example : q → p ∨ q := sorry
