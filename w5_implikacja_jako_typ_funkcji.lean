@@ -69,7 +69,7 @@ def uogólniona_identyczność (typ : Type) (parametr : typ) : typ := parametr
 #eval uogólniona_identyczność String "2" -- "2"
 
 -- Typ funkcji `uogólniona_identyczność` to przykład *typu zależnego* (przez co ta funkcja jest
--- *polimorficzna*), bo to, *jakiego typu jest ta funkcja, zależy od argumentu*, który podamy jej na
+-- *polimorficzna*), bo *to, jakiego typu jest ta funkcja, zależy od argumentu*, który podamy jej na
 -- wejściu. Konkretnie, *typ* drugiego parametru jest tu *wartością* pierwszego parametru:
 
 -- `uogólniona_identyczność Nat 1` --> (rozpakowanie definicji)
