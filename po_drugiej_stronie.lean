@@ -334,7 +334,8 @@ albo wręcz *niezależnie od* lustra percepcji. Tak jakby "rzeczowość", tak sa
 "autonomiczność" ─ jakby nie była rozumiana ─ nie była również, jak każda inna, własnością
 *relacyjną*.
 
-यः प्रतीत्यसमुत्पादः शून्यतां तां प्रचक्ष्महे । सा प्रज्ञप्तिरुपादाय प्रतिपत् सैव मध्यमा ॥
+यः प्रतीत्यसमुत्पादः शून्यतां तां प्रचक्ष्महे ।
+सा प्रज्ञप्तिरुपादाय प्रतिपत् सैव मध्यमा ॥
 
 A ponieważ, kiedy jesteśmy przytomni, działa mechanizm projekcji, to czy nie jest też tak, że
 najłatwiej jest nam odkrywać aktualny stan własnego umysłu, przyglądając się temu, jak nam się jawi
