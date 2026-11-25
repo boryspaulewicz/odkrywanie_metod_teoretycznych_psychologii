@@ -277,7 +277,7 @@ niechęci czy nienawiści jest zawsze pewien elementarny szacunek, bo jeśli co�
 nienawiść, czy wstręt, to musi być tak, że to coś się dla nas *liczy*. Nie da się, przynajmniej w
 pewnym sensie, bardziej negatywnie ocenić czegoś, a zwłaszcza kogoś, niż jako coś nieistotnego.
 
-Albo jak ujęła to pewna łobuziara: L'attention est la forme la plus rare et la plus pure de la
+Albo, jak ujęła to pewna łobuziara: L'attention est la forme la plus rare et la plus pure de la
 générosité.
 
 (- Do czego to wszystko zmierza?
