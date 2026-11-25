@@ -4,6 +4,15 @@ set_option linter.unusedVariables false
 -- Niech to będą jakieś zdania i jakieś predykaty dotyczące liczb naturalnych (bo czemu nie):
 variable (p q r : Prop) (P Q R : Nat → Prop)
 
+-- Na początek (być może irytująca) ciekawostka:
+theorem idProp0 : (p : Prop) → p → p := fun p : Prop => fun hp : p => hp
+theorem idProp1 (p : Prop) : p → p := fun hp : p => hp
+theorem idProp2 (p : Prop) (hp : p) : p := hp
+theorem idProp3 : ∀ p : Prop, p → p := fun p : Prop => fun hp : p => hp
+theorem idProp4 : ∀ p : Prop, ∀ hp : p, p := fun p : Prop => fun hp : p => hp
+example : (idProp0 = idProp1) ∧ (idProp1 = idProp2) ∧ (idProp2 = idProp3) ∧ (idProp3 = idProp4)
+   := ⟨by rfl, ⟨by rfl, ⟨by rfl, by rfl⟩⟩⟩
+
 ----------------------------------------------------------------------------------------------------
 -- RACHUNEK ZDAŃ
 
@@ -21,7 +30,7 @@ example : p ∧ q → p := sorry
 theorem some_theo : p ∧ q → q ∧ p := sorry
    -- może raz w trybie interaktywnym, a raz pisząc kod wprost?
 
--- Jak udowodnisz `some_theo`, ten przykład zacznie (sam) naprawdę działać:
+-- Jak udowodnisz `some_theo`, ten przykład zacznie naprawdę działać:
 example : (p ∧ q) ↔ (q ∧ p) := ⟨some_theo p q, some_theo q p⟩
 
 -- Ex contradictione quodlibet:
