@@ -298,6 +298,8 @@ Albo, jak ujął to pewien łobuz: Ainsi je tire de l’absurde trois conséquen
 ma liberté et ma passion. Par le seul jeu de la conscience je transforme en règle de vie ce qui
 était une invitation à la mort — et je refuse le suicide. Inaczej mówiąc, `{} → {♥}`.
 
+Zadanie 2: Gdzie w tym wszystkim jest μῦθος, a gdzie λόγος?
+
 "Substancja" odgrywa w filozofii rolę o tyle szczególną, że ma status terminu technicznego, którego
 znaczenie, w przeciwieństwie do słów takich jak "mentalne", "byt", i wielu innych, *nie* wywodzi się
 z mowy potocznej. Substancja to to, co jest, a więc dla materialisty to będą obiekty fizyczne albo
@@ -334,8 +336,7 @@ albo wręcz *niezależnie od* lustra percepcji. Tak jakby "rzeczowość", tak sa
 "autonomiczność" ─ jakby nie była rozumiana ─ nie była również, jak każda inna, własnością
 *relacyjną*.
 
-यः प्रतीत्यसमुत्पादः शून्यतां तां प्रचक्ष्महे ।
-सा प्रज्ञप्तिरुपादाय प्रतिपत् सैव मध्यमा ॥
+यः प्रतीत्यसमुत्पादः शून्यतां तां प्रचक्ष्महे । सा प्रज्ञप्तिरुपादाय प्रतिपत् सैव मध्यमा ॥
 
 A ponieważ, kiedy jesteśmy przytomni, działa mechanizm projekcji, to czy nie jest też tak, że
 najłatwiej jest nam odkrywać aktualny stan własnego umysłu, przyglądając się temu, jak nam się jawi
@@ -431,7 +432,7 @@ To już może I=Will See-My-Self-Out 😘
 -- BTW, Q.E.D. (FR, chyba, że znajdziesz kontrargument)
 
 /-
-Zadanie 2: Tym razem zamiast *udowadniać*, że jakieś *zdanie* jest *prawdziwe* lub *fałszywe*,
+Zadanie 3: Tym razem zamiast *udowadniać*, że jakieś *zdanie* jest *prawdziwe* lub *fałszywe*,
 spróbuj *zademonstrować*, że któraś z przytoczonych *interpretacji* jest *nieadekwatna* lub
 *bezużyteczna*.
 
@@ -456,7 +457,6 @@ między innymi ─ w mojej ocenie wybitni Psycho-Logowie ─ Sutton i Barto, Spi
 Weil, Albert Camus, Al-Halladż, Mistrz Eckhart, św. Augustyn, Ten, który Obudził się na jawie, Ten,
 który został Namaszczony, Arthur Schopenhauer i Thomas Nagel 🫥
 -/
-
 
 
 
