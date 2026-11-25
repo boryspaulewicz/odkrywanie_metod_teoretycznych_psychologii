@@ -294,6 +294,10 @@ granicy"), zwracać uwagę na *wszystko* (w danym kontekście) *jako na pewną n
 jakby ─ swoją Postawą ─ niewerbalnie wypowiadając wobec świata i aktualnego swojego w nim miejsca
 niewyrażalne wprost w zwyczajnym języku Wielkie "Tak".
 
+Albo, jak ujął to pewien łobuz: Ainsi je tire de l’absurde trois conséquences, qui sont ma révolte,
+ma liberté et ma passion. Par le seul jeu de la conscience je transforme en règle de vie ce qui
+était une invitation à la mort — et je refuse le suicide. Inaczej mówiąc, `{} → {♥}`.
+
 "Substancja" odgrywa w filozofii rolę o tyle szczególną, że ma status terminu technicznego, którego
 znaczenie, w przeciwieństwie do słów takich jak "mentalne", "byt", i wielu innych, *nie* wywodzi się
 z mowy potocznej. Substancja to to, co jest, a więc dla materialisty to będą obiekty fizyczne albo
@@ -330,8 +334,7 @@ zewnątrz*, albo wręcz *niezależnie od* lustra percepcji. Tak jakby "rzeczowo�
 "oporność" czy "autonomiczność" ─ jakby nie była rozumiana ─ nie była również, jak każda inna,
 własnością *relacyjną*.
 
-यः प्रतीत्यसमुत्पादः शून्यतां तां प्रचक्ष्महे ।
-सा प्रज्ञप्तिरुपादाय प्रतिपत् सैव मध्यमा ॥
+यः प्रतीत्यसमुत्पादः शून्यतां तां प्रचक्ष्महे । सा प्रज्ञप्तिरुपादाय प्रतिपत् सैव मध्यमा ॥
 
 A ponieważ, kiedy jesteśmy przytomni, działa mechanizm projekcji, to czy nie jest też tak, że
 najłatwiej jest nam odkrywać aktualny stan własnego umysłu, przyglądając się temu, jak nam się jawi
@@ -445,16 +448,13 @@ ale właściwie co? Czy może raczej Kto? Kim jest ten Ów, który istnieje jesz
 perspektywę? Czy ten jakiś Ktoś, to nie przypadkiem, wydaje się wręcz, że z trudnej do uchwycenia
 definicji ─ we Własnej Osobie ─ sam Widok Znikąd?
 
+Inaczej mówiąc: Biega, krzyczy pan Hilary: "Gdzie są moje okulary?"
+
 Na koniec wypada wspomnieć, że (może niespodziewanymi) niejawnymi bohaterami tego odcinka byli
 między innymi ─ w mojej ocenie wybitni Psycho-Logowie ─ Sutton i Barto, Spinoza, Nagardżuna, Simone
-Weil, Al-Halladż, Mistrz Eckhart, św. Augustyn, Ten, który Obudził się na jawie, Ten, który został
-Namaszczony, Arthur Schopenhauer i Thomas Nagel 🫥
+Weil, Albert Camus, Al-Halladż, Mistrz Eckhart, św. Augustyn, Ten, który Obudził się na jawie, Ten,
+który został Namaszczony, Arthur Schopenhauer i Thomas Nagel 🫥
 -/
-
-
-
-
-
 
 
 
