@@ -388,8 +388,8 @@ und ein Erkennen und ein Lieben. Inaczej mówiąc, `∅ → {∅}` ~ `{} → {�
 I czy to wszystko nie są w istocie sprawy Psycho-Logiczne?
 
 A z innej beczki, co powiesz na taką dualność, która według niektórych wynika z dualizmu: Dwa
-najczęściej występujące rodzaje zaburzeń psychicznych to zaburzenia lękowe i  depresyjne. Jedno lub
-drugie występuje tak często, że niektórzy nazywają je psychicznym  przeziębieniem. Jak zasugerował
+najczęściej występujące rodzaje zaburzeń psychicznych to zaburzenia lękowe i depresyjne. Jedno lub
+drugie występuje tak często, że niektórzy nazywają je psychicznym przeziębieniem. Jak zasugerował
 rzekomo jeszcze inny łobuz, istotą depresji jest życie  *przeszłością*, a istotą nadmiernego lęku
 jest życie *przyszłością*. Nie wiem, czy zaraz  "istotą", ale może przez chwilę "wychodźmy z tego
 założenia".
@@ -421,7 +421,7 @@ istnieje *z pewnością*, istnieje *tylko aktualnie* i *w* naszej świadomości.
 Z tej perpektywy świadomość *jako taka* nie ma właściwości; świadomość tylko *jest* i *tylko* o niej
 możemy naprawdę wiedzieć, że jest, zanim jeszcze cokolwiek pomyślimy, co czyni ją jednocześnie
 *pustą* i maksymalnie  *obiektywną*. Właściwie nie ma nawet żadnego punktu, *z którego* dopiero coś
-widzimy, są tylko  *widzenia* w różnych "modalnościach" i punkty, które można *dzięki tym widzeniom*
+widzimy, są tylko *widzenia* w różnych "modalnościach" i punkty, które można *dzięki tym widzeniom*
 odnaleźć w  dostępnych *w ramach* tych widzeń (w takim lub innym sensie) przestrzennych treściach.
 
 To już może I=Will See-My-Self-Out 😘
@@ -449,7 +449,7 @@ ale właściwie co? Czy może raczej Kto? Kim jest ten Ów, który istnieje jesz
 perspektywę? Czy ten jakiś Ktoś, to nie przypadkiem, wydaje się wręcz, że z trudnej do uchwycenia
 definicji ─ we Własnej Osobie ─ sam Widok Znikąd?
 
-Inaczej mówiąc: Biega, krzyczy pan Hilary: "Gdzie są moje okulary?"
+(Biega, krzyczy pan Hilary: "Gdzie są moje okulary?")
 
 Na koniec wypada wspomnieć, że (może niespodziewanymi) niejawnymi bohaterami tego odcinka byli
 między innymi ─ w mojej ocenie wybitni Psycho-Logowie ─ Sutton i Barto, Spinoza, Nagardżuna, Simone
