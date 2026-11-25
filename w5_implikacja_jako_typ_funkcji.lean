@@ -9,6 +9,7 @@
 -- `Nat` (`(n : Nat)`) i zwraca rezultat typu `Nat` (`: Nat`). Ta funkcja (w swoim *ciele*)
 -- dwukrotnie stosuje funkcję `Nat.succ`:
 def ss (n : Nat) : Nat := Nat.succ (Nat.succ n)
+
 #eval ss 1 -- `3`
 
 -- Gdy *zestawiamy* ze sobą funkcję `ss` i jakiś akceptowalny przez nią *argument*, uzyskujemy w ten
