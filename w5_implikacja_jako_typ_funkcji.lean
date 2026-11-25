@@ -17,6 +17,8 @@ def ss (n : Nat) : Nat := Nat.succ (Nat.succ n)
 -- (nazywane *aplikacją*) jest już opisem pewnej liczby naturalnej:
 #check ss 1 -- `ss 1 : Nat`
 
+-- Inaczej mówiąc: `ss 1 : Nat` bo `ss : Nat → Nat` i `1 : Nat`.
+
 -- Gdy kursor znajduje się na linii `#eval ...` powyżej, Lean *rozpakowuje definicję* stałej `ss`.
 -- Treścią tej definicji jest funkcja *anonimowa*, ...
 #check (fun (n : Nat) => Nat.succ (Nat.succ n)) -- `... : Nat → Nat`
