@@ -327,12 +327,12 @@ Czy to nie wrażenie (względnej) "oporności", "stabilności" albo "niezależno
 nam się być działaniem "naszej woli", sprawia, że różne zjawiska postrzegamy jako istniejące
 "autonomicznie" i odrębnie, a my, doświadczając ich ─ być może zniekształcająco ─ w zasadzie tylko
 je "odzwierciedlamy"? Gdy połączymy to wrażenie i myślowy nawyk z wrażeniem odległości w przestrzeni
-między naszym ciałem i innymi ciałami, pojawia się, jak uporczywe pojęciowe swędzenie, kantowska
-zagadka dostępu do "rzeczy samych w sobie". Jako takich rzeczy, które są *poza nami*, ale "jeszcze
-bardziej poza" niż te, które znamy, bo jako takie, rzeczy same w sobie istnieją, wydaje się, *na
-zewnątrz*, albo wręcz *niezależnie od* lustra percepcji. Tak jakby "rzeczowość", tak samo jak
-"oporność" czy "autonomiczność" ─ jakby nie była rozumiana ─ nie była również, jak każda inna,
-własnością *relacyjną*.
+między naszym ciałem i innymi ciałami, pojawia się, jak pojęciowe swędzenie, kantowska zagadka
+dostępu do "rzeczy samych w sobie". Jako takich rzeczy, które są *poza nami*, ale "jeszcze bardziej
+poza" niż te, które znamy, bo jako takie, rzeczy same w sobie istnieją, wydaje się, *na zewnątrz*,
+albo wręcz *niezależnie od* lustra percepcji. Tak jakby "rzeczowość", tak samo jak "oporność" czy
+"autonomiczność" ─ jakby nie była rozumiana ─ nie była również, jak każda inna, własnością
+*relacyjną*.
 
 यः प्रतीत्यसमुत्पादः शून्यतां तां प्रचक्ष्महे । सा प्रज्ञप्तिरुपादाय प्रतिपत् सैव मध्यमा ॥
 
