@@ -75,8 +75,7 @@ Deklaracja `variable` mówi tak naprawdę: Hej, Lean, użyj tego jako parametru 
 gdzie `m` pojawi się *"znienacka"* . Czyli `variable (m : Nat)` można odczytać jako "jakby co, to
 `m` ma być zmienną typu `Nat`". Matematycy (i psychologowie) często stosują takie skrótowe sposoby
 mówienia, polegające na pominięciu wcześniejszych jawnych deklaracji typów zmiennych, na przykład
-(najpierw matematycy),
-...
+(najpierw matematycy), ...
 
 "Suma liczb naturalnych `m` i `n` jest ..."
 
