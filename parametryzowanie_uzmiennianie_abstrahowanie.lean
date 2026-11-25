@@ -46,6 +46,9 @@ to samo, co "potraktuj `m` jako *wejście jakiejś funkcji*"?
 
 *Abstrahowanie = parametryzowanie = uzmiennianie = robienie z czegoś funkcji czegoś*!
 
+(nawiasem mówiąc, łacińskie słowo "abstrahere" znaczy odciągać lub oderwać, jak poprzednik
+zastosowanej w dowodzie implikacji, a mówiąc ogólnie  źródło albo dziedzinę zastosowanej funkcji)
+
 W szczególności, ...
 -/
 
