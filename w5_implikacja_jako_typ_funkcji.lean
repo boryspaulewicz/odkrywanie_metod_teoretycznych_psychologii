@@ -33,10 +33,10 @@ def ss (n : Nat) : Nat := Nat.succ (Nat.succ n)
 -- ... i *podstawia argument we wszystkie miejsca wystąpienia parametru*:
 #check Nat.succ (Nat.succ 1) -- `... : Nat`
 
--- Lean w ten sam sposób ewaluuje (redukując przez podstawianie i odrzucanie części `fun ... =>`)
--- aplikację `Nat.succ 1`, a gdy już obliczy rezultat (`2`), tak samo ewaluuje `Nat.succ 2`.
--- Ponieważ rezultat tej ostatniej aplikacji (`3`) *nie* jest już aplikacją, ewaluacja się na tym
--- kończy.
+-- Lean w ten sam sposób ewaluuje (rozpakowując definicję `Nat.succ`, a potem redukując przez
+-- podstawianie i odrzucanie części `fun ... =>`) aplikację `Nat.succ 1`, a gdy już obliczy rezultat
+-- (`2`), tak samo ewaluuje `Nat.succ 2`. Ponieważ rezultat tej ostatniej aplikacji (`3`) *nie* jest
+-- już aplikacją, ewaluacja się na tym kończy.
 
 -- Dlatego każdą definicję funkcji można rozumieć jak pudełko, które ma jedno lub więcej wejść
 -- określonego typu (tutaj `(n : Nat)`), jedno wyjście określonego typu (tutaj `Nat`), a w środku
@@ -47,7 +47,7 @@ def ss (n : Nat) : Nat := Nat.succ (Nat.succ n)
 -- funkcji.
 
 -- Na przykład, definicję `ss` można by (w wymyślonej przeze mnie notacji) "zobrazować" tak,
--- interpretując `:` jako zewnętrzny "interfejs" a `-->` jako "przewody kierunkowe":
+-- interpretując `:` jako zewnętrzny "interfejs", a `-->` jako "przewody kierunkowe":
 
 -- `Nat : --> Nat.succ --> Nat.succ --> : Nat`
 
