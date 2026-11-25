@@ -77,6 +77,11 @@ def uogólniona_identyczność (typ : Type) (parametr : typ) : typ := parametr
 -- `(fun (parametr : Nat) => parametr) 1` --> (oderwanie ciała i podstawianie)
 -- `1`
 
+-- To właśnie dzięki typom zależnym teoria typów to język programowania, w którym zdania (takie jak
+-- `p → p` gdzie `p` to jakieś zdanie <`p : Prop`>), to typy jak każde inne, a dowody to dokładnie
+-- termy typów zdaniowych (tutaj `(fun hp : p => hp) : p → p`), czyli programy komputerowe lub
+-- struktury danych, które mają takie lub inne zdanie jako swój typ.
+
 -- A teraz bardziej rozwlekle i trochę inaczej.
 
 ----------------------------------------------------------------------------------------------------
