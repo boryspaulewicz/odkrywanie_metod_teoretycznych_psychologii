@@ -9,8 +9,9 @@ Na razie jest tu tylko kilka skryptów napisanych w języku [Lean](https://lean-
 Instrukcje, jak zainstalować edytor Visual Studio Code ze wsparciem dla Leana, znajdziesz
 [tutaj](https://lean-lang.org/install/).
 
-Można się zorientować, czy któryś ze skryptów uległ ostatnio zmianie, a jeśli tak, to jakie
-dokładnie to były zmiany, korzystając z funkcjonalności GitHuba.
+Te skrypty są wymienione poniżej w kolejności, w której należy je czytać za pierwszym razem, jeżeli
+nie ma się do tego przygotowania. Można się zorientować, czy któryś uległ ostatnio zmianie, a jeśli
+tak, to jakie dokładnie to były zmiany, korzystając z funkcjonalności GitHuba.
 
 <hr>
 
