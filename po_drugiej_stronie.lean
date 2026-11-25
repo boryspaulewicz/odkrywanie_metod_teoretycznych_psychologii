@@ -95,7 +95,7 @@ example (p q : Prop) : (p ∧ q) ↔ (q ∧ p) :=
   Iff.intro (fun hpq : p ∧ q => sorry) (fun hqp : q ∧ p => sorry)
 
 ----------------------------------------------------------------------------------------------------
--- RELACJA MIĘDZY FAŁSZEM I PRAWDĄ
+-- RELACJA MIĘDZY FAŁSZEM I PRAWDĄ (albo TO SAMO - CO ZAWSZE)
 
 -- Skoro z fałszu wynika każde zdanie, a prawda wynika z każdego zdania, to musi być tak, że:
 
