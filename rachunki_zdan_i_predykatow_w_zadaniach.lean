@@ -82,6 +82,9 @@ example : p ∧ (q ∨ r) → (p ∧ q) ∨ (p ∧ r) := sorry
 -- wyrazić jako równoważności (`↔`).
 example : p ∨ (q ∧ r) → (p ∨ q) ∧ (p ∨ r) := sorry
 
+-- Akurat ta strzałka jest "szalenie kanoniczna" (o czym może kiedy indziej):
+example : p ∧ q → p ∨ q := sorry
+
 -- Nasz zdaniowy final boss to prawa De Morgana (w których używamy wszystkich spójników):
 example : ¬(p ∧ q) ↔ ¬p ∨ ¬q := sorry
 
@@ -90,4 +93,38 @@ example : ¬(p ∨ q) ↔ ¬p ∧ ¬q := sorry
 ----------------------------------------------------------------------------------------------------
 -- RACHUNEK PREDYKATÓW
 
--- TODO
+-- To jest (znacznie) prostsze niż (być może początkowo) myślisz!
+example : ∀ n : Nat, P n → P n := fun n => sorry
+
+example : ∀ n : Nat, P n ∧ Q n → P n := fun n => sorry
+
+example : ∀ n : Nat, P n → P n ∨ Q n := fun n => sorry
+
+example : ∀ n : Nat, P n ∧ Q n → Q n := fun n => sorry
+
+example : ∀ n : Nat, P n ∧ Q n → Q n ∧ P n := fun n => sorry
+
+example : ∀ n : Nat, P n ∨ Q n → Q n ∨ P n := fun n => sorry
+
+example : ∀ n : Nat, P n ∧ ¬(P n) → Q n := fun n => sorry
+
+example : ∀ n : Nat, (P n → Q n) → (¬(Q n) → ¬(P n)) := fun n => sorry
+
+example : ∀ n : Nat, ¬(P n ∧ Q n) → ¬(P n) ∨ ¬(Q n) := fun n => sorry
+
+example : ∀ n : Nat, ¬(P n ∨ Q n) → ¬(P n) ∧ ¬(Q n) := fun n => sorry
+
+-- Dopiero od tego momentu kwantyfikatory "coś wnoszą" do dowodów. Już wiesz, czemu wcześniej duży
+-- kwantyfikator i struktura podmiot-orzeczenie nie miały właściwie znaczenia?
+
+-- To tak nie działa z alternatywą. Domyślasz się czemu?
+example : (∀ n : Nat, P n ∧ Q n) → (∀ n : Nat, P n) ∧ (∀ n : Nat, Q n) := fun n => sorry
+
+example : (∃ n : Nat, P n ∧ Q n) → (∃ n : Nat, P n) ∧ (∃ n : Nat, Q n) := fun n => sorry
+
+example : (∀ n : Nat, ¬(P n)) → ¬(∃ n : Nat, P n) := sorry
+
+example : ¬(∃ n : Nat, P n) → (∀ n : Nat, ¬(P n)) := sorry
+
+-- Dowód implikacji w drugą stronę wymaga logiki klasycznej, czyli na przykład aksjomatu `em`:
+example : (∃ n : Nat, ¬(P n)) → ¬(∀ n : Nat, P n) := sorry
