@@ -662,7 +662,6 @@ który został Namaszczony, Arthur Schopenhauer i Thomas Nagel 🫥
 
 
 
-
 -- PS Jeżeli interesuje Cię celowość wprowadzania takiej rozpiętości rejestrów w tego rodzaju
 -- kontekście, to może zainteresuje Cię też wprowadzenie do "Pagan Mysteries in the Renaissance"
 -- Edgara Winda.
