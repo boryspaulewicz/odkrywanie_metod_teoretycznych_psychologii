@@ -96,31 +96,31 @@ example : ¬(p ∨ q) ↔ ¬p ∧ ¬q := sorry
 -- To jest (znacznie) prostsze niż (być może początkowo) myślisz!
 example : ∀ n : Nat, P n → P n := fun n => sorry
 
-example : ∀ n : Nat, P n ∧ Q n → P n := fun n => sorry
+example : ∀ n : Nat, P n ∧ Q n → P n := sorry
 
-example : ∀ n : Nat, P n → P n ∨ Q n := fun n => sorry
+example : ∀ n : Nat, P n → P n ∨ Q n := sorry
 
-example : ∀ n : Nat, P n ∧ Q n → Q n := fun n => sorry
+example : ∀ n : Nat, P n ∧ Q n → Q n := sorry
 
-example : ∀ n : Nat, P n ∧ Q n → Q n ∧ P n := fun n => sorry
+example : ∀ n : Nat, P n ∧ Q n → Q n ∧ P n := sorry
 
-example : ∀ n : Nat, P n ∨ Q n → Q n ∨ P n := fun n => sorry
+example : ∀ n : Nat, P n ∨ Q n → Q n ∨ P n := sorry
 
-example : ∀ n : Nat, P n ∧ ¬(P n) → Q n := fun n => sorry
+example : ∀ n : Nat, P n ∧ ¬(P n) → Q n := sorry
 
-example : ∀ n : Nat, (P n → Q n) → (¬(Q n) → ¬(P n)) := fun n => sorry
+example : ∀ n : Nat, (P n → Q n) → ¬(Q n) → ¬(P n) := sorry
 
-example : ∀ n : Nat, ¬(P n ∧ Q n) → ¬(P n) ∨ ¬(Q n) := fun n => sorry
+example : ∀ n : Nat, ¬(P n ∧ Q n) → ¬(P n) ∨ ¬(Q n) := sorry
 
-example : ∀ n : Nat, ¬(P n ∨ Q n) → ¬(P n) ∧ ¬(Q n) := fun n => sorry
+example : ∀ n : Nat, ¬(P n ∨ Q n) → ¬(P n) ∧ ¬(Q n) := sorry
 
 -- Dopiero od tego momentu kwantyfikatory "coś wnoszą" do dowodów. Już wiesz, czemu wcześniej duży
 -- kwantyfikator i struktura podmiot-orzeczenie nie miały właściwie znaczenia?
 
 -- To tak nie działa z alternatywą. Domyślasz się czemu?
-example : (∀ n : Nat, P n ∧ Q n) → (∀ n : Nat, P n) ∧ (∀ n : Nat, Q n) := fun n => sorry
+example : (∀ n : Nat, P n ∧ Q n) → (∀ n : Nat, P n) ∧ (∀ n : Nat, Q n) := sorry
 
-example : (∃ n : Nat, P n ∧ Q n) → (∃ n : Nat, P n) ∧ (∃ n : Nat, Q n) := fun n => sorry
+example : (∃ n : Nat, P n ∧ Q n) → (∃ n : Nat, P n) ∧ (∃ n : Nat, Q n) := sorry
 
 example : (∀ n : Nat, ¬(P n)) → ¬(∃ n : Nat, P n) := sorry
 
