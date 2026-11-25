@@ -1,5 +1,83 @@
 -- Tak w Leanie piszemy komentarze. Komentarze są przez Leana ignorowane.
 
+-- Najpierw objaśnię sedno sprawy w maksymalnym (i dla początkujących niezbyt zrozumiałym) skrócie:
+
+-- Zdefiniowana w Leanie funkcja `Nat.succ` zwraca następną liczbę naturalną, na przykład:
+#eval Nat.succ 1 -- `2`
+
+-- To *definicja* (`def ... := ...`) stałej o nazwie `ss` jako funkcji, która pobiera argumenty typu
+-- `Nat` (`(n : Nat)`) i zwraca rezultat typu `Nat` (`: Nat`). Ta funkcja (w swoim *ciele*)
+-- dwukrotnie stosuje funkcję `Nat.succ`:
+def ss (n : Nat) : Nat := Nat.succ (Nat.succ n)
+#eval ss 1 -- `3`
+
+-- Gdy *zestawiamy* ze sobą funkcję `ss` i jakiś akceptowalny przez nią *argument*, uzyskujemy w ten
+-- sposób *od razu, jeszcze przed obliczeniem wyniku*, term typu `Nat`, bo samo takie zestawienie
+-- (nazywane *aplikacją*) jest już opisem pewnej liczby naturalnej:
+#check ss 1 -- `ss 1 : Nat`
+
+-- Gdy kursor znajduje się na linii `#eval ...` powyżej, Lean *rozpakowuje definicję* stałej `ss`.
+-- Treścią tej definicji jest funkcja *anonimowa*, ...
+#check (fun (n : Nat) => Nat.succ (Nat.succ n)) -- `... : Nat → Nat`
+
+-- ... a ponieważ pojawia się tam argument `1`, to uzyskujemy (po rozpakowaniu definicji `ss`) taką
+-- oto aplikację o typie `Nat`:
+#check (fun (n : Nat) => Nat.succ (Nat.succ n)) 1 -- `... : Nat`
+
+-- Ewaluacja (która w a tym wypadku jest nazywana też *redukcją*) tej aplikacji polega na tym, że
+-- Lean *odrywa ciało funkcji*, czyli część definicji funkcji występującą po symbolu `=>`, ...
+
+-- `Nat.succ (Nat.succ n)`
+
+-- ... i *podstawia argument we wszystkie miejsca wystąpienia parametru*:
+#check Nat.succ (Nat.succ 1) -- `... : Nat`
+
+-- Lean w ten sam sposób ewaluuje (redukując przez podstawianie i odrzucanie części `fun ... =>`)
+-- aplikację `Nat.succ 1`, a gdy już obliczy rezultat (`2`), tak samo ewaluuje `Nat.succ 2`.
+-- Ponieważ rezultat tej ostatniej aplikacji (`3`) *nie* jest już aplikacją, ewaluacja się na tym
+-- kończy.
+
+-- Dlatego każdą definicję funkcji można rozumieć jak pudełko, które ma jedno lub więcej wejść
+-- określonego typu (tutaj `(n : Nat)`), jedno wyjście określonego typu (tutaj `Nat`), a w środku
+-- którego to pudełka są "przewody" od wejść do jakiś wewnętrznych pudełek (czyli innych funkcji
+-- aplikowanych do parametrów w ciele tej funkcji, tutaj `Nat.succ`), których wyjścia, być może
+-- przechodząc przez jakieś wewnętrzne pudełka (tutaj wyjście "pierwszego" pudełka `Nat.succ` jest
+-- podłączone do jeszcze jednego pudełka `Nat.succ`), ostatecznie zmierzają do wyjścia definiowanej
+-- funkcji.
+
+-- Na przykład, definicję `ss` można by (w wymyślonej przeze mnie notacji) "zobrazować" tak,
+-- interpretując `:` jako zewnętrzny "interfejs" a `-->` jako "przewody kierunkowe":
+
+-- `Nat : --> Nat.succ --> Nat.succ --> : Nat`
+
+-- Czytamy to: Pobieram `Nat-y`, które przepuszczam przez maszynkę `Nat.succ`, a wynik przepuszczam
+-- jeszcze raz przez `Nat.succ`, i zwracam rezultat (typu `Nat`). Zastosowana tu "graficzna" notacja
+-- "przewodowa" sprawia, że *nazwy parametrów stają się całkowicie zbędne*, ponieważ de facto *są*
+-- zbędne:
+
+-- *Parametry to oznaczenia połączeń między funkcjami, z aplikacji których składa się dana funkcja*.
+
+-- Gdyby w Leanie można było robić tylko takie rzeczy, byłby to język programowania funkcyjnego jak
+-- każdy inny. Ale można robić w nim również takie rzeczy (i w zasadzie właśnie to sprawia, że w
+-- Leanie można sformalizować praktycznie całą matematykę):
+
+def uogólniona_identyczność (typ : Type) (parametr : typ) : typ := parametr
+
+-- Tą funkcję można stosować do argumentów różnego typu, trzeba jej tylko powiedzieć, jakiego:
+#eval uogólniona_identyczność Nat 1 -- 1
+#eval uogólniona_identyczność String "2" -- "2"
+
+-- Typ funkcji `uogólniona_identyczność` to przykład *typu zależnego* (przez co ta funkcja jest
+-- *polimorficzna*), bo to, *jakiego typu jest ta funkcja, zależy od argumentu*, który podamy jej na
+-- wejściu. Konkretnie, *typ* drugiego parametru jest tu *wartością* pierwszego parametru:
+
+-- `uogólniona_identyczność Nat 1` --> (rozpakowanie definicji)
+-- `(fun (typ : Type) => (fun (parametr : typ) => parametr)) Nat 1` --> (oderwanie ciała i podstawianie)
+-- `(fun (parametr : Nat) => parametr) 1` --> (oderwanie ciała i podstawianie)
+-- `1`
+
+-- A teraz bardziej rozwlekle i trochę inaczej.
+
 ----------------------------------------------------------------------------------------------------
 -- TERMY, TYPY, FUNKCJE, SPRAWDZANIE TYPU I EWALUACJA
 
