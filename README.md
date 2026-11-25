@@ -1,5 +1,7 @@
 # Odkrywanie metod teoretycznych psychologii
 
+![Code in Lean](./Code_in_Lean.jpg)
+
 To repozytorium zawiera niektóre materiały, których używam na tym
 [kursie](https://www.usosweb.uj.edu.pl/kontroler.php?_action=katalog2/przedmioty/pokazPrzedmiot&kod=WFz.IPs-N-MB37).
 
