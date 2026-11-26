@@ -309,7 +309,7 @@ Albo, jak ujął to pewien łobuz: Ainsi je tire de l’absurde trois conséquen
 ma liberté et ma passion. Par le seul jeu de la conscience je transforme en règle de vie ce qui
 était une invitation à la mort — et je refuse le suicide. Inaczej mówiąc, `{} → {♥}`.
 
-Zadanie 2: Gdzie w tym wszystkim jest μῦθος, a gdzie λόγος?
+Zadanie 2: Gdzie w tym wszystkim jest μῦθος, gdzie λόγος, a gdzie ἦθος?
 
 Symbole używane powszechnie przez matematyków są ostatecznie wybierane intuicyjnie i stają się
 standardowe przede wszystkim dlatego, że są w jakiś głębszy sposób *zrozumiałe*, a czym niby jest
