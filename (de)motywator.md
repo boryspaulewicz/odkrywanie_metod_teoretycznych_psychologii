@@ -25,7 +25,7 @@ statystyczne, jest obecnie tak bogatym i złożonym tworem, że chyba nikt nie m
 
 Teoria wnioskowania przyczynowego rozwija się ostatnio dość gwałtownie i już być może jest zbyt
 "duża", żeby można było powiedzieć, że ktokolwiek zna wszystkie definicje i twierdzenia, które się
-na nią w tym momencie składają. Ale z drugiej strony, *cała ta teoria wynika w z kilku prostych
+na nią w tym momencie składają. Ale z drugiej strony, *cała ta teoria wynika z kilku prostych
 aksjomatów*.
 
 Obydwie te teorie są *niefalsyfikowalne*, bo to są matematyczne teorie aksjomatyczne, a jednak
