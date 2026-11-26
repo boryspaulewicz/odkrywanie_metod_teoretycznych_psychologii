@@ -36,7 +36,8 @@ def ss' : Nat → Nat := (fun (n : Nat) => Nat.succ (Nat.succ n))
 -- unikalnej liczby naturalnej:
 #check ss 1 -- `ss 1 : Nat`
 
--- Inaczej mówiąc: `ss 1 : Nat`, bo `ss : Nat → Nat` i `1 : Nat`.
+-- Inaczej mówiąc: `ss 1 : Nat`, bo `ss : Nat → Nat` i `1 : Nat`. *Na skutek samej aplikacji*
+-- zachodzi pewne *przekształcenie na poziomie typu*.
 
 -- Gdy kursor znajduje się na linii `#eval ...` powyżej, Lean *rozpakowuje definicję* stałej `ss`.
 -- Treścią tej definicji jest funkcja *anonimowa*, ...
