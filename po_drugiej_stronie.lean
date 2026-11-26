@@ -343,8 +343,8 @@ przeciwnie, bo zdaje się być konieczna, żeby to coś zachodziło ─ jest *do
 naszego doświadczenia to dokładnie wszystko to, co wydaje nam się nie całkiem kontrolowalne. Zdaniem
 niektórych (również filozofów), z jednym wyjątkiem: uniwersalnej postawy ocennej, która akceptuje
 samą siebie, bo kiedy (jeśli) pojawia się taka postawa, pojawia się jednocześnie ─ pusta, bo
-polegająca na nieróżnicującej akceptacji albo *uniwersalnym przyzwoleniu* ─ pełna kontrola, czyli
-nieograniczona wolność.
+polegająca na nieróżnicującej akceptacji albo *uniwersalnym przyzwoleniu* (γενηθήτω τὸ θέλημά σου) ─
+pełna kontrola, czyli nieograniczona wolność.
 
 (- A to też będzie na teście końcowym?
  - Co?)
