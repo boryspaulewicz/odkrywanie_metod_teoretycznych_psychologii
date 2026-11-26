@@ -2,19 +2,33 @@
 
 -- Najpierw objaśnię sedno sprawy w maksymalnym (i dla początkujących niezbyt zrozumiałym) skrócie:
 
--- Zdefiniowana w Leanie funkcja `Nat.succ` zwraca następną liczbę naturalną, na przykład:
+-- Poprawne wyrażenia w teorii typów to tak zwane termy. Każdy term ma unikalny typ (`1 : Nat`), a
+-- każdy typ jest termem (np. `Nat : Type`). Typy zawierające strzałkę (np. `Nat → Nat`) to typy
+-- funkcji. Wszystko, co "dzieje się" w matematyce, dzieje się dzięki funkcjom.
+
+-- Funkcja `Nat.succ` zwraca następną liczbę naturalną:
+#check @Nat.succ -- `Nat.succ : Nat → Nat`
 #eval Nat.succ 1 -- `2`
 
--- To *definicja* (`def ... := ...`) stałej o nazwie `ss` jako funkcji, która pobiera argumenty typu
--- `Nat` (`(n : Nat)`) i zwraca rezultat typu `Nat` (`: Nat`). Ta funkcja (w swoim *ciele*)
+-- To *definicja* (`def ... := ...`) stałej o nazwie `ss` jako funkcji, która pobiera *argumenty*
+-- typu `Nat` (`(n : Nat)`) i zwraca *rezultat* typu `Nat` (`: Nat`). Ta funkcja (w swoim *ciele*)
 -- dwukrotnie stosuje funkcję `Nat.succ`:
 def ss (n : Nat) : Nat := Nat.succ (Nat.succ n)
 
+-- Notacja `(n : Nat) : Nat` to tylko jedna z konwencji. Tą samą funkcję możemy zdefiniować tak
+-- (nadając jej inną nazwę <to przykład *przestawialności głównego dwukropka* w definicjach
+-- *funkcji*>):
+def ss' : Nat → Nat := (fun (n : Nat) => Nat.succ (Nat.succ n))
+-- Czytamy to: Definiuję `ss1` jako stałą typu `Nat → Nat`, czyli funkcję z `Nat`-ów do `Nat`-ów.
+-- Wartością tej stałej jest funkcja (anonimowa), stosująca do dowolnego termu `n` typu `Nat` kod
+-- `Nat.succ (Nat.succ n)`.
+
 #eval ss 1 -- `3`
+#eval ss' 1 -- `3`
 
 -- Gdy *zestawiamy* ze sobą funkcję `ss` i jakiś akceptowalny przez nią *argument*, uzyskujemy w ten
 -- sposób *od razu, jeszcze przed obliczeniem wyniku*, term typu `Nat`, bo samo takie zestawienie
--- (nazywane *aplikacją*) jest już opisem pewnej liczby naturalnej:
+-- (nazywane *aplikacją*) jest już opisem unikalnej liczby naturalnej:
 #check ss 1 -- `ss 1 : Nat`
 
 -- Inaczej mówiąc: `ss 1 : Nat` bo `ss : Nat → Nat` i `1 : Nat`.
@@ -27,15 +41,15 @@ def ss (n : Nat) : Nat := Nat.succ (Nat.succ n)
 -- oto aplikację o typie `Nat`:
 #check (fun (n : Nat) => Nat.succ (Nat.succ n)) 1 -- `... : Nat`
 
--- Ewaluacja (która w a tym wypadku jest nazywana też *redukcją*) tej aplikacji polega na tym, że
--- Lean *odrywa ciało funkcji*, czyli część definicji funkcji występującą po symbolu `=>`, ...
+-- Ewaluacja (która w tym wypadku jest nazywana też *redukcją*) tej aplikacji polega na tym, że Lean
+-- *odrywa ciało funkcji*, czyli część definicji funkcji występującą po symbolu `=>`, ...
 
 -- `Nat.succ (Nat.succ n)`
 
 -- ... i *podstawia argument we wszystkie miejsca wystąpienia parametru*:
 #check Nat.succ (Nat.succ 1) -- `... : Nat`
 
--- Lean w ten sam sposób ewaluuje (rozpakowując definicję `Nat.succ`, a potem redukując przez
+-- W ten sam sposób ewaluuje (rozpakowując definicję `Nat.succ`, a potem redukując przez
 -- podstawianie i odrzucanie części `fun ... =>`) aplikację `Nat.succ 1`, a gdy już obliczy rezultat
 -- (`2`), tak samo ewaluuje `Nat.succ 2`. Ponieważ rezultat tej ostatniej aplikacji (`3`) *nie* jest
 -- już aplikacją, ewaluacja się na tym kończy.
@@ -48,25 +62,26 @@ def ss (n : Nat) : Nat := Nat.succ (Nat.succ n)
 -- podłączone do jeszcze jednego pudełka `Nat.succ`), ostatecznie zmierzają do wyjścia definiowanej
 -- funkcji.
 
--- Na przykład, definicję `ss` można by (w wymyślonej przeze mnie notacji) "zobrazować" tak,
+-- Na przykład, definicję `ss` można (w wymyślonej przeze mnie notacji) "zobrazować" tak,
 -- interpretując `:` jako zewnętrzny "interfejs", a `-->` jako "przewody kierunkowe":
 
 -- `Nat : --> Nat.succ --> Nat.succ --> : Nat`
 
--- Czytamy to: Pobieram `Nat-y`, które przepuszczam przez maszynkę `Nat.succ`, a wynik przepuszczam
--- jeszcze raz przez `Nat.succ`, i zwracam rezultat (typu `Nat`). Zastosowana tu "graficzna" notacja
--- "przewodowa" sprawia, że *nazwy parametrów stają się całkowicie zbędne*, ponieważ de facto *są*
--- zbędne:
+-- Czytamy to: Pobieram `Nat-y`, które przepuszczam przez maszynkę `Nat.succ`, wynik przepuszczam
+-- przez `Nat.succ`, i zwracam rezultat (typu `Nat`). Zastosowana tu "graficzna" notacja
+-- "przewodowa" sprawia, że *nazwy parametrów stają się zbędne*, ponieważ de facto *są* zbędne:
 
--- *Parametry to oznaczenia połączeń między funkcjami, z aplikacji których składa się dana funkcja*.
+-- *Parametry to, istniejące dla naszej wygody, oznaczenia połączeń między funkcjami, z aplikacji
+-- których składa się dana funkcja*.
 
 -- Gdyby w Leanie można było robić tylko takie rzeczy, byłby to język programowania funkcyjnego jak
--- każdy inny. Ale można robić w nim również takie rzeczy (i w zasadzie właśnie to sprawia, że w
--- Leanie można sformalizować praktycznie całą matematykę):
+-- każdy inny. Ale można robić w nim również takie rzeczy (co sprawia, że w teorii typów można
+-- sformalizować praktycznie całą matematykę):
 
 def uogólniona_identyczność (typ : Type) (parametr : typ) : typ := parametr
 
--- Tą funkcję można stosować do argumentów różnego typu, trzeba jej tylko powiedzieć, jakiego:
+-- Tą funkcję dwuargumentową można stosować do argumentów różnego typu, trzeba jej tylko powiedzieć,
+-- jakiego:
 #eval uogólniona_identyczność Nat 1 -- 1
 #eval uogólniona_identyczność String "2" -- "2"
 
@@ -80,9 +95,14 @@ def uogólniona_identyczność (typ : Type) (parametr : typ) : typ := parametr
 -- `1`
 
 -- To właśnie dzięki typom zależnym teoria typów to język programowania, w którym zdania (takie jak
--- `p → p` gdzie `p` to jakieś zdanie <`p : Prop`>), to typy jak każde inne, a dowody to dokładnie
--- termy typów zdaniowych (tutaj `(fun hp : p => hp) : p → p`), czyli programy komputerowe lub
--- struktury danych, które mają takie lub inne zdanie jako swój typ.
+-- `¬p`, `p → q`, `p ∧ q`, czy `p ∨ q`, gdzie `p q : Prop`), to typy jak każde inne, a *dowody* to
+-- dokładnie *termy typów zdaniowych* (np. `(fun (hp : p) => hp) : p → p`), czyli *programy
+-- komputerowe* lub *struktury danych*, które *mają jakieś zdanie jako swój typ*.
+
+-- (Nawiasem mówiąc, to są dowody tożsamości funkcji `ss` i `ss'`. Dowiesz się, co się tu dzieje, w
+-- następnych skryptach.)
+example : ∀ (n : Nat), (ss n) = (ss' n) := by intro n; rfl
+example : ss = ss' := by rfl
 
 -- A teraz bardziej rozwlekle i trochę inaczej.
 
