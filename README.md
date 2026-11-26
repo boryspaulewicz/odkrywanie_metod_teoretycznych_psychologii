@@ -15,6 +15,8 @@ tak, to jakie dokładnie to były zmiany, korzystając z funkcjonalności GitHub
 
 {·} to link do skróconej wersji skryptu, która ma pomóc w generatywnym powtarzaniu.
 
+A to nie jest skrypt: [(de)motywator](./(de)motywator.md))
+
 <hr>
 
 [Implikacja jako typ funkcji](./w5_implikacja_jako_typ_funkcji.lean) <br>
