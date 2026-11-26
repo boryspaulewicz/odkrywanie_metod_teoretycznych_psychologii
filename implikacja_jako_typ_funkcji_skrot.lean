@@ -8,6 +8,13 @@
 -- typy *funkcji*. Wszystko, co "dzieje się" w matematyce, dzieje się dzięki funkcjom, a raczej
 -- dzięki temu, jak *my ich używamy*.
 
+-- `#check` *podaje typ* wyrażeń typowalnych:
+#check 1 -- `1 : Nat`
+-- `example` pozwala *sprawdzić, czy określony typ pasuje do określonego termu*:
+example : Nat := 1
+-- `#eval` "oblicza" wartość termu:
+#eval 1 + 1 -- `2`
+
 -- Funkcja `Nat.succ` zwraca następną liczbę naturalną:
 #check @Nat.succ -- `Nat.succ : Nat → Nat`
 #eval Nat.succ 1 -- `2`
