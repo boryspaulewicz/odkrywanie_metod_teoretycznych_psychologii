@@ -384,7 +384,7 @@ Nadeszła pora na coś bardziej odklejonego, czyli przyziemnego.
 --              - Co to jest pion? - pyta Jade.
 --              - Przeciwieństwo poziomu, idiotko - wyjaśnia Min.
 --
---                                                        (George Sounders, *Morszczyn*)
+--                                                        (George Saunders, *Morszczyn*)
 
 
 /-
