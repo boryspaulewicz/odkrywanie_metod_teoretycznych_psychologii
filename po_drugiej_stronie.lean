@@ -1,5 +1,9 @@
 ----------------------------------------------------------------------------------------------------
 -- PO dRUGIEJ sTRONIE
+--
+--          W życiu trzeba się nie tylko upewniać, ale też odpewniać.
+--
+--                                                            (Maciej Wojtyszko)
 
 /-
 (Komentarze ciągnące się przez wiele linii wystarczy otoczyć symbolami `/-` i `-/`)
@@ -480,10 +484,6 @@ między innymi ─ w mojej ocenie wybitni Psycho-Logowie ─ Sutton i Barto, Spi
 Weil, Albert Camus, Al-Halladż, Mistrz Eckhart, św. Augustyn, Ten, który Obudził się na jawie, Ten,
 który został Namaszczony, Arthur Schopenhauer i Thomas Nagel 🫥
 -/
-
-
-
-
 
 
 
