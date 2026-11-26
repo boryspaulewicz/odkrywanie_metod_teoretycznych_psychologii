@@ -287,18 +287,38 @@ No dobrze (?), ale przecież uwaga to *selekcja* albo *filtrowanie*, a tutaj cho
 zasadzie tak, ale redukowanie pojęcia uwagi do pojęcia selekcji jest problematyczne, bo w *samej*
 selektywności *jakiegokolwiek* reagowania, na przykład w selektywności rezonansowej odpowiedzi pudła
 gitary na drgania powietrza, nie ma *oceny*. A przecież uwaga, tak jak ją rozumiemy w psychologii,
-wydaje się zawsze polegać na jakiejś ocenie, bo to jest pojęcie funkcjonalne (w znaczeniu
-zdefiniowane w kategoriach wykonywania jakiegoś zadania). Jeżeli rozumiemy uwagę jako (abstrakcyjnie
-pojęte) *przykładanie do czegoś wagi*, to może jednak da się, choćby tylko teoretycznie (albo "w
-granicy"), zwracać uwagę na *wszystko* (w danym kontekście) *jako na pewną niepodzielną całość*. Tak
-jakby ─ swoją Postawą ─ niewerbalnie wypowiadając wobec świata i aktualnego swojego w nim miejsca
-niewyrażalne wprost w zwyczajnym języku Wielkie "Tak".
+zawsze polega na ocenie, bo to jest pojęcie *funkcjonalne*, w znaczeniu zdefiniowane w kategoriach
+wykonywania jakiegoś zadania.
+
+Jeżeli rozumiemy uwagę jako (abstrakcyjnie pojęte) *przykładanie do czegoś wagi*, nieważne, czy
+"dobrej", czy "złej", to może jednak da się, choćby tylko teoretycznie albo "w granicy", zwracać
+uwagę na *wszystko* (w danym kontekście) *jako na pewną niepodzielną całość*. Tak jakby ─ swoją
+Postawą ─ wypowiadając wobec świata i aktualnego swojego w nim miejsca niewyrażalne wprost w
+zwyczajnym języku Wielkie "Tak". Bo czy nie o to, to jest właśnie o *rozproszenie* uwagi na
+*nieustannie zmieniającą się całość* doświadczenia ─ a nie o skupienie się na czymś wyróżnionym
+kosztem czegoś innego, co akurat jest ─ chodzi w *uważności* (स्मृति <道>)?
+
+Przecież *nie jesteśmy w stanie* utrzymać uwagi na czymś, co jest dla nas *obojętne*; dlatego
+wszelkie próby wracania do czegoś niezbyt interesującego czy ważnego uwagą kończą się zawsze tak
+samo ─ to coś staje się dla nas, przynajmniej na chwilę, *ciekawe*. Zaczynamy to *doceniać* i to coś
+staje się dla nas w pewien sposób "dobre". I dzieje się tak niekoniecznie dlatego, że jedno z tych
+zjawisk jest *fizyczną przyczyną* drugiego; na pewno zaś dzieje się tak dlatego, że w przeciwnym
+razie nasze zwracanie na to coś uwagi byłoby *niespójne*.
 
 Albo, jak ujął to pewien łobuz: Ainsi je tire de l’absurde trois conséquences, qui sont ma révolte,
 ma liberté et ma passion. Par le seul jeu de la conscience je transforme en règle de vie ce qui
 était une invitation à la mort — et je refuse le suicide. Inaczej mówiąc, `{} → {♥}`.
 
 Zadanie 2: Gdzie w tym wszystkim jest μῦθος, a gdzie λόγος?
+
+Symbole używane powszechnie przez matematyków są ostatecznie wybierane intuicyjnie i stają się
+standardowe przede wszystkim dlatego, że są w jakiś głębszy sposób *zrozumiałe*, a czym niby jest
+sama strzałka ...
+
+---                                              `→`
+
+... jeśli nie naszą najbardziej abstrakcyjną i kanoniczną reprezentacją *relacji*, *porządku*,
+*oceny*, *celowości*, *działania* i *ruchu*?
 
 "Substancja" odgrywa w filozofii rolę o tyle szczególną, że ma status terminu technicznego, którego
 znaczenie, w przeciwieństwie do słów takich jak "mentalne", "byt", i wielu innych, *nie* wywodzi się
@@ -460,26 +480,6 @@ między innymi ─ w mojej ocenie wybitni Psycho-Logowie ─ Sutton i Barto, Spi
 Weil, Albert Camus, Al-Halladż, Mistrz Eckhart, św. Augustyn, Ten, który Obudził się na jawie, Ten,
 który został Namaszczony, Arthur Schopenhauer i Thomas Nagel 🫥
 -/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
