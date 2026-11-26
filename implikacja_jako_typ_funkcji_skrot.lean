@@ -131,8 +131,8 @@ def uogólniona_identyczność (typ : Type) (parametr : typ) : typ := parametr
 example : ∀ (n : Nat), (ss n) = (ss' n) := by intro n; rfl
 example : ss = ss' := by rfl
 
--- Byłoby wspaniale, gdyby udało Ci się czasami potwórzyć, pisząc to, jak je rozumiesz, na kartce
--- całymi zdaniami, treść następujących pojęć:
+-- Byłoby wspaniale, gdyby udało Ci się czasami potwórzyć ─ pisząc to, jak je rozumiesz, na kartce
+-- całymi zdaniami, przy okazji zapisując jakieś przykłady kodu ─ treść następujących pojęć:
 --
 -- Term, typ, sprawdzanie typu inaczej typowanie, funkcja, parametr, przestawialność głównego
 -- dwukropka w definicjach funkcji, argument, typy zależne, ewaluacja
