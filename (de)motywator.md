@@ -43,9 +43,11 @@ wszystko zdaje się, że jakiś sens przynajmniej czasami mają.
 Przy okazji nie zaszkodzi dowiedzieć się, jak *dokładnie* działa ogólna logika wnioskowania
 statystycznego albo przyczynowego, a tego się chyba nie da osiągnąć bez opanowania logiki predykatów
 wyższego rzędu. Gdy już się ją opanuje, można dosłownie *zobaczyć*, o co dokładnie w tego rodzaju
-rozumowaniach chodzi.
+rozumowaniach chodzi. Nie widzę też powodu, żeby psychologowie nie mieli poznać bliżej kilku zarazem
+uniwersalnie użytecznych i bardzo prostych abstrakcyjnych pojęć, takich jak izomorfizm, porządek,
+monoid, konstrukcja uniwersalna, czy kategoria.
 
-Poza tym czy nie jest matematyka jednym z najważniejszych *rezultatów i narzędzi naszego
+Wreszcie czy nie jest matematyka jednym z najważniejszych *rezultatów i narzędzi naszego
 zachowania*? W dodatku *w skali cywilizacji*? Jeżeli zgodzimy się, że jest, to jak można uważać się
 za psychologa nie wiedząc, w jaki sposób coś, co odgrywa tak doniosłą rolę w naszym zachowaniu i co
 określa w jakiś sposób *granice* tego, co jest dla ludzi w pewnym sensie *maksymalnie pojmowalne*,
