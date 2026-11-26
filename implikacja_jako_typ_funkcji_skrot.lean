@@ -103,18 +103,17 @@ def uogólniona_identyczność (typ : Type) (parametr : typ) : typ := parametr
 -- Typ funkcji `uogólniona_identyczność` to przykład *typu zależnego* (przez co ta funkcja jest
 -- <parametrycznie> *polimorficzna*), bo *to, jakiego typu jest ta funkcja, zależy od argumentu*,
 -- który podamy jej na wejściu. Konkretnie, *typ* drugiego *parametru* jest tu *wartością*
--- pierwszego *parametru*:
+-- pierwszego *parametru* (stosuję tu `#check`, żeby można się było przekonać, że kod reprezentujący
+-- kolejne kroki ewaluacji jest poprawny):
 
--- `uogólniona_identyczność Nat 1`
---> (rozpakowanie definicji):
-
--- `(fun (typ : Type) => (fun (parametr : typ) => parametr)) Nat 1`
+#check uogólniona_identyczność Nat 1
+--> (rozpakowanie definicji stałej `uogólniona_identyczność`):
+#check (fun (typ : Type) => (fun (parametr : typ) => parametr)) Nat 1
 --> (oderwanie ciała i podstawianie):
-
--- `(fun (parametr : Nat) => parametr) 1`
+#check (fun (parametr : Nat) => parametr) 1
 --> (oderwanie ciała i podstawianie):
-
--- `1`
+#check 1
+-- To koniec ewaluacji, bo nie ma już żadnych aplikacji do zredukowania.
 
 -- Dzięki temu, że w teorii typów mamy *typy zależne*, rezultaty *tych* (częściowych) aplikacji
 -- mają *różne* typy:
