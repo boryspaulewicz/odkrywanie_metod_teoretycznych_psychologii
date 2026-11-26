@@ -13,6 +13,8 @@ Te skrypty są wymienione poniżej w kolejności, w której należy je czytać z
 nie ma się do tego przygotowania. Można się zorientować, czy któryś uległ ostatnio zmianie, a jeśli
 tak, to jakie dokładnie to były zmiany, korzystając z funkcjonalności GitHuba.
 
+{·} to link do skróconej wersji skryptu, która ma pomóc w generatywnym powtarzaniu.
+
 <hr>
 
 [Implikacja jako typ funkcji](./w5_implikacja_jako_typ_funkcji.lean) <br>
