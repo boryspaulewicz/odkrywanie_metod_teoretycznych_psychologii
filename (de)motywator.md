@@ -44,8 +44,8 @@ Przy okazji nie zaszkodzi dowiedzieć się, jak *dokładnie* działa ogólna log
 statystycznego albo przyczynowego, a tego się chyba nie da osiągnąć bez opanowania logiki predykatów
 wyższego rzędu. Gdy już się ją opanuje, można dosłownie *zobaczyć*, o co dokładnie w tego rodzaju
 rozumowaniach chodzi. Nie widzę też powodu, żeby psychologowie nie mieli poznać bliżej kilku zarazem
-uniwersalnie użytecznych i bardzo prostych abstrakcyjnych pojęć, takich jak izomorfizm, porządek,
-monoid, konstrukcja uniwersalna, czy kategoria.
+uniwersalnie użytecznych i bardzo prostych abstrakcyjnych pojęć, takich jak zbiór, funkcja,
+izomorfizm, porządek, monoid, konstrukcja uniwersalna, czy kategoria.
 
 Wreszcie czy nie jest matematyka jednym z najważniejszych *rezultatów i narzędzi naszego
 zachowania*? W dodatku *w skali cywilizacji*? Jeżeli zgodzimy się, że jest, to jak można uważać się
