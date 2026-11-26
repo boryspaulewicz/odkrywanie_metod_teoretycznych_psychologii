@@ -15,7 +15,7 @@ tak, to jakie dokładnie to były zmiany, korzystając z funkcjonalności GitHub
 
 <hr>
 
-[Implikacja jako typ funkcji](./w5_implikacja_jako_typ_funkcji.lean)
+[Implikacja jako typ funkcji](./w5_implikacja_jako_typ_funkcji.lean)[{·}](./implikacja_jako_typ_funkcji_skrot.lean)
 
 [Implikacja, koniunkcja i prawda](./w6_implikacja_koniunkcja_i_prawda.lean)
 
