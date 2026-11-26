@@ -313,7 +313,7 @@ Zadanie 2: Gdzie w tym wszystkim jest μῦθος, a gdzie λόγος?
 
 Symbole używane powszechnie przez matematyków są ostatecznie wybierane intuicyjnie i stają się
 standardowe przede wszystkim dlatego, że są w jakiś głębszy sposób *zrozumiałe*, a czym niby jest
-sama strzałka ...
+sama strzałka, ...
 
 ---                                              `→`
 
