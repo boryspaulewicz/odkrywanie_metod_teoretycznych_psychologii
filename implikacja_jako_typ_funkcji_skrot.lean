@@ -1,3 +1,5 @@
+-- To jest skrócona wersja pierwszego skryptu, która ma ułatwiać powtarzanie materiału.
+
 -- *Teoria typów* to teoria *syntaktyczna*, to znaczy, określająca reguły tworzenia wyrażeń, a nie
 -- ich sens; sens(y) nadajemy jak chcemy.
 
