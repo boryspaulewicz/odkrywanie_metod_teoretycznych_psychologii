@@ -22,7 +22,8 @@ A to nie jest skrypt: [(de)motywator](./(de)motywator.md)
 [Implikacja jako typ funkcji](./w5_implikacja_jako_typ_funkcji.lean) <br>
 [{·}](./implikacja_jako_typ_funkcji_skrot.lean)
 
-[Implikacja, koniunkcja i prawda](./w6_implikacja_koniunkcja_i_prawda.lean)
+[Implikacja, koniunkcja i prawda](./w6_implikacja_koniunkcja_i_prawda.lean) <br>
+[{·}](./implikacja_koniunkcja_i_prawda_skrot.lean)
 
 [Alternatywa, negacja i fałsz](./w7_alternatywa_negacja_i_falsz.lean)
 
