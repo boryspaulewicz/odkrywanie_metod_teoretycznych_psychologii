@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------
-RACHUNEK PREDYKATÓW WYŻSZEGO RZĘDU
+-- RACHUNEK PREDYKATÓW WYŻSZEGO RZĘDU
 
 /-
 Jak być może pamiętasz z lektury wprowadzenia do książki Alyssy Nye, oczywista, a więc "dana" nam
