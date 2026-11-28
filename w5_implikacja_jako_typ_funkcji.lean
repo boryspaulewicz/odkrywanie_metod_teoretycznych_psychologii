@@ -352,11 +352,11 @@ variable (p q r : Prop)
 -- A teraz popatrzmy raz jeszcze, co się właściwie tutaj, to znaczy w logice konstruktywnej
 -- uprawianej za pomocą języka teorii typów (obsługiwanego przez asystenta dowodzenia Lean), dzieje:
 
--- Umawiamy się, że zdanie prawdziwe = zdanie posiadające (jakiś) dowód.
+-- Umawiamy się, że zdanie prawdziwe = zdanie posiadające (konkretny lub tylko hipotetyczny) dowód.
 --
--- Zdania to termy typu `Prop` i jednocześnie typy swoich dowodów. Inaczej mówiąc, każdy term
--- zdania-jako-typu jest dowodem tego zdania. A wszystkie takie termy są (czasami hipotetycznymi!)
--- programami komputerowymi.
+-- Zdania to termy typu `Prop` i jednocześnie typy swoich dowodów: `dowód : zdanie : Prop`. Inaczej
+-- mówiąc, każdy term zdania-jako-typu jest dowodem tego zdania. A wszystkie takie termy są (czasami
+-- hipotetycznymi!) programami komputerowymi (lub strukturami danych).
 --
 -- Jeżeli `p : Prop`, to `p → p` to również zdanie i jednocześnie typ funkcji, które przekształcają
 -- termy typu `p`, czyli dowody zdania `p`, w termy typu `p`, czyli dowody zdania `p`.
@@ -368,9 +368,12 @@ variable (p q r : Prop)
 -- dowodu zdania `p → p`, a to jest dokładnie to samo, co istnienie funkcji, która z dowolnego
 -- dowodu zdania `p` robi (w jakikolwiek sposób) dowód zdania `p`.
 --
--- Jeżeli `p`, to `p`. Mając jakiś dowód `p`, zawsze można zrobić dowód `p`. Czy nie wydaje Ci się
--- teraz oczywiste, że to (prawie) to samo?
+-- *Prawdziwość* zdania jeżeli `p`, to `q`, czyli `p → q` ─ gdzie `p` i `q` to jakieś zdania ─ w
+-- naszej logice znaczy, że zawsze można zrobić dowód `q`, mając jakiś dowód `p`. Załóżmy, że dla
+-- pewnych `p` i `q` zdanie `p → q` jest prawdziwe. Skoro z każdego dowodu zdania `p` można zrobić
+-- dowód zdania `q`, to musi być tak, że prawdziwość `p` gwarantuje prawdziwość `q`, czyli, że z `p`
+-- wynika `q`. Czy nie wydaje Ci się teraz oczywiste, że to (prawie) to samo?
 
 -- Jeżeli nie udało Ci się jeszcze zrobić ostatniego zadania, to zastanów się proszę, co takiego
 -- musi robić funkcja, która dostaje na wejściu dowody zdania `p`, żeby dała nam na wyjściu dowód
--- zdania `p`? Podpowiem tylko, że bardzo niewiele.
+-- zdania `p`? Podpowiem, że niewiele.
