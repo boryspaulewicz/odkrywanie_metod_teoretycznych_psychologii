@@ -370,7 +370,9 @@ się, *na zewnątrz lustra percepcji*. Tak jakby "rzeczowość", tak samo jak "o
 "autonomiczność" i "zewnętrzność" ─ jakby nie były rozumiane ─ nie była również, jak każda inna,
 własnością *relacyjną*.
 
-यः प्रतीत्यसमुत्पादः शून्यतां तां प्रचक्ष्महे । सा प्रज्ञप्तिरुपादाय प्रतिपत् सैव मध्यमा ॥
+यः प्रतीत्यसमुत्पादः शून्यतां तां प्रचक्ष्महे ।
+
+सा प्रज्ञप्तिरुपादाय प्रतिपत् सैव मध्यमा ॥
 
 A ponieważ, kiedy jesteśmy przytomni, działa mechanizm projekcji, to czy nie jest też tak, że
 najłatwiej jest nam odkrywać aktualny stan własnego umysłu, przyglądając się temu, jak nam się jawi
@@ -494,8 +496,6 @@ między innymi ─ w mojej ocenie wybitni Psycho-Logowie ─ Sutton i Barto, Spi
 Weil, Albert Camus, Al-Halladż, Mistrz Eckhart, św. Augustyn, Ten, który Obudził się na jawie, Ten,
 który został Namaszczony, Arthur Schopenhauer i Thomas Nagel 🫥
 -/
-
-
 
 
 
