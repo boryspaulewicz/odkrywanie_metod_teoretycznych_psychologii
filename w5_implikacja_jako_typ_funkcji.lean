@@ -254,11 +254,15 @@ variable (p q r : Prop)
 #check p → p -- `p → p : Prop`
 
 -- Skoro `p` to zdanie, a `→` ze zdania do zdania oznacza implikację, to `p → p` jest również
--- zdaniem, które można odczytać jako "Jeżeli `p`, to `p`". Nawiasem mówiąc, można powiedzieć, że
--- implikacja to najważniejszy spójnik w logice. Ale z drugiej strony właściwie wszystko *można*
--- powiedzieć (chociaż nie wszystko zawsze wypada, należy, lub warto).
+-- zdaniem, które można odczytać jako "Jeżeli `p`, to `p`":
 
--- To teraz uważaj: W teorii typów jest *jednocześnie* prawdą, że `p → p` to typ funkcji!
+#check p → p -- `p → p : Prop`
+
+-- Nawiasem mówiąc, można powiedzieć, że implikacja to najważniejszy spójnik w logice. Ale z drugiej
+-- strony właściwie wszystko *można* powiedzieć (chociaż nie wszystko zawsze wypada, należy, lub
+-- warto).
+
+-- W teorii typów jest *jednocześnie* prawdą, że `p → p` to pewne *zdanie* i *typ funkcji*!
 
 -- Ale może po kolei: W logice konstruktywnej, inaczej intuicjonistycznej, której się teraz uczymy,
 -- zdanie prawdziwe znaczy dokładnie to samo, co zdanie mające dowód. W logice *klasycznej* ta
