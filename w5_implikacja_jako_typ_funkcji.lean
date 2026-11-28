@@ -277,15 +277,20 @@ variable (p q r : Prop)
 -- *Dla każdego zdania `z`, jeżeli nieprawda, że nieprawda, że `z`, to `z`*.
 
 -- ... która *nie* obowiązuje (uniwersalnie) w logice konstruktywnej, ponieważ nie każde
--- matematyczne zdanie prawdziwe da się w matematyce udowodnić. Ale o tym może kiedy indziej.
+-- matematyczne zdanie prawdziwe da się w matematyce udowodnić (sic!). Ale o tym może kiedy indziej.
 
--- To teraz znowu uważaj: Termy typu `Prop` są w naszej teorii typami! A więc nie tylko `Prop` to
--- term oznaczający typ (tutaj akurat typ zdań), ale również termy typu `Prop` to typy. W
--- szególności, `p`, `q` i `r` to zdania i jednocześnie typy (bo każde zdanie w teorii typów jest
--- typem). A co jest termem typu zdaniowego `p`? Jest nim każdy *dowód* `p`. To nie musi mieć w tej
--- chwili dla Ciebie żadnego sensu, ale to jest coś, co trzeba chwilowo *zaakceptować jako
--- konwencję* (albo interpretację, albo perspektywę, albo punkt widzenia). Po prostu tak się tylko
--- umawiamy, żeby zobaczyć, co z tego wyniknie.
+-- To teraz znowu uważaj: *Termy typu* `Prop` to w naszej teorii *typy* (niemal) jak każde inne! A
+-- więc nie tylko `Prop` to term *oznaczający* typ (tutaj akurat typ zdań), ale również *termy typu*
+-- `Prop` to *typy*. W szególności, `p`, `q` i `r` to zdania i jednocześnie typy (bo każde zdanie w
+-- teorii typów jest typem). A co jest termem typu zdaniowego `p`? Jest nim każdy *dowód* `p`. To
+-- nie musi mieć w tej chwili dla Ciebie żadnego sensu, ale to jest coś, co trzeba chwilowo
+-- *zaakceptować jako konwencję* (albo interpretację, albo perspektywę, albo punkt widzenia). Po
+-- prostu tak się tylko umawiamy, żeby zobaczyć, co z tego wyniknie.
+
+-- Można by to było wyrazić tak: `jakiś_term : p : Prop`, gdyby Lean pozwalał na takie równoległe
+-- wielopoziomowe typowanie. `Prop` jest tutaj termem i typem *zdań*, `p` jest termem i typem
+-- *zdaniowym*, bo jest *termem typu* `Prop`, czyli jest pewnym zdaniem, a `jakiś_term` to term i
+-- tylko term typu `p`, czyli to *dowód tego zdania*.
 
 -- Wobec tego w teorii typów jest *jednocześnie* prawdą, że:
 --
