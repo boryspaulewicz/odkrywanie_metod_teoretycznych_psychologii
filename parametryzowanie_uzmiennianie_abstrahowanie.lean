@@ -2,34 +2,40 @@
 -- PARAMETRYZOWANIE = UZMIENNIANIE = ABSTRAHOWANIE = "FUNKCJONOWANIE"
 
 -- Poniżej widzimy kilka przykładów *tego samego* sprawdzania "zgadzania się" typu i termu,
--- *zapisane* na 7 (powierzchownie) różnych sposobów. Zwróć uwagę, że położenie głównego dwukropka,
--- to jest tego, który oddziela listę parametrów od specyfikacji typu rezultatu, jest kwestią wyboru
--- (albo "gustu"). *Jedyny* warunek jest taki, żeby coś było po prawej od tego dwukropka ─ inaczej
--- powstałoby dziwne `cośtam : :=`, a poza tym to by nie była funkcja.
+-- *zapisane* na wiele (powierzchownie) różnych sposobów. Zwróć uwagę, że położenie *głównego
+-- dwukropka*, który oddziela *listę parametrów* od *typu rezultatu*, jest kwestią wyboru (albo
+-- "gustu"). *Jedyny* warunek jest taki, żeby coś było po prawej od tego dwukropka ─ inaczej
+-- powstałoby dziwne `<cośtam> : :=`.
 
 example (m : Nat) (n : Nat) : Nat := m + n
 example (m n : Nat) : Nat := m + n -- tak też można, bo oba parametry mają ten sam typ
 example (m : Nat) : Nat → Nat := fun n : Nat => m + n
+example (m : Nat) : Nat → Nat := fun n => m + n -- Lean wie, jaki typ musi mieć ten parametr
 example : Nat → Nat → Nat := fun m : Nat => fun n : Nat => m + n
 -- Widzisz wzorzec w dotychczasowych przykładach? Parametry funkcji można "obsłużyć" albo po lewej,
 -- albo po prawej od głównego dwukropka, wybór należy do Ciebie.
 example : Nat → Nat → Nat := by -- `by` := wejdź w tryb interaktywny (czyli prowadź mnie za rączkę)
-  -- Zrób `fun m => (fun n => ...)`, czyli potraktuj `m` i `n` jako parametry=zmienne=termy
+  -- Zrób `fun m => (fun n => ...)`, czyli potraktuj `m` i `n` jako wejścia=parametry=zmienne=termy
   -- hipotetyczne=założenia ...
   intro m n
-  -- ... i dodaj do konstrukcji dokładnie/wprost ten term:
+  -- ... i dopisz w tym miejscu dokładnie/wprost ten term:
   exact m + n
 example (m : Nat) : Nat → Nat := by
-  -- Tutaj `m` już jest parametrem, a więc jest od razu widoczne w trybie interaktywnym, bo
-  -- podaliśmy specyfikację tego parametru przed głównym dwukropkiem
+  -- Tutaj zmienna `m` jest od razu widoczna w trybie interaktywnym, bo podaliśmy specyfikację tego
+  -- parametru przed głównym dwukropkiem. Nawiasem mówiąc, zmienne powyżej symbolu derywacji w
+  -- stanie taktycznym to tak zwany *kontekst*.
   intro n
   exact m + n
 example (m n : Nat) : Nat := by
   -- Tutaj `m` i `n` są już parametrami
   exact m + n
+example : ∀ m n : Nat, Nat := fun m => fun n => m + n
+example : ∀ m n : Nat, Nat := fun m => fun n => m + n
+example : ∀ m : Nat, ∀ n : Nat, Nat := fun m => fun n => m + n
 -- To wszystko są różne sposoby zapisania tego samego termu (o tym samym typie <z konieczności, bo
 -- typy termów są unikalne>). Ponieważ twierdzenia to funkcje, przesuwalność głównego dwukropka
--- działa dla twierdzeń tak samo (to jest to samo zdanie i ten sam dowód, tylko inaczej zapisane):
+-- działa dla twierdzeń tak samo (to jest to samo zdanie i ten sam dowód, zmienia się tylko sposób
+-- zapisu):
 example : (p : Prop) → p → p := fun _ => fun hp => hp
 example (p : Prop) : p → p := fun hp => hp
 example (p : Prop) (hp : p) : p := hp
@@ -46,8 +52,8 @@ to samo, co "potraktuj `m` jako *wejście jakiejś funkcji*"?
 
 *Abstrahowanie = parametryzowanie = uzmiennianie = robienie z czegoś funkcji czegoś*!
 
-(nawiasem mówiąc, łacińskie słowo "abstrahere" znaczy odciągać lub oderwać, jak poprzednik
-zastosowanej w dowodzie implikacji, a mówiąc ogólnie  źródło albo dziedzinę zastosowanej funkcji)
+(nawiasem mówiąc, łacińskie słowo "abstrahere" znaczy odciągać lub oderwać ─ jak poprzednik
+zastosowanej w dowodzie implikacji, a mówiąc ogólnie źródło albo dziedzinę zastosowanej funkcji)
 
 W szczególności, ...
 -/
@@ -63,16 +69,18 @@ example (m n : Nat) : Nat := m + n
 
 "Dla liczb naturalnych `m` i `n`, `m + n` to liczba naturalna, która ...".
 
-I oba te *fragmenty tekstu* są de facto pewnymi *funkcjami*!
+I oba te *fragmenty tekstu w języku naturalnym* są de facto pewnymi *funkcjami*! Może przeczytaj to
+zdanie jeszcze raz.
 
-A my, *psychologowie*? Kiedy na przykład piszemy, że zgodnie z taką a taką teorią, "jeżeli bodziec
+A my, *psychologowie*? Kiedy na przykład piszemy, że zgodnie z taką-a-taką teorią, "jeżeli bodziec
 `s2` następuje w każdej próbie po bodźcu `s1`, to ...", *musimy* mieć na myśli `s1` i `s2` jako
 *zmienne*, których wartość czy treść zależy od *konkretnego zastosowania* takiego czy innego
-*schematu badawczego*. Dlatego każdy schemat badawczy jest de facto *funkcją*. Jak każda funkcja,
-schemat (albo "paradygmat") badawczy ma zawsze jakieś parametry *określonego typu*, które jednak
-wtedy nazywamy raczej *warunkami stosowalności*. Widzisz, że na pewnym poziomie ogólności nie ma tu
-zasadniczej różnicy? Z drugiej strony, na pewnym poziomie ogólności można powiedzieć (że) wszystko
-(jest) jedno co(ś).
+*schematu badawczego*. Dlatego każdy schemat badawczy jest również de facto *funkcją*. Jak każda
+funkcja, schemat (albo "paradygmat") badawczy ma zawsze jakieś parametry *określonego typu*, które
+jednak wtedy nazywamy raczej *warunkami stosowalności*. Widzisz, że na pewnym poziomie ogólności nie
+ma tu zasadniczej różnicy?
+
+Z drugiej strony, na pewnym poziomie ogólności można powiedzieć (że) wszystko (jest) jedno co(ś).
 
 Deklaracja `variable` mówi tak naprawdę: Hej, Lean, użyj tego jako parametru (czyli zmiennej) *tam*,
 gdzie `m` pojawi się *"znienacka"* . Czyli `variable (m : Nat)` można odczytać jako "jakby co, to
@@ -124,12 +132,13 @@ example (p q : Prop) : (p ∧ ¬p) → q := fun h => False.elim (h.right h.left)
 
 /-
 To ostatnie `example` czytamy: Niech `p` i `q` będą zdaniami. Wtedy (`:`) typ `(p ∧ ¬p) → q` ma
-między innymi (`:=`) term `fun h => False.elim (h.right h.left)`. Czy widzisz, że gdyby nie
+między innymi (`:=`) term `fun h => False.elim (h.right h.left)`. Przykłady (udanego) zastosowania
+`example` (hm) to tak naprawdę nic innego jak *definicje bez nazwy*. Czy widzisz, że gdyby nie
 wcześniejsza deklaracja `(p q : Prop)`, to wyrażenie `(p ∧ ¬p) → q` *nie miałoby sensu*? No bo skąd
 Lean miałby wiedzieć, czym mają być `p` i `q`?
 
-(Właściwie mógłby się domyślić, o co chodzi, na podstawie samego użycia operacji "koniunkcjowania"
-`∧`, ale nie ma takiej wbudowanej domyślności.)
+(właściwie mógłby się domyślić, o co chodzi, na podstawie samego użycia operacji `∧` i `¬`, ale nie
+ma takiej wbudowanej domyślności)
 
 Ponadto, gdyby nie nawiasy w `False.elim (h.right h.left)`, Lean pomyślałby, że chodzi o aplikację
 `False.elim` do *dwóch* argumentów. Ponieważ *aplikacja* `h.right h.left` ma typ `False`, to można
@@ -151,13 +160,13 @@ liczbą naturalną, więc nie musiałem go podawać. `(n : Nat) : Nat` to zatem 
 stałej `dodaje1`, określająca typ parametru i ─ po głównym dwukropku ─ typ rezultatu. Tą samą
 konwencję zastosujemy niebawem.
 
-(Nawiasem mówiąc, w razie wątpliwości lepiej nie używać skrótów.)
+(nawiasem mówiąc, w razie wątpliwości lepiej nie używać skrótów)
 
 Gdy stosujemy tego rodzaju zapis definicji funkcji, po lewej od głównego dwukropka mamy widoczne "ze
 środka" definiowanego "pudełka" (funkcji) nazwy (tutaj tylko `n`) i typy (`Nat`) "otworów
 wejściowych", a po prawej od głównego dwukropka mamy tylko typ "otworu wyjściowego" (czyli rezultatu
-zastosowania funkcji), już *bez* (zmiennej) *nazwy*. Nadawanie *wyjściu* funkcji nazwy nie ma sensu,
-bo rezultatem działania funkcji jest to, co "oblicza" albo "robi" jej *całe* ciało (tutaj `n + 1`).
+zastosowania funkcji), już *bez* (zmiennej) *nazwy*. Nadawanie *wyjściu* funkcji nazwy nie miałoby
+sensu, bo rezultatem działania funkcji jest to, co "oblicza" albo "robi" jej *całe* ciało (`n + 1`).
 Równoważnie, można było zapisać to tak (nazwa to teraz `dodaje1'` z apostrofem, bo `dodaje1` już
 wcześniej, hm, stało się *stałą*):
 -/
@@ -168,23 +177,24 @@ def dodaje1' : Nat → Nat := fun (n : Nat) => n + 1
 Czytamy to: definiuję (`def`) stałą `dodaje1'` typu (`:`) `Nat → Nat` jako (`:=`) funkcję, która
 przekształca `n : Nat` w `n + 1`.
 
-Czyli typowa całkiem "oficjalna" albo całkiem eksplicitna definicja funkcji, taka jakby stojąca w
-niedzielę rano przed chałupą w wykrochmalonej koszuli, wygląda następująco:
+Czyli (hm) typowa całkiem "oficjalna" albo całkiem eksplicitna definicja funkcji, taka jakby
+różanolica, pełna zapału w oczach i stojąca w niedzielę rano przed chałupą w wykrochmalonej koszuli,
+wygląda następująco:
 
 `def` <nazwa stałej> <specyfikacja parametru>+ `:` <typ rezultatu> `:=` <ciało funkcji>
 
 gdzie <cośtam>+ znaczy <cośtam> występujące raz lub więcej razy.
 
-(Nawiasem mówiąc, czy widzisz, że potoczne "*nast*ępująco" znaczy mniej więcej to samo, co "jak
+(nawiasem mówiąc, czy widzisz, że potoczne "*nast*ępująco" znaczy mniej więcej to samo, co "jak
 podano na pozycji <albo w *kroku*> + 1"?)
 -/
 
 ----------------------------------------------------------------------------------------------------
--- TWIERDZENIA TO TAKIE "DEFINITYWNE" STWIERDZENIA
+-- TWIERDZENIA TO DEFINITYWNE STWIERDZENIA
 
 -- To również *definicja funkcji*, tylko zapisana za pomocą słowa kluczowego `theorem`, żeby Lean
--- traktował ją tak, jak "lubi" traktować udowodnione twierdzenia. A lubi je traktować jako
--- *funkcje, których aplikacji się nie ewaluuje* (tylko sprawdza się ich typ).
+-- traktował ją tak, jak "lubi" traktować twierdzenia, czyli udowodnione zdania. A lubi je traktować
+-- jako *funkcje, których aplikacji się nie ewaluuje* (tylko sprawdza się ich typ):
 
 theorem ecq {p q : Prop} (h : (p ∧ ¬p)) : q := (h.right h.left).elim
 
@@ -193,18 +203,19 @@ Nazwa `ecq` to skrót od "ex contradictione quodlibet", czyli "ze sprzeczności 
 zasada obowiązuje m.in. w logikach konstruktywnej i klasycznej, ale już w parakonsystentnych nie).
 
 (Nawiasem mówiąc, pierwsze zdanie arykułu Wikipedii poświęconego hasłu "logika parakonsystentna"
-określa <każdą> taką logikę jako "dopuszczającą wystąpienie sprzeczności, pod warunkiem, że nie
+określa <każdą> taką logikę jako "dopuszczającą wystąpienie sprzeczności, pod warunkiem, że to nie
 prowadzi do przepełnienia systemu". "Przepełnienia systemu"! Czy widzisz tu pewien trudny do
 wyrażenia wprost związek z tym, że ludzie czasami tolerują niektóre sprzeczności czy niespójności, a
 nawet bywa i tak, że z nich chętnie korzystają, i wtedy nazywają je *paradoksami*, ale zdarzają się
 też sprzeczności czy niespójności, takie jak niektóre wyraźne *niekonsekwencje* w zachowaniach,
-których ludzie <gdy te są widoczne!> nie są za bardzo w stanie tolerować?)
+których <gdy te są widoczne, na przykład z powodu *wytknięcia*> nie są za bardzo w stanie
+tolerować?)
 
 Specyfikacja parametrów `p` i `q` jest tutaj *implicitna* inaczej *niejawna*, co poznajemy po
 nawiasach *klamrowych*. Wyrażenie `{p q : Prop}` czytamy jako "Hej, Lean, domyślaj się, czym mają
-być `p` i `q`, z kontekstu użycia tej funkcji". Dzięki temu Lean domyśli się, *gdy będzie umiał*,
-wartości tych parametrów i wtedy nie będziemy musieli podawać ich *wartości* (czyli odpowiadających
-im *argumentów aplikacji*) jawnie, co zwiększy czytelność i zwięzłość zapisu.
+być `p` i `q` z kontekstu użycia tej funkcji". Dzięki temu Lean domyśli się, *gdy będzie umiał*,
+wartości tych parametrów i nie będziemy musieli podawać ich *wartości* (czyli odpowiadających im
+*argumentów aplikacji*) jawnie, co zwiększy czytelność i zwięzłość zapisu.
 
 To dobry przykład wykorzystania parametryzacji implicitnej:
 -/
@@ -231,18 +242,19 @@ dowód zdania `q`.
 -- *To samo* można zapisać tak ...
 example (r s : Prop) (h : r ∧ ¬r) : s := ecq h        -- lub tak, ...
 example (r s : Prop) : (r ∧ ¬r) → s := fun h => ecq h -- ... lub tak,
--- ... a nawet tak (prowokując *ostrzeżenia o stylu*):
+-- ... a nawet tak (prowokując ostrzeżenia o stylu):
 example : (r s : Prop) → (r ∧ ¬r) → s := fun r => fun s => fun h => ecq h
 -- Możemy się pozbyć tych ostrzeżeń używając `_`, ...
 example : (r s : Prop) → (r ∧ ¬r) → s := fun _ => fun _ => fun h => ecq h
 -- ... ale zostawię resztę, bo mi się podoba, jak migocą.
 example : (r s : Prop) → (r ∧ ¬r) → s := fun (r : Prop) => fun (s : Prop) => fun h => ecq h
 example : (r s : Prop) → (r ∧ ¬r) → s := (fun (r : Prop) => (fun (s : Prop) => (fun h => ecq h)))
-example : (r : Prop) → (s : Prop) → (r ∧ ¬r) → s := fun (r : Prop) => fun (s : Prop) => fun h => ecq h
+example : (r : Prop) → (s : Prop) → (r ∧ ¬r) → s :=
+  fun (r : Prop) => fun (s : Prop) => fun h => ecq h
 
 /-
 Skupmy się chwilowo (czy w ogóle można się skupić trwale? Czy skupianie <się> nie jest *stałym*
-*przekierowywaniem*, a nie kierowaniem, "energii mentalnej" będącej *zawsze* w ruchu? <Tego
+*przekierowywaniem*, a nie *s*kierowaniem, "energii mentalnej" będącej *zawsze* w ruchu? <Tego
 rodzaju rozważania zwykle poprzedzają formalizację ⟦a to była spora dystrakcja!⟧>) na tej wersji:
 -/
 
@@ -269,16 +281,16 @@ example (r s : Prop) : (r ∧ ¬r) → s := by
   -- (docelowy) *typ* konstrukcji, którą mamy w danym miejscu w kodzie stworzyć, w trybie
   -- interaktywnym podany zawsze po symbolu derywacji `⊢`.
   --
-  -- Jedyne parametry/zmienne, którymi w tym momencie dysponujemy, to *jakieś* zdania `r` i `s`, a
-  -- także nie interesująca nas akurat teraz, "zabłąkana" (globalna) zmienna/parametr `m : Nat`. Czy
-  -- już widzisz, że nad symbolem `⊢` mamy same parametry/zmienne (jak również ─ jak się przekonasz
-  -- później ─ konstrukcje zrobione ze zmiennych)? A więc w trybie interaktywnym tak jakby "tworzymy
-  -- od środka pudełko/mechanizm określonego rodzaju".
+  -- Jedyne parametry/zmienne, którymi w tym momencie dysponujemy (w tak zwanym *kontekście*), to
+  -- *jakieś* zdania `r` i `s`, a także nie interesująca nas akurat teraz, "zabłąkana" (globalna)
+  -- zmienna/parametr `m : Nat`. Czy już widzisz, że nad symbolem `⊢` mamy same parametry/zmienne
+  -- (jak również ─ jak się przekonasz później ─ konstrukcje zrobione ze zmiennych)? A więc w trybie
+  -- interaktywnym tak jakby "tworzymy od środka pudełko/mechanizm określonego rodzaju".
   intro h
   -- Gdy cel ma postać implikacji, a nasz cel przed chwilą miał właśnie taką postać, *taktyka*
-  -- (taktyki działają tylko w trybie interaktywnym) `intro h` pozwala przyjąć założenie (=
-  -- wprowadzić parametr/zmienną o typie zdaniowym), że "mamy" dowód poprzednika implikacji będącej
-  -- aktualnym celem, i nazwać to założenie (czyli hipotetyczny dowód) literą `h`. Można też
+  -- (taktyki działają tylko w trybie interaktywnym) `intro` pozwala przyjąć założenie (= wprowadzić
+  -- parametr/zmienną o typie zdaniowym), że "mamy" dowód poprzednika implikacji będącej aktualnym
+  -- celem, i nazwać to założenie (czyli hipotetyczny dowód) literą (tutaj `h`). Można też
   -- powiedzieć, że `intro h` tworzy sam początek kodu funkcji anonimowej `fun h =>`. Dla nas to
   -- przecież na jedno wychodzi. Dlatego po zastosowaniu tej taktyki, poprzednik celu-implikacji
   -- zostaje "oderwany" i "wskakuje" powyżej `⊢` jako coś, co odtąd "mamy" jako (zmienne, bo o
@@ -289,9 +301,9 @@ example (r s : Prop) : (r ∧ ¬r) → s := by
   -- definicji podany jako argument kod wprost. Lean mówi nam w tym momencie `No goals`, co znaczy,
   -- że skonstruowaliśmy poprawny dowód.
 
--- Proponuję chociaż raz spokojnie przejść również ten kod kursorem (cursor to łacińskie słowo
+-- Proponuję chociaż raz spokojnie przejść również ten kod kursorem ("cursor" to łacińskie słowo
 -- oznaczające biegacza), linia po linii, czytając przy tym komentarze, oglądając zmiany stanu
--- taktycznego i czasami trochę o tym wszystkim myśląc:
+-- taktycznego i czasami trochę o tym wszystkim myśląc (od niechcenia):
 example (p q : Prop) : (p ∧ q) → (q ∧ p) := by
   intro hpandq -- lokalne założenia nazywamy niemal jak chcemy
   apply And.intro
@@ -303,23 +315,23 @@ example (p q : Prop) : (p ∧ q) → (q ∧ p) := by
   -- dowód zdania `q`) i jeden typu `p`, bo tego wymaga w tym momencie osiągnięcie celu za pomocą
   -- `And.intro`, dlatego podaje te typy jako *dwa* cele.
   exact hpandq.right -- ten term "spełnia" pierwszy cel, ...
-  exact hpandq.left  -- ... a ten drugi.
+  exact hpandq.left  -- ... a ten spełnia drugi.
 
 example (p q : Prop) : (p → q) → (¬q → ¬p) := by
   intro h
   intro nq
   -- Taktyka `unfold` *rozwija* podane z nazwy *definicje* w celu. Akurat tutaj chodzi o definicję
   -- negacji, która w Leanie nosi nazwę `Not`. Tą nazwę można było samodzielnie odkryć, umieszczając
-  -- kursor nad symbolem negacji w kodzie (nie w komentarzu).
+  -- kursor myszy nad symbolem negacji w kodzie (nie w komentarzu).
   unfold Not       -- po rozwinięciu definicji widać, że celem jest de facto implikacja (do fałszu)
-  unfold Not at nq -- `at` pozwala stosować taktyki do termów/parametrów/zmiennych "na górze"
+  unfold Not at nq -- `at` pozwala stosować taktyki do termów/parametrów/zmiennych w kontekście
   intro hp
   -- A teraz widać, że mamy już tylko uzyskać term typu `False`, i od razu też widać, skąd *musimy*
   -- go ostatecznie wziąć ─ *korzystając* w *jakiś* sposób z `nq`, a więc możemy (m.in.) użyć tu
   -- `apply`:
   apply nq
   -- Lean sam wywnioskował, że aby to zrobić, musimy dostarczyć dowód/term typu `q`, bo inaczej `nq`
-  -- tutaj nie "zadziała". Dlatego teraz celem jest `q`. Można to zrobić tak, ...
+  -- tutaj nie zadziała. Dlatego teraz celem jest `q`. Można to zrobić tak, ...
   --
   -- exact h hp
   --
@@ -335,7 +347,7 @@ theorem cp {p q : Prop} (h : p → q) : (¬q → ¬p) := by
   -- (równoważnie: bo są przed głównym dwukropkiem).
   intro nq hp
   -- Używając w trybie interaktywnym taktyki `have`, możemy dodać do tego, co "mamy", nazwane termy,
-  -- które jesteśmy w stanie w danym momencie skonstruować.
+  -- które jesteśmy w stanie w danym miejscu skonstruować.
   have hc := And.intro (h hp) nq
   -- Term `hc` ma typ `q ∧ ¬q`, czyli to jest (też hipotetyczny, bo przecież został zrobiony z
   -- termów będących zmiennymi) dowód tej sprzeczności.
