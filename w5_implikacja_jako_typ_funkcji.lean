@@ -26,7 +26,7 @@
 -- Każdy typ jest również termem! Ale nie każdy term jest typem! Na przykład, `Nat` to jednocześnie
 -- term i pewien typ, ale `2` to nie jest żaden typ, bo to jest *tylko* term. Podobnie w życiu,
 -- konkretna bułka (albo, jak mówią filozofowie, jej "token") jest obiektem typu bułka, ale raczej
--- nie jest żadnym typem. Natomiast typ bułka, to jest bółkę w ogólności, również można, jeśli się
+-- nie jest żadnym typem. Natomiast typ bułka, to jest bułkę w ogólności, również można, jeśli się
 -- chce, traktować jako pewnego rodzaju obiekt, tyle, że abstrakcyjny.
 
 -- Tak przy okazji, term `Nat` jest typu `Type`, bo jest takim dosyć zwyczajnym typem, ...
@@ -69,7 +69,7 @@
 -- Logik, ponieważ, o czym zdążyliśmy się już przekonać, to będą nasze formalne narzędzia służące do
 -- formalizacji rozumowań, co jest niewątpliwie jednym ze sposobów uprawiania analizy
 -- (meta)teoretycznej. Jakieś rodzaje logik odgrywają również ważną rolę na przykład w procesie
--- terapii, bo przecież terapeci często próbują ułatwić swom pacjentom odkrywanie *niespójności* w
+-- terapii, bo przecież terapeci często próbują ułatwić swoim pacjentom odkrywanie *niespójności* w
 -- ich zachowaniach i przekonaniach, a w logikach poprawność formalna to właśnie między innymi (w
 -- taki albo inny sposób rozumiana) spójność.
 --
@@ -108,6 +108,8 @@
 -- przykład tak:
 
 def idnat (n : Nat) := n
+-- (to zrozumiały dla Leana zapis skrótowy; *powinno* być tak `def idnat (n : Nat) : Nat := n`, o
+-- czym później)
 
 -- Czytamy to: Definiuję (`def`) stałą o nazwie `idnat` jako funkcję, która, gdy podamy jej na jej
 -- (jedynym) wejściu term o typie `Nat` (`(n : Nat)`), który akurat dla tej funkcji (albo z jej
@@ -137,7 +139,8 @@ def idnat (n : Nat) := n
 -- facecik (czyli Lean <ten sam w każdej funkcji!>), który go (to znaczy ten przepis) stosuje, gdy
 -- go (to znaczy Leana) o to ładnie poprosimy.
 
--- Wybrałem arbitralną nazwę `idnat`, bo tak, i ta nazwa ma odtąd status zdefiniowanej *stałej*.
+-- Wybrałem arbitralną nazwę `idnat`, bo tak, i ta nazwa ma odtąd status raz na zawsze zdefiniowanej
+-- *stałej*.
 
 -- Lean domyśla się, że w tej definicji chodzi nam o funkcję, ponieważ zaraz po nazwie stałej
 -- pojawia się wyrażenie `(n : Nat)`, określające parametr. Dla porównania, to jest definicja stałej
@@ -162,10 +165,10 @@ def nast (liczba : Nat) := liczba + 1
 -- tożsamości funkcji):
 
 #check idnat -- idnat (n : Nat) : Nat
-#check nast -- nast (liczba : Nat) : Nat
+#check nast  -- nast (liczba : Nat) : Nat
 
 -- Lean może pokazać te typy w inny sposób, to jest w pewnym sensie bardziej wprost, gdy użyjemy
--- takiej oto składni (dopisujemy z przodu `@`) i wtedy od razu widać, że obie funkcje mają ten sam
+-- takiej składni (dopisujemy z przodu `@`), i wtedy od razu widać, że obie funkcje mają ten sam
 -- typ:
 
 #check @idnat -- idnat : Nat → Nat
@@ -179,20 +182,38 @@ def nast (liczba : Nat) := liczba + 1
 -- jest endofunkcją na typie `Nat`, albo jest mapowaniem `Nat`-ów w `Nat`-y, jak również jest "na",
 -- ale tymi wszystkimi alternatywnymi sposobami mówienia się w ogóle nie przejmuj.
 
--- Jeżeli teraz *poddamy ewaluacji zastosowanie* (samo *zestawienie termów* `idnat 2`, jeszcze
--- *przed* obliczeniem wyniku, jest w naszej terminologii już zastosowaniem, inaczej *aplikacją*
--- funkcji) tej funkcji do termu `2`, to zobaczymy jako wynik `2`:
+-- Jeżeli teraz *poddamy ewaluacji zastosowanie* (samo *zestawienie termów*, czyli samo *zapisanie
+-- obok siebie* `idnat 2`, jeszcze *przed* obliczeniem wyniku, jest w naszej terminologii już
+-- "zastosowaniem", inaczej *aplikacją* funkcji) tej funkcji do termu `2`, to zobaczymy jako wynik
+-- `2`:
 
 #eval idnat 2
 
 -- A to przykład tej samej aplikacji (tej samej funkcji do tego samego argumentu), którego nie
 -- poddajemy (w tym miejscu) ewaluacji, bo tylko sprawdzamy typ:
 
-#check idnat 2 -- idnat 2 : Nat
+#check idnat 2 -- `idnat 2 : Nat`
 
 -- Jak widać, czasami warto odróżnić tak rozumianą *aplikację funkcji do argumentu* od *ewaluacji
 -- takiej aplikacji*. Bo czasem, zwłaszcza zaś - jak zobaczymy - w logice, obchodzi nas *tylko*
--- poprawność lub typ tego rodzaju aplikacji, a *nie* jej wynik.
+-- poprawność lub typ tego rodzaju aplikacji, a *nie* jej wynik. W istocie *cała* matematyka
+-- teoretyczna (w której nie chodzi o żadne obliczanie jakiś konkretnych wyników) będzie się u nas
+-- rozgrywała właśnie na poziomie typów wyrażeń.
+
+-- Czemu `idnat 2 : Nat`? Bo `idnat : Nat → Nat` i `2 : Nat`. Czy widzisz, że w ten sposób samo
+-- zapisanie obok siebie dwóch termów wymusza pewne przekształcenie na poziomie typu? Może tutaj
+-- tego aż tak wyraźnie nie widać, bo poza strzałką mamy tylko jeden typ (`Nat`). Ale tutaj już
+-- widać:
+
+def monotematyczna (n : Nat) := "333"
+-- podkreślenie `n` na szaro to tutaj tylko *ostrzeżenie* (o stylu), a nie *błąd*
+#eval monotematyczna 1  -- `"333"`
+#eval monotematyczna 10 -- `"333"`
+
+-- Ponieważ `monotematyczna : Nat → String` i `1 : Nat`, to `monotematyczna 1 : String`. Czy
+-- widzisz, że na skutek samej aplikacji zachodzi tu "interakcja" między typami `Nat → String` i
+-- `Nat` i pojawia się, jako typ aplikacji, typ `String`, którego wcześniej nie było (był tylko
+-- *częścią* typu `Nat → String`)?
 
 -- Zadanie 1: Zdefiniuj (bez użycia AI!) funkcję `plus2`, która będzie dodawała do dowolnej liczby
 -- naturalnej liczbę `2`, przeczytaj tą definicję zgodnie z podaną wcześniej konwencją, a na koniec
