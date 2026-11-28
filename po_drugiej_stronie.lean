@@ -56,8 +56,11 @@ example (p : Prop) : False ∨ p → p := fun h => Or.elim h (fun hF => hF.elim)
 -- i skorzystać z pojawiającego się wtedy okienka pomocy).
 
 /-
+
+Zresztą `×` to symbol taki sam jak `+`, tyle, że w stanie częściowego upadku.
+
 Co więcej, w pewnym (bardzo) abstrakcyjnym sensie dodawanie i mnożenie, więc również koniunkcja i
-alternatywa, to *jedna i ta sama operacja*, tylko "działająca" *dualnie*. Zresztą `1` i `0` to też
+alternatywa, to *jedna i ta sama operacja*, tylko działająca *dualnie*. Zresztą `1` i `0` to też
 obiekty dualne, czyli (wcale nie tak metaforycznie, jak się może wydawać) wzajemne lustrzane
 odbicia, a więc to *ten sam obiekt oglądany z dwóch stron*.
 
@@ -65,7 +68,8 @@ Z faktem, że dodawanie i mnożenie to w zasadzie to samo, można się wstępnie
 sobie, że dodawanie staje się mnożeniem, gdy zastosujemy do niego funkcję wykładniczą, a mnożenie
 staje się dodawaniem, gdy zastosujemy do niego logarytm, i te dwie funkcje są względem siebie
 odwrotne, a więc są również w pewnym sensie jedną i tą samą funkcją, tyle, że "działającą" raz w
-jedną, a raz w drugą stronę.
+jedną, a raz w drugą stronę. Jeżeli nie pamiętasz, o co chodziło z tymi funkcjami, nie przejmuj się
+tym, to tylko dygresja.
 
 No dobrze, a co z implikacją? Cieszę się, że pytasz. Otóż implikacja jest w pewnym technicznym i
 (ekstremalnie) abstrakcyjnym sensie w zasadzie tym samym, co funkcja wykładnicza! I to ma ścisły
@@ -78,14 +82,15 @@ szalenie praktyczne.
 -- "lustrzane odbijanie")
 
 /-
-Zdanie o postaci `p ↔ q` (nawet litery są tutaj swoimi odbiciami!) to z definicji to samo, co zdanie
-`(p → q) ∧ (q → p)`, ale udowadniamy równoważność korzystając z (dwuargumentowego) konstruktora
-`Iff.intro`, a nie z `And.intro`.
+Zdanie o postaci `p ↔ q` (nawet litery są tutaj swoimi lustrzanymi odbiciami) to z definicji to
+samo, co zdanie `(p → q) ∧ (q → p)`, ale udowadniamy równoważność korzystając z (również
+dwuargumentowego) konstruktora `Iff.intro`, a nie z `And.intro`.
 -/
 
 example (p : Prop) : p ↔ p := Iff.intro id id
 -- Rozumiesz już, jak ten dowód działa? Jeżeli jeszcze nie, spróbuj "rozpakować" definicję stałej
--- `↔` w zdaniu `p ↔ p`.
+-- `↔` w zdaniu `p ↔ p` i przypomnij sobie, czym jest `id` (albo umieść kursor myszy nad tym
+-- symbolem).
 
 /-
 Zadanie 1: Udowodnij, zastępując `sorry` dowodami zdań `q ∧ p` i `p ∧ q`, twierdzenie, które mówi,
@@ -107,9 +112,9 @@ theorem certum_est_quia_impossibile : False → True := fun hF => sorry
 
 /-
 Inną nazwą tego twierdzenia mogłoby być credo ut intelligam, albo credo quia absurdum. Warto jednak
-pamiętać, że łacińskie "credo" czy nasze "wiara" to niezbyt dokładne tłumaczenie występującego w
-Nowym Testamencie starogreckiego słowa "πίστις". To słowo oznaczało nie tylko wiarę, ale również
-pewność, dowód, albo *zaufanie*.
+pamiętać, że słowo "wiara" to niezbyt dokładne tłumaczenie występującego w Nowym Testamencie
+starogreckiego słowa "πίστις".To słowo oznaczało nie tylko wiarę, ale również pewność, dowód, albo
+*zaufanie*.
 
 Przy okazji dodam, że nazwą *sposobu działania* typu `False` w Leanie jest *absurd*:
 -/
@@ -122,12 +127,13 @@ pierwszego zbioru musi mieć dokładnie *jeden* odpowiednik w drugim zbiorze. Is
 jedna, czyli unikalna funkcja (matematyczna albo funkcja jako program) ze zbioru pustego, czyli
 zera, do (każdego) zbioru jednoelementowego, czyli do (funkcjonalnej) jedynki, z dwóch niezależnych
 powodów. Po pierwsze, istnieje tylko jeden (pusty) sposób, żeby każdemu elementowi zbioru pustego
-przypisać unikalny element *jakiegokolwiek* zbioru. Dlatego sam fakt, że dziedzina jest pusta,
-gwarantuje unikalność tej funkcji. Po drugie, sam fakt, że przeciwdziedzina jest zbiorem
-jednoelementowym, gwarantuje unikalność funkcji do tego zbioru z każdego zbioru, bo wszystkie
-elementy dziedziny, jaka by ona nie była, muszą być posłane do tego samego elementu
-przeciwdziedziny. W zasadzie z tego samego powodu dowód twierdzenia `False → True` też można
-skonstruować na dwa sposoby (zadanie?).
+przypisać unikalny element *jakiegokolwiek* zbioru. Po prostu dlatego, że nie ma do czego
+przypisywać elementów przeciwdziedziny, a więc nie robiąc nic, automatycznie "mamy" taką funkcję.
+Dlatego sam fakt, że dziedzina jest pusta, gwarantuje unikalność funkcji ze zbioru pustego do zbioru
+jednoelementowego. Po drugie, sam fakt, że przeciwdziedzina jest zbiorem jednoelementowym,
+gwarantuje unikalność funkcji do tego zbioru z każdego zbioru, bo wszystkie elementy dziedziny, jaka
+by ona nie była, muszą być posłane do tego samego elementu przeciwdziedziny. W zasadzie z tego
+samego powodu dowód twierdzenia `False → True` też można skonstruować na dwa sposoby (zadanie?).
 
 Ponieważ zbiory o *skończonej* liczbie elementów możemy definiować po prostu *wypisując* wszystkie
 elementy (otaczamy je wtedy nawiasami klamrowymi), tą funkcję można zapisać między innymi tak
@@ -138,8 +144,9 @@ elementy (otaczamy je wtedy nawiasami klamrowymi), tą funkcję można zapisać 
 O obiektach, które emitują w pewien (bardzo) abstrakcyjny sposób rozumiane *unikalne* strzałki *do
 każdego obiektu* (tego samego rodzaju), mówimy w matematyce, że to obiekty początkowe albo początki.
 Z kolei o obiektach, które otrzymują w ten sam sposób rozumiane *unikalne* strzałki *od każdego
-obiektu* mówimy, że to obiekty końcowe. Między innymi zbiór pusty, zero i typ `False` to obiekty
-początkowe, a między innymi (każdy) zbiór jednoelementowy, jedynka i typ `True` to obiekty końcowe.
+obiektu* mówimy, że to obiekty końcowe. Między innymi zbiór pusty, zero i typ `False` to (każdy w
+swoim "matematycznym świecie") obiekty początkowe, a między innymi (każdy) zbiór jednoelementowy,
+jedynka i typ `True` to obiekty końcowe.
 
 Z ich definicji wynika, że jeśli w jakimś "matematycznym świecie" istnieją obiekt początkowy (`I`
 jak "initial") i końcowy (`T` jak "terminal"), to (z obydwu powodów) istnieje (tak rozumiana)
@@ -151,9 +158,9 @@ Strzałka z `False` do `True`, te ze zbioru pustego do każdego singletona, i wi
 niekoniecznie podobnie rozumianych strzałek, to szczególne przypadki tego rodzaju struktury. Jak
 widzisz, obiekty początkowy i końcowy to bardzo ogólne pojęcia.
 
-*Jedyna* różnica między definicjami obiektu początkowego i końcowego dotyczy *kierunku* (wszystkich)
-strzałek. I właśnie w tym technicznym znaczeniu to są struktury względem siebie dualne, czyli
-dokładnie swoje lustrzane odbicia.
+*Dualność* prawdy i falszu polega dokładnie na tym, że *jedyna* różnica między definicjami obiektu
+początkowego i końcowego dotyczy *kierunku wszystkich strzałek*. To właśnie w tym technicznym
+znaczeniu to są struktury względem siebie dualne, czyli dokładnie swoje lustrzane odbicia.
 
 Wyobraź sobie teraz wszystkie możliwe *formuły logiczne*, to znaczy formalne zdania, które są albo
 zdaniami *atomowymi*, takimi jak `False`, `True` i `p` czy `q`, albo *formułami złożonymi*, to
@@ -163,11 +170,11 @@ wszystkie są oczywiście prawdziwe.
 
 Tak rozumianych zdań jest nieskończenie wiele, bo, dajmy na to, `p ∧ p` jest takim zdaniem, a wobec
 tego również `(p ∧ p) ∧ p` jest zdaniem, i tak dalej. Może najlepiej wyobraź sobie `False` na górze,
-`True` na samym dole (albo odwrotnie), a między nimi wszystkie inne zdania jako kropki. Wyobraź
-sobie też, *że* (czyli nie wyobrażaj sobie tych strzałek, bo jest ich za dużo, tylko wyobraź sobie
-pewien *fakt* <?>) od każdego zdania wychodzą strzałki (ale może inaczej rysowane, bo mają oznaczać
-coś innego niż implikacje) do każdego takiego zdania, które z tego pierwszego w *jakikolwiek* sposób
-logicznie wynika.
+`True` na samym dole (albo odwrotnie), a między nimi wszystkie inne zdania jako kropki (albo gwiazdy
+na niebie). Wyobraź sobie też, *że* (czyli nie wyobrażaj sobie tych strzałek, bo jest ich za dużo,
+tylko wyobraź sobie pewien *fakt* <?>) od każdego zdania wychodzą strzałki (ale może inaczej
+rysowane, bo mają oznaczać coś innego niż implikacje) do każdego takiego zdania, które z tego
+pierwszego w *jakikolwiek* sposób logicznie wynika.
 
 To znaczy, że każda taka strzałka ma reprezentować *relację dowiedlności*, czyli sam *fakt*
 istnienia dowodu, a nie żaden *konkretny* dowód. To taka różnica jak między *istnieniem* połączenia
@@ -203,7 +210,7 @@ Może już nie tak ważne, ale za to niewątpliwie interesujące są *strzałki 
 <skądś, bo w przeciwieństwie do `False`, zdanie `True` jest *o czymś* w tym znaczeniu, że *ma*
 dowód>). *Te* strzałki, czyli "prawdziwe wskazania", odpowiadają dokładnie wszystkim *zdaniom
 nietrywialnie prawdziwym*, to jest *nieatomowym twierdzeniom*, takim jak `p → p`. Żeby zobaczyć, że
-takie strzałki ze zdania `True` odpowiadają dokładnie twierdzeniom logiki, wystarczy zdać sobie
+takie strzałki ze zdania `True` odpowiadają dokładnie *twierdzeniom logiki*, wystarczy zdać sobie
 sprawę, że dowód zdania `True` jest jednocześnie ważny i bezużyteczny:
 -/
 
@@ -226,21 +233,23 @@ w przesłankach, a z drugiej strony, dopóki nie zostaną z nich *wyprowadzone* 
 pasterza?), są w nich zawarte niejawnie. Inaczej mówiąc, trzeba (rozważając je jako potencjalny
 wniosek) "popatrzeć w ich stronę", z miejsca odpowiadającego przesłankom, żeby je (dedukcyjnie)
 "zobaczyć" (jako prawdziwe). Wtedy zmieniają się z wniosków potencjalnych albo implicitnych we
-wnioski eksplicitne. Okazuje się więc, że w tej logice prawdą są dokładnie te zdania (`p`), które są
-*widoczne z dwóch stron*, to znaczy jednocześnie od strony "obiektywnej", czyli "skądś" ...
+wnioski eksplicitne. Z tej perspektywy widać, że w tej logice prawdą są dokładnie te zdania (`p`),
+które są *widoczne z dwóch stron*, to znaczy jednocześnie od strony "obiektywnej", czyli "skądś" ...
 
 -- `True → p`,
 
-... jak i od tej (skrajnie) "subiektywnej", czyli "znikąd":
+... jak i od tej (skrajnie) "subiektywnej", to jest "znikąd":
 
 -- `False → p`
+
+(A wydawałoby się, że "znikąd" to "obiektywnie", prawda? Prawda, bo to też prawda.)
 
 Możemy chyba nazwać tą drugą stronę subiektywną, bo subiektywność jest "meta" w tym znaczeniu, że
 nie znajduje "się" *w* spostrzeganej przestrzeni jako część jej zawartości, tylko jest samym
 spostrzeganiem albo sposobem spostrzegania. W końcu strzałkami z `False` są dokładnie *jakiekolwiek
-zdania*, a subiektywność *jako taką* można rozumieć jako ogół *arbitralnych* zdań.
+zdania*, a subiektywność *jako taką* można rozumieć jako *ogół arbitralnych zdań*.
 
-Można więc również powiedzieć, że prawda (w tej logice) to jakby dokładnie *ugruntowane złudzenia*.
+Można więc również powiedzieć, że prawda w tej logice to *ugruntowane złudzenia*.
 -/
 
 ----------------------------------------------------------------------------------------------------
@@ -253,11 +262,11 @@ jednego zbioru, nazywanego dziedziną funkcji, dokładnie jednego elementu drugi
 jej przeciwdziedziną. Na przykład, funkcja kwadratowa każdej liczbie przyporządkowuje dokładnie
 jedną liczbę (będącą jej kwadratem), i właśnie dlatego nazywamy ten "obiekt" funkcją.
 
-Jeżeli potraktujemy funkcję jako sposób oznaczania, przeciwdziedzina będzie kontekstem, a dziedzina
-będzie maksymalnie ubogim językiem, w którym są tylko nazwy własne. Dlatego funkcje nazywamy w
+Jeżeli potraktujemy funkcje jako sposoby oznaczania, przeciwdziedzina będzie kontekstem, a dziedzina
+będzie najprostszym możliwym językiem, w którym są tylko nazwy własne. Dlatego funkcje nazywamy w
 matematyce też "mapami" albo "mapowaniami", czy wreszcie "odwzorowaniami". Każda funkcja może być
-więc rozumiana jako jednoczesne nazywanie lub wskazywanie (i może <również> stąd ta strzałka?) jakiś
-"rzeczy", "miejsc" albo "własności" w jakimś kontekście (albo w jakiejś "sytuacji").
+więc rozumiana jako jednoczesne "nazywanie" lub "wskazywanie" (i może <również> stąd ta strzałka?)
+jakiś "rzeczy", "miejsc" albo "własności" w jakimś "kontekście" (albo w jakiejś "sytuacji").
 
 Jeżeli tak, to *czym* jest, istniejąca unikalnie, funkcja ze zbioru *pustego* do (dowolnego) zbioru
 *jednoelementowego*?
@@ -273,11 +282,11 @@ najuboższego możliwego języka. Czy wobec tego nie można powiedzieć, że tak
 (Nawiasem mówiąc, `∅` to standardowe oznaczenie zbioru pustego, a skoro w tak zwanej "czystej"
 teorii mnogości <ZFC> zbiory mogą być *elementami* innych zbiorów, to `{∅}` jest singletonem jak
 każdy inny. Zresztą zbiory są w tej teorii *jedynymi* elementami, bo *wszystko* jest tam "zrobione"
-ostatecznie ze zbioru pustego!)
+ostatecznie ze zbioru pustego.)
 
-I czy zwracanie uwagi nie jest najbardziej fundamentalnym *aktem oceny*? Bo zwracać na coś u*wagę*,
-to traktować to coś, choćby na chwilę, jako w jakiś sposób przynajmniej potencjalnie ważne. W
-niechęci czy nienawiści jest zawsze pewien elementarny szacunek, bo jeśli coś budzi w nas niechęć,
+I czy *zwracanie uwagi* nie jest najbardziej fundamentalnym *aktem oceny*? Bo zwracać na coś
+u*wagę*, to traktować to coś, choćby na chwilę, jako w jakiś sposób przynajmniej potencjalnie ważne.
+W niechęci czy nienawiści jest zawsze pewien elementarny szacunek, bo jeśli coś budzi w nas niechęć,
 nienawiść, czy wstręt, to musi być tak, że to coś się dla nas *liczy*. Nie da się, przynajmniej w
 pewnym sensie, bardziej negatywnie ocenić czegoś, a zwłaszcza kogoś, niż jako coś nieistotnego.
 
@@ -290,9 +299,9 @@ générosité.
 No dobrze (?), ale przecież uwaga to *selekcja* albo *filtrowanie*, a tutaj chodzi o *całość*. W
 zasadzie tak, ale redukowanie pojęcia uwagi do pojęcia selekcji jest problematyczne, bo w *samej*
 selektywności *jakiegokolwiek* reagowania, na przykład w selektywności rezonansowej odpowiedzi pudła
-gitary na drgania powietrza, nie ma *oceny*. A przecież uwaga, tak jak ją rozumiemy w psychologii,
-zawsze polega na ocenie, bo to jest pojęcie *funkcjonalne*, w znaczeniu zdefiniowane w kategoriach
-wykonywania jakiegoś zadania.
+gitary na drgania powietrza, nie ma jeszcze *oceny*. A przecież uwaga, tak jak ją rozumiemy w
+psychologii, *zawsze* polega na ocenie, bo to jest pojęcie *funkcjonalne*, w znaczeniu zdefiniowane
+w kategoriach wykonywania jakiegoś zadania.
 
 Jeżeli rozumiemy uwagę jako (abstrakcyjnie pojęte) *przykładanie do czegoś wagi*, nieważne, czy
 "dobrej", czy "złej", to może jednak da się, choćby tylko teoretycznie albo "w granicy", zwracać
@@ -303,11 +312,12 @@ zwyczajnym języku Wielkie "Tak". Bo czy nie o to, to jest właśnie o *rozprosz
 kosztem czegoś innego, co akurat jest ─ chodzi w *uważności* (स्मृति <道>)?
 
 Przecież *nie jesteśmy w stanie* utrzymać uwagi na czymś, co jest dla nas *obojętne*; dlatego
-wszelkie próby wracania do czegoś niezbyt interesującego czy ważnego uwagą kończą się zawsze tak
-samo ─ to coś staje się dla nas, przynajmniej na chwilę, *ciekawe*. Zaczynamy to *doceniać* i to coś
-staje się dla nas w pewien sposób "dobre". I dzieje się tak niekoniecznie dlatego, że jedno z tych
-zjawisk jest *fizyczną przyczyną* drugiego; na pewno zaś dzieje się tak dlatego, że w przeciwnym
-razie nasze zwracanie na to coś uwagi byłoby *niespójne*.
+wszelkie próby wracania do czegoś niezbyt interesującego albo niezbyt ważnego uwagą kończą się
+zawsze tak samo ─ to coś staje się dla nas, przynajmniej na chwilę, *ciekawe*. Zaczynamy to
+*automatycznie doceniać* i to coś staje się dla nas w pewien elementarny sposób "dobre". I dzieje
+się tak niekoniecznie dlatego, że jedno z tych zjawisk jest *fizyczną przyczyną* drugiego; na pewno
+zaś dzieje się tak dlatego, że w przeciwnym razie nasze zwracanie na to coś uwagi byłoby
+*niespójne*.
 
 Albo, jak ujął to pewien łobuz: Ainsi je tire de l’absurde trois conséquences, qui sont ma révolte,
 ma liberté et ma passion. Par le seul jeu de la conscience je transforme en règle de vie ce qui
@@ -322,18 +332,18 @@ sama strzałka, ...
 ---                                              `→`
 
 ... jeśli nie naszą najbardziej abstrakcyjną i kanoniczną reprezentacją *relacji*, *porządku*,
-*oceny*, *celowości*, *działania* i *ruchu*?
+*oceny*, *celowości*, *siły*, *woli*, *działania* i *ruchu*?
 
 "Substancja" odgrywa w filozofii rolę o tyle szczególną, że ma status terminu technicznego, którego
 znaczenie, w przeciwieństwie do słów takich jak "mentalne", "byt", i wielu innych, *nie* wywodzi się
-z mowy potocznej. Substancja to to, co jest, a więc dla materialisty to będą obiekty fizyczne albo
-materialne, dla dualisty to będą obiekty materialne i stany albo procesy mentalne, i tak dalej. A co
-powiesz na interpretację, że "substancją" jest *dla nas* to i tylko to, co (zdaje nam się) stawia(ć)
-w jakimkolwiek sensie pewien *opór*? Fizyczne czy materialne obiekty to takie, które opierają się,
-przynajmniej do pewnego stopnia, gdy ich dotykamy. Mentalne "obiekty", takie jak myśli, to takie,
-które opierają się, przynajmniej do pewnego stopnia, naszym *mentalnym* próbom kontrolowania. Każda,
-nawet najbardziej ulotna myśl, ma przecież swoją upartą bezwładność i nie da się jej *natychmiast*
-całkowicie "usunąć z głowy".
+z mowy potocznej. Dla zawodowego filozofa substancja to to, co jest, a więc dla materialisty to będą
+obiekty fizyczne albo materialne, dla dualisty to będą obiekty materialne i stany albo procesy
+mentalne, i tak dalej. A co powiesz na interpretację, że "substancją" jest *dla nas* to i tylko to,
+co (zdaje nam się) stawia(ć) w jakimkolwiek sensie pewien *opór*? Fizyczne czy materialne obiekty to
+takie, które opierają się, przynajmniej do pewnego stopnia, gdy ich dotykamy. Mentalne "obiekty",
+takie jak myśli, to takie, które opierają się, przynajmniej do pewnego stopnia, naszym *mentalnym*
+próbom kontrolowania. Każda, nawet najbardziej ulotna myśl, ma przecież swoją upartą bezwładność i
+nie da się jej *natychmiast* całkowicie "usunąć z głowy".
 
 (- Ile jeszcze będzie tych akapitów?
  - ...)
@@ -341,27 +351,26 @@ całkowicie "usunąć z głowy".
 *Jedyne*, w czym "substancjalność" nam *nigdy* w *żaden* sposób *nie* przeszkadza ─ jest wręcz
 przeciwnie, bo zdaje się być konieczna, żeby to coś zachodziło ─ jest *doświadczanie*. Treści
 naszego doświadczenia to dokładnie wszystko to, co wydaje nam się nie całkiem kontrolowalne. Zdaniem
-niektórych (również filozofów), z jednym wyjątkiem: uniwersalnej postawy ocennej, która akceptuje
-samą siebie, bo kiedy (jeśli) pojawia się taka postawa, pojawia się jednocześnie ─ pusta, bo
-polegająca na nieróżnicującej akceptacji albo *uniwersalnym przyzwoleniu* (γενηθήτω τὸ θέλημά σου) ─
-pełna kontrola, czyli nieograniczona wolność.
+niektórych (również filozofów), z jednym wyjątkiem: uniwersalnej postawy ocennej, która, jako że
+jest uniwersalna, akceptuje też samą siebie. Bo kiedy (lub jeśli) pojawia się taka postawa, pojawia
+się jednocześnie ─ pusta, bo polegająca na nieróżnicującej akceptacji albo *uniwersalnym
+przyzwoleniu* (γενηθήτω τὸ θέλημά σου) ─ pełna kontrola, czyli nieograniczona wolność.
 
 (- A to też będzie na teście końcowym?
  - Co?)
 
 Czy to nie wrażenie (względnej) "oporności", "stabilności" albo "niezależności" od tego, co wydaje
 nam się być działaniem "naszej woli", sprawia, że różne zjawiska postrzegamy jako istniejące
-"autonomicznie" i odrębnie, a my, doświadczając ich ─ być może zniekształcająco ─ w zasadzie tylko
-je "odzwierciedlamy"? Gdy połączymy to wrażenie i myślowy nawyk z wrażeniem odległości w przestrzeni
-między naszym ciałem i innymi ciałami, pojawia się, jak pojęciowe swędzenie, kantowska zagadka
-dostępu do "rzeczy samych w sobie". Jako takich rzeczy, które są *poza nami*, ale "jeszcze bardziej
-poza" niż te, które znamy, bo jako takie, rzeczy same w sobie istnieją, wydaje się, *na zewnątrz*,
-albo wręcz *niezależnie od* lustra percepcji. Tak jakby "rzeczowość", tak samo jak "oporność" czy
-"autonomiczność" ─ jakby nie była rozumiana ─ nie była również, jak każda inna, własnością
-*relacyjną*.
+"autonomicznie" i odrębnie, a my, doświadczając ich, nawet jeśli zniekształcająco, to jednak w
+zasadzie tylko je "odzwierciedlamy"? Gdy połączymy to wrażenie i myślowy nawyk z wrażeniem
+odległości w przestrzeni między "naszym" ciałem i innymi ciałami, pojawia się, jak pojęciowe
+swędzenie, zagadka dostępu do "rzeczy samych w sobie". Jako takich rzeczy, które są *poza nami*, ale
+"jeszcze bardziej poza" niż te, które znamy, bo jako takie, rzeczy same w sobie istnieją, wydaje
+się, *na zewnątrz lustra percepcji*. Tak jakby "rzeczowość", tak samo jak "oporność",
+"autonomiczność" i "zewnętrzność" ─ jakby nie były rozumiane ─ nie była również, jak każda inna,
+własnością *relacyjną*.
 
-यः प्रतीत्यसमुत्पादः शून्यतां तां प्रचक्ष्महे ।
-सा प्रज्ञप्तिरुपादाय प्रतिपत् सैव मध्यमा ॥
+यः प्रतीत्यसमुत्पादः शून्यतां तां प्रचक्ष्महे । सा प्रज्ञप्तिरुपादाय प्रतिपत् सैव मध्यमा ॥
 
 A ponieważ, kiedy jesteśmy przytomni, działa mechanizm projekcji, to czy nie jest też tak, że
 najłatwiej jest nam odkrywać aktualny stan własnego umysłu, przyglądając się temu, jak nam się jawi
@@ -396,7 +405,7 @@ Logiczna relacja między Fałszem i Prawdą to:
 
 - sam Początek Ruchu, z Niebytu do Bytu, albo z Ciemności do Światła,
 
-- Ocena albo Owoc z Drzewa Poznania (Dobrego i Złego),
+- Ocena jako taka, albo Owoc z Drzewa Poznania Dobrego i Złego,
 
 - Klejnot w Lotosie.
 
@@ -423,14 +432,14 @@ jest życie *przyszłością*. Nie wiem, czy zaraz  "istotą", ale może przez c
 założenia".
 
 Z tej perspektywy w obydwu przypadkach chodzi o *życie czymś, czego nie ma*. Tak jakby *strzałka
-aktywności* była skierowana *od tego, co jest, do tego, czego nie ma*. (Nawiasem mówiąc, w teorii
+aktywności* była skierowana *od tego, co jest, do tego, czego nie ma* (nawiasem mówiąc, w teorii
 mnogości i logice zdań takich strzałek nie ma, bo nie spełniałyby jednego z dwóch podstawowych
 wymagań dotyczących funkcji). Wspólną istotą obydwu rodzajów zaburzeń jest jednocześnie negatywna
 perspektywa albo nastawienie, a mówiąc dokładniej *negatywne złudzenie ocenne*, bo gdyby w tym
 ocenianiu nie było daleko idącej przesady, nie mielibyśmy do czynienia z zaburzeniami. W obydwu
 przypadkach mamy więc pewną postać *fałszu*. A najgłębsza *różnica* między tymi zaburzeniami wydaje
-się, przynajmniej z tej perspektywy, dotyczyć *zwrotu strzałki czasu*. Czyli to też są, przynajmniej
-w tym znaczeniu, swoje lustrzane odbicia.
+się, przynajmniej z tej perspektywy, dotyczyć *zwrotu strzałki czasu*. Czyli to też są, w dodatku z
+więcej niż jednego powodu, swoje lustrzane odbicia.
 
 Pobawmy się też może przy okazji zagadką świadomości. Psychologowie od dawna próbują to coś badać,
 ale, o ile mi wiadomo, jak dotąd nie udało się ustalić na ten temat nawet *jednego* nietrywialnego
@@ -448,9 +457,10 @@ istnieje *z pewnością*, istnieje *tylko aktualnie* i *w* naszej świadomości.
 
 Z tej perpektywy świadomość *jako taka* nie ma właściwości; świadomość tylko *jest* i *tylko* o niej
 możemy naprawdę wiedzieć, że jest, zanim jeszcze cokolwiek pomyślimy, co czyni ją jednocześnie
-*pustą* i maksymalnie  *obiektywną*. Właściwie nie ma nawet żadnego punktu, *z którego* dopiero coś
-widzimy, są tylko *widzenia* w różnych "modalnościach" i punkty, które można *dzięki tym widzeniom*
-odnaleźć w  dostępnych *w ramach* tych widzeń (w takim lub innym sensie) przestrzennych treściach.
+*pustą* i maksymalnie *obiektywną*; najbardziej *oporną* i jednocześnie *nietykalną*. Właściwie nie
+ma nawet żadnego punktu, *z którego* dopiero coś widzimy, są tylko *widzenia* w różnych
+"modalnościach" i punkty, które można *dzięki tym widzeniom* odnaleźć w  dostępnych *w ramach* tych
+widzeń (w takim lub innym sensie) przestrzennych treściach.
 
 To już może I=Will See-My-Self-Out 😘
 -/
@@ -484,16 +494,6 @@ między innymi ─ w mojej ocenie wybitni Psycho-Logowie ─ Sutton i Barto, Spi
 Weil, Albert Camus, Al-Halladż, Mistrz Eckhart, św. Augustyn, Ten, który Obudził się na jawie, Ten,
 który został Namaszczony, Arthur Schopenhauer i Thomas Nagel 🫥
 -/
-
-
-
-
-
-
-
-
-
-
 
 
 
