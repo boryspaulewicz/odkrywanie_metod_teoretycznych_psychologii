@@ -304,42 +304,45 @@ variable (p q r : Prop)
 --
 -- `p → p` to implikacja, która oznacza, że ze zdania `p` wynika zdanie `p`.
 --
--- Jeżeli w jakikolwiek sposób uda nam się skonstruować term typu `p → p`, czyli tak działającą
--- funkcję, to udowodnimy (konstruktywnie) zdanie `p → p`.
+-- Jeżeli w *jakikolwiek* sposób skonstruujemy term typu `p → p`, czyli *tak działającą funkcję*, to
+-- *udowodnimy* (konstruktywnie) *zdanie* `p → p`.
 
 -- Możemy to zrobić na wiele sposobów, ale zaczniemy od takiego, który pozwoli nam wyraźnie zobaczyć
 -- tą wspaniałą "wieloznaczność". Żeby to zrobić, musimy wprowadzić pojęcie *funkcji anonimowej*,
--- czyli funkcji, która nie ma nazwy, czyli takiej, która nie jest "treścią" żadnej stałej.
+-- czyli takiej "nagiej" funkcji, która *nie ma nazwy* (używamy do tego *słowa kluczowego* `fun`):
 
 #check (fun (n : Nat) => n + 1) -- `fun (n : Nat) => n + 1 : Nat → Nat`
 
 -- Lean nam mówi, że `(fun (n : Nat) => n + 1)` to funkcja przekształcająca `Nat`-y w `Nat`-y, co
 -- znaczy, że to jest term o typie `Nat → Nat`. Zwracam uwagę, że przed ciałem w taki sposób
 -- zapisanej funkcji piszemy `=>`, a nie `:=`, bo tu nie chodzi o *definiowanie* `fun (n : Nat)`,
--- tylko o *określenie sposobu działania na parametrach*.
+-- tylko o *określenie sposobu działania na parametrach*, czyli o ich przekształcanie (stąd symbol
+-- <pogrubionej> strzałki).
 
 -- Funkcje anonimowe możemy stosować tak, jak każde inne:
 
 #check (fun (n : Nat) => n + 1) 2
 
--- Ten term (złożony) ma typ `Nat`, bo samo zastosowanie tej funkcji do liczby naturalnej *jest* już
--- liczbą naturalną, tak jak zastosowanie funkcji kwadratowej do liczby rzeczywistej, jeszcze przed
--- obliczeniem wyniku, takie jak 2², *jest* już - w pewien sposób zapisaną - liczbą rzeczywistą.
+-- Ten term (złożony) ma typ `Nat`, bo samo "zastosowanie" tej funkcji do liczby naturalnej *jest*
+-- już liczbą naturalną, tak jak zastosowanie funkcji kwadratowej do liczby rzeczywistej, jeszcze
+-- przed obliczeniem wyniku, takie jak 2², *jest* już - w pewien sposób zapisaną - liczbą
+-- rzeczywistą.
 
 #eval (fun (n : Nat) => n + 1) 2 -- Lean twierdzi, że `3`
 
 -- Pytanie, czy zdanie `p → p` jest twierdzeniem logiki, możemy teraz rozumieć jako pytanie, czy
 -- istnieje term typu `p → p`, czyli, czy istnieje (jakakolwiek) funkcja z typu `p` do typu `p`.
 -- Żeby *skonstruować* taką *funkcję*, nie musimy dysponować żadnym konkretnym termem typu `p`,
--- czyli dowodem zdania `p`. Podobnie, żeby skonstruować funkcję z `Nat` do `Nat`, co nie wymagało
--- jeszcze jej stosowania, nie korzystaliśmy z żadnej konkretnej liczby naturalnej.
+-- czyli dowodem zdania `p`. Podobnie, żeby *skonstruować funkcję* z `Nat` do `Nat`, co nie wymagało
+-- jeszcze ani jej stosowania, ani liczenia jakiegoś wyniku, nie korzystaliśmy z żadnej konkretnej
+-- liczby naturalnej.
 
 -- Żeby sprawdzić, czy poszukiwana funkcja "działa", czyli, czy jest faktycznie dowodem zdania `p →
 -- p`, musimy więc tylko sprawdzić jej typ. I to będzie Twoje zadanie.
 
 -- Zadanie 2: Zastąp słowo kluczowe `sorry` czymś, co sprawi, że uzyskasz funkcję anonimową będącą
--- termem o typie `p → p`, czyli sprawi, że udowodnisz zdanie `p → p`, tym samym przyznając mu
--- status *twierdzenia*:
+-- termem o typie `p → p`, czyli sprawi, że udowodnisz zdanie `p → p`, tym samym nadając mu status
+-- *twierdzenia*:
 
 #check (fun (jakis_dowod_p : p) => sorry)
 
